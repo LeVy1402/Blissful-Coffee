@@ -1,0 +1,15 @@
+.location {
+    margin-right: 70px;
+}
+
+.location h5{
+    font-size: 14px;
+    line-height: 1.8;
+}
+.icon_phone{
+    display: inline-block;
+    margin-right: 5px;
+}
+.phone{
+    display: inline-block;
+}
