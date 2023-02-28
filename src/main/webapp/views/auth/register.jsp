@@ -68,7 +68,7 @@
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="../../views/dashboard.jsp"><i class="fa fa-home"></i></a></li>
-            <li><a href="../../views/auth/login.jsp">Account</a></li>
+            <li><a href="../../views/profile/my_account.jsp">Account</a></li>
             <li><a href="../../views/auth/register.jsp">Register</a></li>
         </ul>
         <div class="row">
