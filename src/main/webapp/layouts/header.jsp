@@ -12,24 +12,27 @@
     <base/>
     <meta name="description" content="My Store"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://opencart.templatemela.com/OPC08/OPC080182/image/catalog/cart.png" rel="icon"/>
+    <link href="../assets/images/theme/catalog/cart.png" rel="icon"/>
     <link href="https://opencart.templatemela.com/OPC08/OPC080182/" rel="canonical"/>
-    <script src="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/jquery/jquery-2.1.1.min.js"
-            type="text/javascript"></script>
-    <script src="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/bootstrap/js/bootstrap.min.js"
-            type="text/javascript"></script>
-    <link href="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/font-awesome/css/font-awesome.min.css"
-          rel="stylesheet" type="text/css"/>
+
+    <script src="../js/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="../js/boostrap/bootstrap.min.js" type="text/javascript"></script>
+
+    <link href="../js/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Coustard:400,900" rel="stylesheet" type="text/css"/>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,300' rel='stylesheet'
-          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,300' rel='stylesheet' type='text/css'>
+
+    <%--    khong doi duoc do dinh link image--%>
     <link href="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/theme/OPC080182/stylesheet/stylesheet.css"
           rel="stylesheet">
 
+    <%--    khong doi duoc do dinh link image--%>
     <link rel="stylesheet" type="text/css"
           href="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/theme/OPC080182/stylesheet/megnor/carousel.css"/>
+
     <link rel="stylesheet" type="text/css"
           href="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/theme/OPC080182/stylesheet/megnor/custom.css"/>
     <link rel="stylesheet" type="text/css"
@@ -101,7 +104,7 @@
         <div class="row">
             <div class="col-sm-4 logo">
                 <div id="logo">
-                    <a href="../index.jsp"><img
+                    <a href="../views/dashboard.jsp"><img
                             src="https://opencart.templatemela.com/OPC08/OPC080182/image/catalog/logo.png"
                             title="Your Store" alt="Your Store" class="img-responsive"/></a>
                 </div>

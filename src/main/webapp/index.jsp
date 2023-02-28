@@ -7,12 +7,11 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
     <title>Blissful Coffee</title>
+    <link href="https://opencart.templatemela.com/OPC08/OPC080182/image/catalog/cart.png" rel="icon" />
 </head>
 
 
 <body class="common-home layout-1">
-    <jsp:include page="layouts/header.jsp"></jsp:include>
     <jsp:include page="views/dashboard.jsp"></jsp:include>
-    <jsp:include page="layouts/footer.jsp"></jsp:include>
 </body>
 </html>

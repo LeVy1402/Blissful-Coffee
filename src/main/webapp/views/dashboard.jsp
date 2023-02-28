@@ -6,6 +6,7 @@
     <%--    <link rel="stylesheet" href="../css/dashboard.css">--%>
 </head>
 <body>
+<jsp:include page="../layouts/header.jsp"></jsp:include>
 <div class="main-slider">
     <div id="spinner"></div>
     <div id="slideshow0" class="owl-carousel" style="opacity: 1;">
@@ -1510,5 +1511,6 @@
             <span class="module_default_width" style="display:none; visibility:hidden"></span></div>
     </div>
 </div>
+<jsp:include page="../layouts/footer.jsp"></jsp:include>
 </body>
 </html>
