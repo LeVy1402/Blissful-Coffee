@@ -87,6 +87,10 @@
                     <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
                         <li><a href="../views/auth/register.jsp">Register</a></li>
                         <li><a href="../views/auth/login.jsp">Login</a></li>
+
+<%--                        Khi đăng nhập header sẽ chuyển thành dưới--%>
+<%--                        <li><a href="../views/auth/register.jsp">My Profile</a></li>--%>
+<%--                        <li><a href="../views/auth/login.jsp">Logout</a></li>--%>
                     </ul>
                 </li>
                 <li><a href="../views/wishlist.jsp" id="wishlist-total" title="Wish List (0)"><span
