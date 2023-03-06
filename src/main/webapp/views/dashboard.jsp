@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -93,38 +94,46 @@
 </div>
 
 <%--Đổ sản phẩm chỗ này nhe--%>
+<%--<c:if test='${product.getStatus()=="Feature"}'></c:if>--%>
+
 <div class="box featured">
     <div class="box-heading">Featured</div>
+
     <div class="box-content">
         <div class="customNavigation">
             <a class="btn prev">&nbsp;</a>
             <a class="btn next">&nbsp;</a>
         </div>
 
-
         <div class="box-product product-carousel" id="featured-carousel">
+            <c:forEach items="${productList}" var="product">
             <div class="slider-item">
                 <div class="product-block product-thumb transition">
+
                     <div class="product-block-inner ">
                         <div class="image">
-                            <a href=""><img
-                                    src="../assets/images/products/product1.jpg"
-                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>
+                            <a href="">
+                                    <img
+                                            src="../assets/images/products/product1.jpg"
+                                            alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/>
+                               </a>
                             <span class="saleicon sale">Sale</span>
                         </div>
 
                         <div class="caption">
                             <h4>
-                                <a href="">Coffee Bean Direct</a>
+                                <a href="">
+                                        <c:out value="${product.getProductName()}"></c:out>
+                                </a>
                             </h4>
                             <div class="hover_block">
                                 <div class="actions">
-                                    <button type="button" onclick="cart.add('43');"><span
+                                    <button type="button" onclick="cart.add('${product.getProductId()}')"><span
                                             class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
                                     <button class="wishlist_button" type="button" data-toggle="tooltip"
-                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>
+                                            title="Add to Wish List" onclick="wishlist.add('${product.getProductId()}');"></button>
                                     <button class="compare_button" type="button" data-toggle="tooltip"
-                                            title="Add to Compare" onclick="compare.add('43');"></button>
+                                            title="Add to Compare" onclick="compare.add('${product.getProductId()}')"></button>
                                     <div class="rating">
                                         <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
                                         <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
@@ -134,199 +143,29 @@
                                     </div>
                                 </div>
                             </div>
-
                             <p class="price">
-                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>
+                                <span class="price-old">
+                                    <c:out value="${product.getPrice()}">VNĐ</c:out>
+                                    </span><span class="price-new">
+                                  28.000VNĐ
+                               </span>
                             </p>
                             <div class="res-cartbtn">
-                                <button type="button" onclick="cart.add('43');"><span
+                                <button type="button" onclick="cart.add('${product.getProductId()}')"><span
                                         class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div class="slider-item">
-                <div class="product-block product-thumb transition">
-                    <div class="product-block-inner ">
-                        <div class="image">
-                            <a href=""><img
-                                    src="../assets/images/products/product1.jpg"
-                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>
-                            <span class="saleicon sale">Sale</span>
-                        </div>
-
-                        <div class="caption">
-                            <h4>
-                                <a href="">Coffee Bean Direct</a>
-                            </h4>
-                            <div class="hover_block">
-                                <div class="actions">
-                                    <button type="button" onclick="cart.add('43');"><span
-                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    <button class="wishlist_button" type="button" data-toggle="tooltip"
-                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>
-                                    <button class="compare_button" type="button" data-toggle="tooltip"
-                                            title="Add to Compare" onclick="compare.add('43');"></button>
-                                    <div class="rating">
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p class="price">
-                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>
-                            </p>
-                            <div class="res-cartbtn">
-                                <button type="button" onclick="cart.add('43');"><span
-                                        class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item">
-                <div class="product-block product-thumb transition">
-                    <div class="product-block-inner ">
-                        <div class="image">
-                            <a href=""><img
-                                    src="../assets/images/products/product1.jpg"
-                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>
-                            <span class="saleicon sale">Sale</span>
-                        </div>
-
-                        <div class="caption">
-                            <h4>
-                                <a href="">Coffee Bean Direct</a>
-                            </h4>
-                            <div class="hover_block">
-                                <div class="actions">
-                                    <button type="button" onclick="cart.add('43');"><span
-                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    <button class="wishlist_button" type="button" data-toggle="tooltip"
-                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>
-                                    <button class="compare_button" type="button" data-toggle="tooltip"
-                                            title="Add to Compare" onclick="compare.add('43');"></button>
-                                    <div class="rating">
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p class="price">
-                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>
-                            </p>
-                            <div class="res-cartbtn">
-                                <button type="button" onclick="cart.add('43');"><span
-                                        class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item">
-                <div class="product-block product-thumb transition">
-                    <div class="product-block-inner ">
-                        <div class="image">
-                            <a href=""><img
-                                    src="../assets/images/products/product1.jpg"
-                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>
-                            <span class="saleicon sale">Sale</span>
-                        </div>
-
-                        <div class="caption">
-                            <h4>
-                                <a href="">Coffee Bean Direct</a>
-                            </h4>
-                            <div class="hover_block">
-                                <div class="actions">
-                                    <button type="button" onclick="cart.add('43');"><span
-                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    <button class="wishlist_button" type="button" data-toggle="tooltip"
-                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>
-                                    <button class="compare_button" type="button" data-toggle="tooltip"
-                                            title="Add to Compare" onclick="compare.add('43');"></button>
-                                    <div class="rating">
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p class="price">
-                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>
-                            </p>
-                            <div class="res-cartbtn">
-                                <button type="button" onclick="cart.add('43');"><span
-                                        class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item">
-                <div class="product-block product-thumb transition">
-                    <div class="product-block-inner ">
-                        <div class="image">
-                            <a href=""><img
-                                    src="../assets/images/products/product1.jpg"
-                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>
-                            <span class="saleicon sale">Sale</span>
-                        </div>
-
-                        <div class="caption">
-                            <h4>
-                                <a href="">Coffee Bean Direct</a>
-                            </h4>
-                            <div class="hover_block">
-                                <div class="actions">
-                                    <button type="button" onclick="cart.add('43');"><span
-                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    <button class="wishlist_button" type="button" data-toggle="tooltip"
-                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>
-                                    <button class="compare_button" type="button" data-toggle="tooltip"
-                                            title="Add to Compare" onclick="compare.add('43');"></button>
-                                    <div class="rating">
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p class="price">
-                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>
-                            </p>
-                            <div class="res-cartbtn">
-                                <button type="button" onclick="cart.add('43');"><span
-                                        class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
+
 </div>
+
 <span class="featured_default_width" style="display:none; visibility:hidden"></span>
+
 
 <div class="container">
     <div class="row">
