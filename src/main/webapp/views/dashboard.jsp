@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -103,7 +104,6 @@
 
 
         <div class="box-product product-carousel" id="featured-carousel">
-
             <div class="slider-item">
                 <div class="product-block product-thumb transition">
                     <div class="product-block-inner ">
@@ -148,7 +148,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="slider-item">
                 <div class="product-block product-thumb transition">
                     <div class="product-block-inner ">
@@ -360,8 +359,15 @@
                 <div id="tabs" class="htabs">
                     <ul class='etabs'>
                         <li class='tab'>
-                            <a href="#tab-latest">Products</a>
+                            <a href="#tab-latest">Latest</a>
                         </li>
+                        <li class='tab'>
+                            <a href="#tab-bestseller">Bestseller</a>
+                        </li>
+                        <li class='tab'>
+                            <a href="#tab-special">Special</a>
+                        </li>
+
                     </ul>
                 </div>
 
@@ -722,6 +728,720 @@
                     <span class="tablatest_default_width" style="display:none; visibility:hidden"></span>
                 </div>
 
+                <div id="tab-bestseller" class="tab-content">
+                    <div class="box">
+                        <div class="box-content">
+                            <div class="customNavigation">
+                                <a class="btn prev">&nbsp;</a>
+                                <a class="btn next">&nbsp;</a>
+                            </div>
+
+
+                            <div class="box-product product-carousel" id="tabbestseller-carousel">
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="tabbestseller_default_width" style="display:none; visibility:hidden"></span>
+                </div>
+
+                <div id="tab-special" class="tab-content">
+                    <div class="box">
+                        <div class="box-content">
+                            <div class="customNavigation">
+                                <a class="btn prev">&nbsp;</a>
+                                <a class="btn next">&nbsp;</a>
+                            </div>
+
+                            <div class="box-product product-carousel" id="tabspecial-carousel">
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="product-block product-thumb transition">
+                                        <div class="product-block-inner">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="../assets/images/products/product1.jpg"
+                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"
+                                                         class="img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>
+                                                    <a href="">Cinnamon Coffee</a>
+                                                </h4>
+                                                <div class="hover_block">
+                                                    <div class="actions">
+                                                        <button type="button" onclick="cart.add('48');"><span
+                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                        </button>
+                                                        <button class="wishlist_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Wish List"
+                                                                onclick="wishlist.add('48');"></button>
+                                                        <button class="compare_button" type="button"
+                                                                data-toggle="tooltip" title="Add to Compare"
+                                                                onclick="compare.add('48');"></button>
+                                                        <div class="rating">
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="price"> 32.000 VNĐ
+                                                    <span class="price-tax">Ex Tax: $100.00</span>
+                                                </p>
+                                                <div class="res-cartbtn">
+                                                    <button type="button" onclick="cart.add('48');"><span
+                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="tabspecial_default_width" style="display:none; visibility:hidden"></span>
+                </div>
             </div>
 
             <script type="text/javascript">
