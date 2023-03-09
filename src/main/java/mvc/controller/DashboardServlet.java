@@ -8,15 +8,13 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "ProductServlet", value = "/ProductServlet")
-public class ProductServlet extends HttpServlet {
-    private IProductService iProductService = new ProductService();
+@WebServlet(name = "DashboardServlet", value = "/dashboards")
+public class DashboardServlet extends HttpServlet {
+    IProductService iProductService =new ProductService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -34,19 +32,17 @@ public class ProductServlet extends HttpServlet {
 //                showSearchFormCustomer(request, response);
                 break;
             default:
-                listProduct(request, response);
+                dashboard(request, response);
                 System.out.printf("nhận");
                 break;
         }
     }
 
-    private void listProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    private void dashboard(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productListInFeature = iProductService.selectAllProductInFeature();
+        request.setAttribute("productListF", productListInFeature);
         List<Product> productList = iProductService.selectAllProduct();
         request.setAttribute("productList", productList);
-        request.setAttribute("productListInFeature", productListInFeature);
-        System.out.println(productList.size());
         RequestDispatcher dispatcher = request.getRequestDispatcher("views/dashboard.jsp");
         dispatcher.forward(request, response);
     }

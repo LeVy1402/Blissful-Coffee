@@ -8,5 +8,6 @@ public interface IProductRepository {
 
     public  List<Product> selectAllProduct() ;
     public List<Product> selectAllProductInFeature() ;
-Product getProductFeature(String nameProductFeature);
+    Product getProductFeature(String nameProductFeature);
+
 }

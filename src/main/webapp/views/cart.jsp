@@ -646,7 +646,7 @@
                                 <td class="text-left">${orderDetail.getProduct().getProductId()}</td>
                                 <td class="text-left">
                                     <div class="input-group btn-block" style="max-width: 200px;">
-                                        <input type="text" name="quantity[YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjQzO30=]" value="1" size="1" class="form-control" />
+                                        <input type="text" name="quantity[YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjQzO30=]" value="${orderDetail.getQuantity()}" size="1" class="form-control" />
                                         <span class="input-group-btn">
                                         <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary update">
                                             <i class="fa fa-refresh"></i>
