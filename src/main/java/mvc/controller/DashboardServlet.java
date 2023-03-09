@@ -29,13 +29,24 @@ public class DashboardServlet extends HttpServlet {
 //                showUpdateFormCustomer(request, response);
                 break;
             case "search":
-//                showSearchFormCustomer(request, response);
+                showSearchProduct(request, response);
+                System.out.println("search");
                 break;
             default:
                 dashboard(request, response);
-                System.out.printf("nhận");
+                System.out.printf("list");
                 break;
         }
+    }
+
+    private void showSearchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String searchName = request.getParameter("searchName");
+        List<Product> productList ;
+        productList = iProductService.searchProduct(searchName);
+        RequestDispatcher dispatcher;
+        request.setAttribute("productList", productList);
+        dispatcher = request.getRequestDispatcher("views/search.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void dashboard(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -17,6 +17,7 @@ public class ProductRepository implements IProductRepository {
 
     private static final String SELECT_ALL_PRODUCT_IN_FEATURE = "select * from `product` join `category` using(`category_id`) where `product_status` = \"Feature\"\n";
         private static final String SELECT_ALL_PRODUCT = "SELECT * FROM `product` join `category` using(`category_id`);";
+    private static final String SEARCH_NAME_PRODUCT = "select * from `product` join `category` using(`category_id`) where `product_name` like ?;";
 
     @Override
     public List<Product> selectAllProductInFeature() {
@@ -90,6 +91,35 @@ public class ProductRepository implements IProductRepository {
                 }
                 DBConnection.close();
             }
+        }
+        return productList;
+    }
+
+    @Override
+    public List<Product> searchProduct(String search) {
+        List<Product> productList = new ArrayList<>();
+        Connection connection = DBConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_NAME_PRODUCT);
+            preparedStatement.setString(1, "%" + search + "%");
+
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int productId = rs.getInt("product_id");
+                String productName = rs.getString("product_name");
+                double price = rs.getDouble("price");
+                int quantity = rs.getInt("quantity");
+                String description = rs.getString("description");
+                String productStatus = rs.getString("product_status");
+                String image = rs.getString("image");
+                Date dateUpdate = rs.getDate("date_update");
+                Category category = new Category(rs.getInt("category_id"), rs.getString("category_name"));
+
+                Product product = new Product(productId, productName, price, quantity, description, productStatus, image, dateUpdate, category);
+                productList.add(product);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return productList;
     }

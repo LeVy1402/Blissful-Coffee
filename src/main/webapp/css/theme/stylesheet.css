@@ -244,7 +244,7 @@ header{background: none repeat scroll 0 0 #342014; border-bottom: 3px solid #d56
     line-height: 18px;
     padding: 6px 15px;
     width: 290px;
-	height:auto;
+	height:27px;
 	border-radius:0;
 }
 #search .form-control.input-lg, #search .form-control::-moz-placeholder {

@@ -18,4 +18,9 @@ public class ProductService  implements IProductService {
     public List<Product> selectAllProduct() {
         return iProductRepository.selectAllProduct();
     }
+
+    @Override
+    public List<Product> searchProduct(String search) {
+        return iProductRepository.searchProduct(search);
+    }
 }

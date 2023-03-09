@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -355,17 +356,18 @@
             </div>
             <br>
             <div class="row">
-
-                <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-6">
+<c:forEach items="${productList}" var="product" >
+    <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-6">
                     <div class="product-block product-thumb">
                         <div class="product-block-inner ">
-                            <div class="image"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=41&amp;search=coffe"><img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-235x250.jpg" alt="Caramel coffee" title="Caramel coffee" class="img-responsive"></a>
-
-
+                            <div class="image"><a href="chi_tiết sản phẩm">
+                                <img src="/img/${product.getImage()}" style="height: 32%"  class="img-responsive"></a>
                             </div>
                             <div>
                                 <div class="caption">
-                                    <h4><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=41&amp;search=coffe">Caramel coffee</a></h4>
+                                    <h4><a href="chi_tiết sản phẩm">
+                                        <c:out value="${product.getProductName()}"></c:out>
+                                    </a></h4>
                                     <div class="listview_rating">
                                         <div class="rating">
                                             <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
@@ -379,9 +381,9 @@
                                         Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife ´08, and it´s mor..</p>
                                     <div class="hover_block">
                                         <div class="actions">
-                                            <button type="button" onclick="cart.add('41');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" data-toggle="tooltip" title="" onclick="wishlist.add('41');" data-original-title="Add to Wish List"></button>
-                                            <button class="compare_button" type="button" data-toggle="tooltip" title="" onclick="compare.add('41');" data-original-title="Add to Compare"></button>
+                                            <button type="button" onclick="cart.add('${product.getProductId()}');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                            <button class="wishlist_button" type="button" data-toggle="tooltip" title="" onclick="wishlist.add('${product.getProductId()}');" data-original-title="Add to Wish List"></button>
+                                            <button class="compare_button" type="button" data-toggle="tooltip" title="" onclick="compare.add('${product.getProductId()}');" data-original-title="Add to Compare"></button>
                                             <div class="rating">
                                                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
                                                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
@@ -392,17 +394,18 @@
                                         </div>
                                     </div>
                                     <p class="price">
-                                        $122.00                                                      <span class="price-tax">Ex Tax: $100.00</span>
+
+                                        <c:out value="${product.getPrice()}"></c:out>
                                     </p>
 
                                     <div class="res-cartbtn">
-                                        <button type="button" onclick="cart.add('41');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                        <button type="button" onclick="cart.add('${product.getProductId()}');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
                                     </div>
                                     <div class="listview_action">
                                         <div class="actions">
-                                            <button type="button" onclick="cart.add('41');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" title="Add to Wish List" onclick="wishlist.add('41');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
-                                            <button class="compare_button" type="button" title="Add to Compare" onclick="compare.add('41');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
+                                            <button type="button" onclick="cart.add('${product.getProductId()}');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                            <button class="wishlist_button" type="button" title="Add to Wish List" onclick="wishlist.add('${product.getProductId()}');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
+                                            <button class="compare_button" type="button" title="Add to Compare" onclick="compare.add('${product.getProductId()}');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
                                         </div>
                                     </div>
                                 </div>
@@ -410,296 +413,11 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <div class="product-block product-thumb">
-                        <div class="product-block-inner ">
-                            <div class="image"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=48&amp;search=coffe"><img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-235x250.jpg" alt="Cinnamon Coffee" title="Cinnamon Coffee" class="img-responsive"></a>
+</c:forEach>
 
 
-                            </div>
-                            <div>
-                                <div class="caption">
-                                    <h4><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=48&amp;search=coffe">Cinnamon Coffee</a></h4>
-                                    <div class="listview_rating">
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                        </div>
-                                    </div>
-                                    <p>
 
 
-                                        More room to move.
-
-                                        With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combi..</p>
-                                    <div class="hover_block">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('48');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" data-toggle="tooltip" title="" onclick="wishlist.add('48');" data-original-title="Add to Wish List"></button>
-                                            <button class="compare_button" type="button" data-toggle="tooltip" title="" onclick="compare.add('48');" data-original-title="Add to Compare"></button>
-                                            <div class="rating">
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="price">
-                                        $122.00                                                      <span class="price-tax">Ex Tax: $100.00</span>
-                                    </p>
-
-                                    <div class="res-cartbtn">
-                                        <button type="button" onclick="cart.add('48');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    </div>
-                                    <div class="listview_action">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('48');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" title="Add to Wish List" onclick="wishlist.add('48');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
-                                            <button class="compare_button" type="button" title="Add to Compare" onclick="compare.add('48');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <div class="product-block product-thumb">
-                        <div class="product-block-inner ">
-                            <div class="image"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=32&amp;search=coffe"><img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/09-235x250.jpg" alt="Coconut Coffee" title="Coconut Coffee" class="img-responsive"></a>
-
-
-                            </div>
-                            <div>
-                                <div class="caption">
-                                    <h4><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=32&amp;search=coffe">Coconut Coffee</a></h4>
-                                    <div class="listview_rating">
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        Revolutionary multi-touch interface.
-                                        iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip thr..</p>
-                                    <div class="hover_block">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('32');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" data-toggle="tooltip" title="" onclick="wishlist.add('32');" data-original-title="Add to Wish List"></button>
-                                            <button class="compare_button" type="button" data-toggle="tooltip" title="" onclick="compare.add('32');" data-original-title="Add to Compare"></button>
-                                            <div class="rating">
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="price">
-                                        $122.00                                                      <span class="price-tax">Ex Tax: $100.00</span>
-                                    </p>
-
-                                    <div class="res-cartbtn">
-                                        <button type="button" onclick="cart.add('32');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    </div>
-                                    <div class="listview_action">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('32');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" title="Add to Wish List" onclick="wishlist.add('32');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
-                                            <button class="compare_button" type="button" title="Add to Compare" onclick="compare.add('32');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="clearfix visible-lg"></div>
-
-                <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <div class="product-block product-thumb">
-                        <div class="product-block-inner ">
-                            <div class="image"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=43&amp;search=coffe"><img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-235x250.jpg" alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"></a>
-                                <span class="saleicon sale">Sale</span>
-
-                            </div>
-                            <div>
-                                <div class="caption">
-                                    <h4><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=43&amp;search=coffe">Coffee Bean Direct</a></h4>
-                                    <div class="listview_rating">
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        </div>
-                                    </div>
-                                    <p>
-
-                                        Intel Core 2 Duo processor
-
-                                        Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.
-
-                                        1GB memory, larger hard drives
-
-                                        The new MacBoo..</p>
-                                    <div class="hover_block">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" data-toggle="tooltip" title="" onclick="wishlist.add('43');" data-original-title="Add to Wish List"></button>
-                                            <button class="compare_button" type="button" data-toggle="tooltip" title="" onclick="compare.add('43');" data-original-title="Add to Compare"></button>
-                                            <div class="rating">
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="price">
-                                        <span class="price-old">$602.00</span><span class="price-new">$600.80</span>
-                                        <span class="price-tax">Ex Tax: $499.00</span>
-                                    </p>
-
-                                    <div class="res-cartbtn">
-                                        <button type="button" onclick="cart.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    </div>
-                                    <div class="listview_action">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" title="Add to Wish List" onclick="wishlist.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
-                                            <button class="compare_button" type="button" title="Add to Compare" onclick="compare.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <div class="product-block product-thumb">
-                        <div class="product-block-inner ">
-                            <div class="image"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=31&amp;search=coffe"><img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/13-235x250.jpg" alt="Death Wish Coffee" title="Death Wish Coffee" class="img-responsive"></a>
-
-
-                            </div>
-                            <div>
-                                <div class="caption">
-                                    <h4><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=31&amp;search=coffe">Death Wish Coffee</a></h4>
-                                    <div class="listview_rating">
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        </div>
-                                    </div>
-                                    <p>
-
-                                        Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon's newly announced D3 profession..</p>
-                                    <div class="hover_block">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('31');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" data-toggle="tooltip" title="" onclick="wishlist.add('31');" data-original-title="Add to Wish List"></button>
-                                            <button class="compare_button" type="button" data-toggle="tooltip" title="" onclick="compare.add('31');" data-original-title="Add to Compare"></button>
-                                            <div class="rating">
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="price">
-                                        $98.00                                                      <span class="price-tax">Ex Tax: $80.00</span>
-                                    </p>
-
-                                    <div class="res-cartbtn">
-                                        <button type="button" onclick="cart.add('31');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    </div>
-                                    <div class="listview_action">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('31');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" title="Add to Wish List" onclick="wishlist.add('31');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
-                                            <button class="compare_button" type="button" title="Add to Compare" onclick="compare.add('31');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <div class="product-block product-thumb">
-                        <div class="product-block-inner ">
-                            <div class="image"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=42&amp;search=coffe"><img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-235x250.jpg" alt="Kicking Horse Coffee" title="Kicking Horse Coffee" class="img-responsive"></a>
-                                <span class="saleicon sale">Sale</span>
-
-                            </div>
-                            <div>
-                                <div class="caption">
-                                    <h4><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=42&amp;search=coffe">Kicking Horse Coffee</a></h4>
-                                    <div class="listview_rating">
-                                        <div class="rating">
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all ..</p>
-                                    <div class="hover_block">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('42');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" data-toggle="tooltip" title="" onclick="wishlist.add('42');" data-original-title="Add to Wish List"></button>
-                                            <button class="compare_button" type="button" data-toggle="tooltip" title="" onclick="compare.add('42');" data-original-title="Add to Compare"></button>
-                                            <div class="rating">
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="price">
-                                        <span class="price-old">$122.00</span><span class="price-new">$110.00</span>
-                                        <span class="price-tax">Ex Tax: $90.00</span>
-                                    </p>
-
-                                    <div class="res-cartbtn">
-                                        <button type="button" onclick="cart.add('42');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                    </div>
-                                    <div class="listview_action">
-                                        <div class="actions">
-                                            <button type="button" onclick="cart.add('42');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
-                                            <button class="wishlist_button" type="button" title="Add to Wish List" onclick="wishlist.add('42');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
-                                            <button class="compare_button" type="button" title="Add to Compare" onclick="compare.add('42');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="clearfix visible-lg"></div>
             </div>
             <div class="row">
                 <div class="col-sm-6 text-left"></div>
