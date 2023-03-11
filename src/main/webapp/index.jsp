@@ -12,6 +12,6 @@
 
 
 <body class="common-home layout-1">
-    <jsp:include page="views/dashboard.jsp"></jsp:include>
+    <jsp:include page="/dashboards"></jsp:include>
 </body>
 </html>

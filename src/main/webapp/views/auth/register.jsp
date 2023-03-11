@@ -22,18 +22,17 @@
 <div class="account-register layout-2 left-col">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="../../views/dashboard.jsp"><i class="fa fa-home"></i></a></li>
+            <li><a href="/dashboards"><i class="fa fa-home"></i></a></li>
             <li><a href="../../views/profile/my_account.jsp">Account</a></li>
-            <li><a href="../../views/auth/register.jsp">Register</a></li>
+            <li><a href="/register">Register</a></li>
         </ul>
         <div class="row">
             <jsp:include page="../../layouts/menu_vertical.jsp"></jsp:include>
             <div id="content" class="col-sm-9"><h1>Register Account</h1>
                 <p>If you already have an account with us, please login at the <a
-                        href="../auth/login.jsp">login
-                    page</a>.
+                        href="/logins"><strong style="color: #d56b1f">login page</strong></a>.
                 </p>
-                <form action="/register" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <form action="/register" method="post" name="action" value="register" type="hidden" class="form-horizontal">
                     <fieldset id="account" class="personal">
                         <legend>Your Personal Details</legend>
                         <div class="form-group required" style="display: none;">
@@ -50,7 +49,7 @@
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-firstname">Full name</label>
                             <div class="col-sm-10">
-                                <input type="text" name="full_name" value="" placeholder="Nguyễn Văn A"
+                                <input type="text" name="fullName" value="" placeholder="Nguyễn Văn A"
                                        id="input-firstname" class="form-control"/>
                             </div>
                         </div>
@@ -58,7 +57,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="input-lastname">DOB</label>
                             <div class="col-sm-10">
-                                <input type="text" name="dob" value="" placeholder="01/01/1999" id="input-lastname"
+                                <input type="text" name="dateOfBirth" value="" placeholder="01/01/2001" id="input-lastname"
                                        class="form-control"/>
                             </div>
                         </div>
@@ -67,10 +66,10 @@
                             <label class="col-sm-2 control-label">Gender</label>
                             <div class="col-sm-10">
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender" value="1">
+                                    <input type="radio" name="gender" value="1" checked="checked">
                                     Male</label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender" value="0" checked="checked">
+                                    <input type="radio" name="gender" value="0">
                                     Female</label>
                             </div>
                         </div>
@@ -86,7 +85,7 @@
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-telephone">Phone number</label>
                             <div class="col-sm-10">
-                                <input type="tel" name="phone_number" value="" placeholder="" id="input-telephone"
+                                <input type="tel" name="contact" value="" placeholder="" id="input-telephone"
                                        class="form-control"/>
                             </div>
                         </div>

@@ -19,6 +19,14 @@ public class Rating {
         this.customer = customer;
     }
 
+    public Rating( Product product, double score, String remarks, Date dateRecorded, Customer customer) {
+        this.product = product;
+        this.score = score;
+        this.remarks = remarks;
+        this.dateRecorded = dateRecorded;
+        this.customer = customer;
+    }
+
     public int getRatingId() {
         return ratingId;
     }

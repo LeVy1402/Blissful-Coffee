@@ -38,21 +38,25 @@ public class Customer {
         this.address = address;
     }
 
-    public Customer(String fullName, Date dateOfBirth, boolean gender, String contact, String email, String password, String profileCustomer, String address) {
+    public Customer(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    public Customer(String fullName, String email, String password) {
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Customer(String fullName, Date dateOfBirth, boolean gender, String contact, String email, String password, String address) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.contact = contact;
         this.email = email;
         this.password = password;
-        this.profileCustomer = profileCustomer;
         this.address = address;
-    }
-
-    public Customer(int customerId, String fullName, String profileCustomer) {
-        this.customerId = customerId;
-        this.fullName = fullName;
-        this.profileCustomer = profileCustomer;
     }
 
     public String getAccountStatus() {

@@ -102,35 +102,37 @@
             <a class="btn next">&nbsp;</a>
         </div>
 
-
         <div class="box-product product-carousel" id="featured-carousel">
-
-            <c:forEach items="${productListInFeature}" var="productFeature">
-
+            <c:forEach items="${productListFeature}" var="product">
                 <div class="slider-item">
                     <div class="product-block product-thumb transition">
+
                         <div class="product-block-inner ">
                             <div class="image">
                                 <a href="">
-                                    <img
-                                            src="../assets/images/products/product1.jpg"
-                                            alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/>
+                                    <img    style="width: 224px;height: 240px;  "
+                                            src="/img/${product.getImage()}"
+                                            alt="${product.getImage()}" class="img-responsive"/>
                                 </a>
                                 <span class="saleicon sale">Sale</span>
                             </div>
 
                             <div class="caption">
                                 <h4>
-                                    <a href="">${productFeature.getProductName()}</a>
+                                    <a href="">
+                                        <c:out value="${product.getProductName()}"></c:out>
+                                    </a>
                                 </h4>
                                 <div class="hover_block">
                                     <div class="actions">
-                                        <button type="button" onclick="cart.add('43');"><span
+                                        <button type="button" onclick="cart.add('${product.getProductId()}')"><span
                                                 class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
                                         <button class="wishlist_button" type="button" data-toggle="tooltip"
-                                                title="Add to Wish List" onclick="wishlist.add('43');"></button>
+                                                title="Add to Wish List"
+                                                onclick="wishlist.add('${product.getProductId()}');"></button>
                                         <button class="compare_button" type="button" data-toggle="tooltip"
-                                                title="Add to Compare" onclick="compare.add('43');"></button>
+                                                title="Add to Compare"
+                                                onclick="compare.add('${product.getProductId()}')"></button>
                                         <div class="rating">
                                             <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
                                             <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
@@ -140,200 +142,25 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <p class="price">
-                                    <span class="price-old">${productFeature.getPrice()}</span><span class="price-new">28.000VNĐ</span>
+                                <span class="price-old">
+                                    <c:out value="${product.getPrice()}">VNĐ</c:out>
+                                    </span><span class="price-new">
+                                  28.000VNĐ
+                               </span>
                                 </p>
                                 <div class="res-cartbtn">
-                                    <button type="button" onclick="cart.add('43');"><span
+                                    <button type="button" onclick="cart.add('${product.getProductId()}')"><span
                                             class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </c:forEach>
-
-
-<%--            <div class="slider-item">--%>
-<%--                <div class="product-block product-thumb transition">--%>
-<%--                    <div class="product-block-inner ">--%>
-<%--                        <div class="image">--%>
-<%--                            <a href=""><img--%>
-<%--                                    src="../assets/images/products/product1.jpg"--%>
-<%--                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>--%>
-<%--                            <span class="saleicon sale">Sale</span>--%>
-<%--                        </div>--%>
-
-<%--                        <div class="caption">--%>
-<%--                            <h4>--%>
-<%--                                <a href="">Coffee Bean Direct</a>--%>
-<%--                            </h4>--%>
-<%--                            <div class="hover_block">--%>
-<%--                                <div class="actions">--%>
-<%--                                    <button type="button" onclick="cart.add('43');"><span--%>
-<%--                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
-<%--                                    <button class="wishlist_button" type="button" data-toggle="tooltip"--%>
-<%--                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>--%>
-<%--                                    <button class="compare_button" type="button" data-toggle="tooltip"--%>
-<%--                                            title="Add to Compare" onclick="compare.add('43');"></button>--%>
-<%--                                    <div class="rating">--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-
-<%--                            <p class="price">--%>
-<%--                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>--%>
-<%--                            </p>--%>
-<%--                            <div class="res-cartbtn">--%>
-<%--                                <button type="button" onclick="cart.add('43');"><span--%>
-<%--                                        class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <div class="slider-item">--%>
-<%--                <div class="product-block product-thumb transition">--%>
-<%--                    <div class="product-block-inner ">--%>
-<%--                        <div class="image">--%>
-<%--                            <a href=""><img--%>
-<%--                                    src="../assets/images/products/product1.jpg"--%>
-<%--                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>--%>
-<%--                            <span class="saleicon sale">Sale</span>--%>
-<%--                        </div>--%>
-
-<%--                        <div class="caption">--%>
-<%--                            <h4>--%>
-<%--                                <a href="">Coffee Bean Direct</a>--%>
-<%--                            </h4>--%>
-<%--                            <div class="hover_block">--%>
-<%--                                <div class="actions">--%>
-<%--                                    <button type="button" onclick="cart.add('43');"><span--%>
-<%--                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
-<%--                                    <button class="wishlist_button" type="button" data-toggle="tooltip"--%>
-<%--                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>--%>
-<%--                                    <button class="compare_button" type="button" data-toggle="tooltip"--%>
-<%--                                            title="Add to Compare" onclick="compare.add('43');"></button>--%>
-<%--                                    <div class="rating">--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-
-<%--                            <p class="price">--%>
-<%--                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>--%>
-<%--                            </p>--%>
-<%--                            <div class="res-cartbtn">--%>
-<%--                                <button type="button" onclick="cart.add('43');"><span--%>
-<%--                                        class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <div class="slider-item">--%>
-<%--                <div class="product-block product-thumb transition">--%>
-<%--                    <div class="product-block-inner ">--%>
-<%--                        <div class="image">--%>
-<%--                            <a href=""><img--%>
-<%--                                    src="../assets/images/products/product1.jpg"--%>
-<%--                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>--%>
-<%--                            <span class="saleicon sale">Sale</span>--%>
-<%--                        </div>--%>
-
-<%--                        <div class="caption">--%>
-<%--                            <h4>--%>
-<%--                                <a href="">Coffee Bean Direct</a>--%>
-<%--                            </h4>--%>
-<%--                            <div class="hover_block">--%>
-<%--                                <div class="actions">--%>
-<%--                                    <button type="button" onclick="cart.add('43');"><span--%>
-<%--                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
-<%--                                    <button class="wishlist_button" type="button" data-toggle="tooltip"--%>
-<%--                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>--%>
-<%--                                    <button class="compare_button" type="button" data-toggle="tooltip"--%>
-<%--                                            title="Add to Compare" onclick="compare.add('43');"></button>--%>
-<%--                                    <div class="rating">--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-
-<%--                            <p class="price">--%>
-<%--                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>--%>
-<%--                            </p>--%>
-<%--                            <div class="res-cartbtn">--%>
-<%--                                <button type="button" onclick="cart.add('43');"><span--%>
-<%--                                        class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <div class="slider-item">--%>
-<%--                <div class="product-block product-thumb transition">--%>
-<%--                    <div class="product-block-inner ">--%>
-<%--                        <div class="image">--%>
-<%--                            <a href=""><img--%>
-<%--                                    src="../assets/images/products/product1.jpg"--%>
-<%--                                    alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/></a>--%>
-<%--                            <span class="saleicon sale">Sale</span>--%>
-<%--                        </div>--%>
-
-<%--                        <div class="caption">--%>
-<%--                            <h4>--%>
-<%--                                <a href="">Coffee Bean Direct</a>--%>
-<%--                            </h4>--%>
-<%--                            <div class="hover_block">--%>
-<%--                                <div class="actions">--%>
-<%--                                    <button type="button" onclick="cart.add('43');"><span--%>
-<%--                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
-<%--                                    <button class="wishlist_button" type="button" data-toggle="tooltip"--%>
-<%--                                            title="Add to Wish List" onclick="wishlist.add('43');"></button>--%>
-<%--                                    <button class="compare_button" type="button" data-toggle="tooltip"--%>
-<%--                                            title="Add to Compare" onclick="compare.add('43');"></button>--%>
-<%--                                    <div class="rating">--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-
-<%--                            <p class="price">--%>
-<%--                                <span class="price-old">32.000 VNĐ</span><span class="price-new">28.000VNĐ</span>--%>
-<%--                            </p>--%>
-<%--                            <div class="res-cartbtn">--%>
-<%--                                <button type="button" onclick="cart.add('43');"><span--%>
-<%--                                        class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
         </div>
     </div>
+
 </div>
 <span class="featured_default_width" style="display:none; visibility:hidden"></span>
 
@@ -382,36 +209,36 @@
 
                             <div class="box-product product-carousel" id="tablatest-carousel">
                                 <c:forEach items="${productList}" var="product">
-
                                     <div class="slider-item">
                                         <div class="product-block product-thumb transition">
                                             <div class="product-block-inner">
                                                 <div class="image">
                                                     <a href="">
-                                                        <img src="../assets/images/products/product1.jpg"
-                                                             alt="Cinnamon Coffee" title="Cinnamon Coffee"
-                                                             class="img-responsive"/>
+                                                        <img    style="width: 224px;height: 240px;  "
+                                                                src="/img/${product.getImage()}"
+                                                                alt="${product.getImage()}" class="img-responsive"/>
                                                     </a>
                                                 </div>
                                                 <div class="caption">
                                                     <h4>
-                                                        <a href="">${product.getProductName()}</a>
+                                                        <a href=""> <c:out value="${product.getProductName()}"></c:out>
+                                                        </a>
                                                     </h4>
                                                     <div class="hover_block">
                                                         <div class="actions">
-                                                            <button type="button" onclick="cart.add('48');"><span
+                                                            <button type="button" onclick="cart.add('${product.getProductId()}');"><span
                                                                     class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
                                                             </button>
                                                             <button class="wishlist_button" type="button"
                                                                     data-toggle="tooltip" title="Add to Wish List"
-                                                                    onclick="wishlist.add('48');"></button>
+                                                                    onclick="wishlist.add('${product.getProductId()}');"></button>
                                                             <button class="compare_button" type="button"
                                                                     data-toggle="tooltip" title="Add to Compare"
-                                                                    onclick="compare.add('48');"></button>
+                                                                    onclick="compare.add('${product.getProductId()}');"></button>
                                                             <div class="rating">
-                                                            <span class="fa fa-stack">
-                                                                <i class="fa fa-star fa-stack-1x"></i>
-                                                                <i class="fa fa-star fa-stack-1x"></i></span>
+                                                            <span class="fa fa-stack"><i
+                                                                    class="fa fa-star fa-stack-1x"></i><i
+                                                                    class="fa fa-star fa-stack-1x"></i></span>
                                                                 <span class="fa fa-stack"><i
                                                                         class="fa fa-star fa-stack-1x"></i><i
                                                                         class="fa fa-star fa-stack-1x"></i></span>
@@ -428,11 +255,11 @@
                                                         </div>
                                                     </div>
 
-                                                    <p class="price"> ${product.getPrice()}
+                                                    <p class="price"><c:out value="${product.getPrice()}">VNĐ</c:out>
                                                         <span class="price-tax">Ex Tax: $100.00</span>
                                                     </p>
                                                     <div class="res-cartbtn">
-                                                        <button type="button" onclick="cart.add('48');"><span
+                                                        <button type="button" onclick="cart.add('${product.getProductId()}');"><span
                                                                 class="hidden-xs hidden-sm hidden-md">Add to Cart</span>
                                                         </button>
                                                     </div>
@@ -441,292 +268,6 @@
                                         </div>
                                     </div>
                                 </c:forEach>
-<%--                                --%>
-<%--                                <div class="slider-item">--%>
-<%--                                    <div class="product-block product-thumb transition">--%>
-<%--                                        <div class="product-block-inner">--%>
-<%--                                            <div class="image">--%>
-<%--                                                <a href="">--%>
-<%--                                                    <img src="../assets/images/products/product1.jpg"--%>
-<%--                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"--%>
-<%--                                                         class="img-responsive"/>--%>
-<%--                                                </a>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="caption">--%>
-<%--                                                <h4>--%>
-<%--                                                    <a href="">Cinnamon Coffee</a>--%>
-<%--                                                </h4>--%>
-<%--                                                <div class="hover_block">--%>
-<%--                                                    <div class="actions">--%>
-<%--                                                        <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                        </button>--%>
-<%--                                                        <button class="wishlist_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Wish List"--%>
-<%--                                                                onclick="wishlist.add('48');"></button>--%>
-<%--                                                        <button class="compare_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Compare"--%>
-<%--                                                                onclick="compare.add('48');"></button>--%>
-<%--                                                        <div class="rating">--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-
-<%--                                                <p class="price"> 32.000 VNĐ--%>
-<%--                                                    <span class="price-tax">Ex Tax: $100.00</span>--%>
-<%--                                                </p>--%>
-<%--                                                <div class="res-cartbtn">--%>
-<%--                                                    <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                    </button>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <div class="slider-item">--%>
-<%--                                    <div class="product-block product-thumb transition">--%>
-<%--                                        <div class="product-block-inner">--%>
-<%--                                            <div class="image">--%>
-<%--                                                <a href="">--%>
-<%--                                                    <img src="../assets/images/products/product1.jpg"--%>
-<%--                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"--%>
-<%--                                                         class="img-responsive"/>--%>
-<%--                                                </a>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="caption">--%>
-<%--                                                <h4>--%>
-<%--                                                    <a href="">Cinnamon Coffee</a>--%>
-<%--                                                </h4>--%>
-<%--                                                <div class="hover_block">--%>
-<%--                                                    <div class="actions">--%>
-<%--                                                        <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                        </button>--%>
-<%--                                                        <button class="wishlist_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Wish List"--%>
-<%--                                                                onclick="wishlist.add('48');"></button>--%>
-<%--                                                        <button class="compare_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Compare"--%>
-<%--                                                                onclick="compare.add('48');"></button>--%>
-<%--                                                        <div class="rating">--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-
-<%--                                                <p class="price"> 32.000 VNĐ--%>
-<%--                                                    <span class="price-tax">Ex Tax: $100.00</span>--%>
-<%--                                                </p>--%>
-<%--                                                <div class="res-cartbtn">--%>
-<%--                                                    <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                    </button>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <div class="slider-item">--%>
-<%--                                    <div class="product-block product-thumb transition">--%>
-<%--                                        <div class="product-block-inner">--%>
-<%--                                            <div class="image">--%>
-<%--                                                <a href="">--%>
-<%--                                                    <img src="../assets/images/products/product1.jpg"--%>
-<%--                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"--%>
-<%--                                                         class="img-responsive"/>--%>
-<%--                                                </a>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="caption">--%>
-<%--                                                <h4>--%>
-<%--                                                    <a href="">Cinnamon Coffee</a>--%>
-<%--                                                </h4>--%>
-<%--                                                <div class="hover_block">--%>
-<%--                                                    <div class="actions">--%>
-<%--                                                        <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                        </button>--%>
-<%--                                                        <button class="wishlist_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Wish List"--%>
-<%--                                                                onclick="wishlist.add('48');"></button>--%>
-<%--                                                        <button class="compare_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Compare"--%>
-<%--                                                                onclick="compare.add('48');"></button>--%>
-<%--                                                        <div class="rating">--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-
-<%--                                                <p class="price"> 32.000 VNĐ--%>
-<%--                                                    <span class="price-tax">Ex Tax: $100.00</span>--%>
-<%--                                                </p>--%>
-<%--                                                <div class="res-cartbtn">--%>
-<%--                                                    <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                    </button>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <div class="slider-item">--%>
-<%--                                    <div class="product-block product-thumb transition">--%>
-<%--                                        <div class="product-block-inner">--%>
-<%--                                            <div class="image">--%>
-<%--                                                <a href="">--%>
-<%--                                                    <img src="../assets/images/products/product1.jpg"--%>
-<%--                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"--%>
-<%--                                                         class="img-responsive"/>--%>
-<%--                                                </a>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="caption">--%>
-<%--                                                <h4>--%>
-<%--                                                    <a href="">Cinnamon Coffee</a>--%>
-<%--                                                </h4>--%>
-<%--                                                <div class="hover_block">--%>
-<%--                                                    <div class="actions">--%>
-<%--                                                        <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                        </button>--%>
-<%--                                                        <button class="wishlist_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Wish List"--%>
-<%--                                                                onclick="wishlist.add('48');"></button>--%>
-<%--                                                        <button class="compare_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Compare"--%>
-<%--                                                                onclick="compare.add('48');"></button>--%>
-<%--                                                        <div class="rating">--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-
-<%--                                                <p class="price"> 32.000 VNĐ--%>
-<%--                                                    <span class="price-tax">Ex Tax: $100.00</span>--%>
-<%--                                                </p>--%>
-<%--                                                <div class="res-cartbtn">--%>
-<%--                                                    <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                    </button>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <div class="slider-item">--%>
-<%--                                    <div class="product-block product-thumb transition">--%>
-<%--                                        <div class="product-block-inner">--%>
-<%--                                            <div class="image">--%>
-<%--                                                <a href="">--%>
-<%--                                                    <img src="../assets/images/products/product1.jpg"--%>
-<%--                                                         alt="Cinnamon Coffee" title="Cinnamon Coffee"--%>
-<%--                                                         class="img-responsive"/>--%>
-<%--                                                </a>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="caption">--%>
-<%--                                                <h4>--%>
-<%--                                                    <a href="">Cinnamon Coffee</a>--%>
-<%--                                                </h4>--%>
-<%--                                                <div class="hover_block">--%>
-<%--                                                    <div class="actions">--%>
-<%--                                                        <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                                class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                        </button>--%>
-<%--                                                        <button class="wishlist_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Wish List"--%>
-<%--                                                                onclick="wishlist.add('48');"></button>--%>
-<%--                                                        <button class="compare_button" type="button"--%>
-<%--                                                                data-toggle="tooltip" title="Add to Compare"--%>
-<%--                                                                onclick="compare.add('48');"></button>--%>
-<%--                                                        <div class="rating">--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                            <span class="fa fa-stack"><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i><i--%>
-<%--                                                                    class="fa fa-star fa-stack-1x"></i></span>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-
-<%--                                                <p class="price"> 32.000 VNĐ--%>
-<%--                                                    <span class="price-tax">Ex Tax: $100.00</span>--%>
-<%--                                                </p>--%>
-<%--                                                <div class="res-cartbtn">--%>
-<%--                                                    <button type="button" onclick="cart.add('48');"><span--%>
-<%--                                                            class="hidden-xs hidden-sm hidden-md">Add to Cart</span>--%>
-<%--                                                    </button>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
                             </div>
                         </div>
                     </div>

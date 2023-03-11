@@ -6,9 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="">
 </head>
 <body class="product-product-43 layout-1">
     <jsp:include page="../layouts/header.jsp"></jsp:include>
@@ -104,26 +106,26 @@
         <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=common/home"><i class="fa fa-home"></i></a></li>
         <li><a href="indexb8ca.html?route=product/product&amp;product_id=43">Coffee Bean Direct</a></li>
     </ul>
-    <div class="row">
-        <div id="content" class="productpage col-sm-12">
-            <div class="row">
-                <div class="col-sm-8">
-                        <div class="product-info">
-                            <ul class="left product-image thumbnails">
-
-                                <!-- Megnor Cloud-Zoom Image Effect Start -->
-                                <li class="image">
-                                    <a class="thumbnail" href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-500x500.jpg" title="Coffee Bean Direct">
-                                        <img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-506x580.jpg" title="Coffee Bean Direct" alt="Coffee Bean Direct" />
-                                    </a>
-                                </li>
+    <div class="row">                <div id="content" class="productpage col-sm-12">      <div class="row">
 
 
-                                <div class="additional-carousel">
-                                    <div class="customNavigation">
-                                        <span class="btn prev">&nbsp;</span>
-                                        <span class="btn next">&nbsp;</span>
-                                    </div>
+
+        <div class="col-sm-8">
+            <div class="product-info">
+
+
+
+                <ul class="left product-image thumbnails">
+
+                    <!-- Megnor Cloud-Zoom Image Effect Start -->
+                    <li class="image"><a class="thumbnail" href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-500x500.jpg" title="Coffee Bean Direct"><img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-506x580.jpg" title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a></li>
+
+
+                    <div class="additional-carousel">
+                        <div class="customNavigation">
+                            <span class="btn prev">&nbsp;</span>
+                            <span class="btn next">&nbsp;</span>
+                        </div>
 
                                     <div id="additional-carousel" class="image-additional product-carousel">
 
@@ -136,186 +138,212 @@
                                             </div>
                                         </div>
 
-                                        <div class="slider-item">
-                                            <div class="product-block">
-                                                <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-500x500.jpg"><img id="cloud-zoom" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="slider-item">
-                                            <div class="product-block">
-                                                <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-500x500.jpg"><img id="cloud-zoom1" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="slider-item">
-                                            <div class="product-block">
-                                                <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-500x500.jpg"><img id="cloud-zoom2" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
-                                            </div>
-                                        </div>
-                                        <div class="slider-item">
-                                            <div class="product-block">
-                                                <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-500x500.jpg"><img id="cloud-zoom3" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <span class="additional_default_width" style="display:none; visibility:hidden"></span>
+                            <div class="slider-item">
+                                <div class="product-block">
+                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-500x500.jpg"><img id="cloud-zoom" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
                                 </div>
-
-
-                                <!-- Megnor Cloud-Zoom Image Effect End-->
-                            </ul>
-                        </div>
-                    </div>
-                <div class="col-sm-4">
-                        <h2>Coffee Bean Direct</h2>
-                        <h3>Coffee Bean Direct</h3>
-                        <div class="description">
-                            <table class="product-description"> <!-- Megnor <table> Start -->
-                                <tr><td><span>Brand:</span></td><td class="description-right"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a></td></tr>
-                                <tr><td><span>Product Code:</span></td><td class="description-right">Product 16</td></tr>
-                                <tr><td><span>Reward Points:</span></td><td class="description-right">600</td></tr>
-                                <tr><td><span>Availability:</span></td><td class="description-right">In Stock</td></tr>
-                            </table>	<!-- Megnor <table> End -->
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><span style="text-decoration: line-through;">$602.00</span><h4>$600.80</h4></li>
-
-                            <li>Ex Tax: $499.00</li>
-                        </ul>
-                        <div id="product">
-                            <div class="form-group" id="qty-cart">
-                                <label class="control-label" for="input-quantity">Qty</label>
-                                <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
-                                <input type="hidden" name="product_id" value="43" />
-                                <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block">Add to Cart</button>
                             </div>
+                            <div class="slider-item">
+                                <div class="product-block">
+                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-500x500.jpg"><img id="cloud-zoom1" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="product-block">
+                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-500x500.jpg"><img id="cloud-zoom2" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="product-block">
+                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-500x500.jpg"><img id="cloud-zoom3" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="btn-group product">
-                            <button type="button" class="wishlist_button btn btn-default" id="wishlist" onclick="wishlist.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
-                            <button type="button" class="compare_button btn btn-default" id="compare" onclick="compare.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
-                        </div>
-                        <div class="rating">
-                            <p>
-                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
-                                <a href="#" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">0 reviews</a> / <a href="#" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">Write a review</a></p>
-                            <hr>
-                            <!-- AddThis Button BEGIN -->
-                            <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
-                            <script type="text/javascript" src="../../../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
-                            <!-- AddThis Button END -->
-                        </div>
+                        <span class="additional_default_width" style="display:none; visibility:hidden"></span>
                     </div>
-                <div class="col-sm-12">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
-                        <li><a href="#tab-specification" data-toggle="tab">Specification</a></li>
-                        <li><a href="#tab-review" data-toggle="tab">Reviews (0)</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab-description"><div>
-                            <p>
-                                <b>Intel Core 2 Duo processor</b></p>
-                            <p>
-                                Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.</p>
-                            <p>
-                                <b>1GB memory, larger hard drives</b></p>
-                            <p>
-                                The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.</p>
-                            <p>
-                                <b>Sleek, 1.08-inch-thin design</b></p>
-                            <p>
-                                MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.</p>
-                            <p>
-                                <b>Built-in iSight camera</b></p>
-                            <p>
-                                Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth</p>
-                        </div>
-                        </div>
-                        <div class="tab-pane" id="tab-specification">
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <td colspan="2"><strong>Memory</strong></td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>test 1</td>
-                                    <td>8gb</td>
-                                </tr>
-                                </tbody>
-                                <thead>
-                                <tr>
-                                    <td colspan="2"><strong>Processor</strong></td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>No. of Cores</td>
-                                    <td>1</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="tab-pane" id="tab-review">
-                            <form class="form-horizontal">
-                                <div id="review"></div>
-                                <h3>Write a review</h3>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label class="control-label" for="input-name">Your Name</label>
-                                        <input type="text" name="name" value="" id="input-name" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label class="control-label" for="input-review">Your Review</label>
-                                        <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
-                                        <div class="help-block"><span class="text-danger">Note:</span> HTML is not translated!</div>
-                                    </div>
-                                </div>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label class="control-label">Rating</label>
-                                        &nbsp;&nbsp;&nbsp; Bad&nbsp;
-                                        <input type="radio" name="rating" value="1" />
-                                        &nbsp;
-                                        <input type="radio" name="rating" value="2" />
-                                        &nbsp;
-                                        <input type="radio" name="rating" value="3" />
-                                        &nbsp;
-                                        <input type="radio" name="rating" value="4" />
-                                        &nbsp;
-                                        <input type="radio" name="rating" value="5" />
-                                        &nbsp;Good</div>
-                                </div>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label class="control-label" for="input-captcha">Enter the code in the box below</label>
-                                        <input type="text" name="captcha" value="" id="input-captcha" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12"> <img src="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=tool/captcha" alt="" id="captcha" /> </div>
-                                </div>
-                                <div class="buttons">
-                                    <div class="pull-right">
-                                        <button type="button" id="button-review" data-loading-text="Loading..." class="btn btn-primary">Continue</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+
+
+                    <!-- Megnor Cloud-Zoom Image Effect End-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <h2>${product.getProductName()}</h2>
+            <h3>${product.getProductName()}</h3>
+            <div class="description">
+                <table class="product-description"> <!-- Megnor <table> Start -->
+                    <tr><td><span>Brand:</span></td><td class="description-right"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">${product.getCategoryId().getCategoryName()}</a></td></tr>
+                    <tr><td><span>Product ID:</span></td><td class="description-right">#${product.getProductId()}</td></tr>
+                    <tr><td><span>Reward Points:</span></td><td class="description-right">${product.getStatus()}</td></tr>
+                    <tr><td><span>Availability:</span></td><td class="description-right">${product.getQuantity()} remainings</td></tr>
+                </table>	<!-- Megnor <table> End -->
+            </div>
+            <ul class="list-unstyled">
+                <li><span style="text-decoration: line-through;">${product.getPrice()}</span><h4>${product.getPrice()}</h4></li>
+
+                <li>Ex Tax: $499.00</li>
+            </ul>
+            <div id="product">
+                <div class="form-group" id="qty-cart">
+                    <label class="control-label" for="input-quantity">${product.getQuantity()}</label>
+                    <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
+                    <input type="hidden" name="product_id" value="43" />
+                    <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="box">
+            <div class="btn-group product">
+                <button type="button" class="wishlist_button btn btn-default" id="wishlist" onclick="wishlist.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
+                <button type="button" class="compare_button btn btn-default" id="compare" onclick="compare.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
+            </div>
+            <div class="rating">
+                <p>
+                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+                    <a href="#" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">${reviewList.size()} ${reviewList.size()<2?'review':'reviews'} </a> / <a href="#" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">Write a review</a></p>
+                <hr>
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
+                <script type="text/javascript" src="../../../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
+                <!-- AddThis Button END -->
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
+                <li><a href="#tab-specification" data-toggle="tab">Specification</a></li>
+                <li><a href="#tab-review" data-toggle="tab">Reviews (${reviewList.size()})</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab-description">
+                    <div>
+                        <p>${product.getDescription()}</p>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-specification">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <td colspan="2"><strong>Memory</strong></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>test 1</td>
+                            <td>8gb</td>
+                        </tr>
+                        </tbody>
+                        <thead>
+                        <tr>
+                            <td colspan="2"><strong>Processor</strong></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>No. of Cores</td>
+                            <td>1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab-review">
+                    <form class="form-horizontal" method="post">
+                        <input type="hidden" name="actionReview" value="review">
+                        <input type="hidden" name="productId" value="${product.getProductId()}">
+                        <input type="hidden" name="productName" value="${product.getProductName()}">
+                        <input type="hidden" name="productImg" value="${product.getImage()}">
+                        <input type="hidden" name="productStatus" value="${product.getStatus()}">
+
+                        <div id="review">
+                            <table class="table table-striped table-bordered">
+                                <tbody>
+                                    <c:forEach items="${reviewList}" var="review">
+                                        <tr>
+                                            <td style="width: 50%;">
+                                                <strong>${review.getCustomer().getFullName()}</strong>
+                                            </td>
+                                            <td class="text-right">${review.getDateRecorded()}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <p>${review.getRemarks()}</p>
+                                                <c:forEach var="i" begin="1" end="${review.getScore()}" >
+                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                </c:forEach>
+                                                <c:forEach var="i" begin="1" end= "${5-review.getScore()}" >
+                                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                </c:forEach>
+<%--                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>--%>
+<%--                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>--%>
+<%--                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>--%>
+<%--                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>--%>
+<%--                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>--%>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <h3>Write a review</h3>
+                        <div class="form-group required">
+<%--                            <div class="col-sm-12">--%>
+<%--                                <label class="control-label" for="input-name">Your Name</label>--%>
+<%--                                <input type="text" name="name" value="" id="input-name" class="form-control" />--%>
+<%--                            </div>--%>
+                        </div>
+                        <div class="form-group required">
+                            <div class="col-sm-12">
+                                <label class="control-label" for="input-review">Your Review</label>
+                                <textarea name="remarks" rows="5" id="input-review" class="form-control"></textarea>
+                                <div class="help-block"><span class="text-danger">Note:</span> HTML is not translated!</div>
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <div class="col-sm-12">
+
+                                <label class="control-label">Rating</label>
+                                &nbsp;&nbsp;&nbsp; Bad&nbsp;
+                                <input type="radio" name="score" value="1" />
+                                &nbsp;
+                                <input type="radio" name="score" value="2" />
+                                &nbsp;
+                                <input type="radio" name="score" value="3" />
+                                &nbsp;
+                                <input type="radio" name="score" value="4" />
+                                &nbsp;
+                                <input type="radio" name="score" value="5" />
+                                &nbsp;Good
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <div class="col-sm-12">
+                                <label class="control-label" for="input-captcha">Enter the code in the box below</label>
+                                <input type="text" name="captcha" value="" id="input-captcha" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12"> <img src="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=tool/captcha" alt="" id="captcha" /> </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="pull-right">
+                                <input type="submit" id="button-review" data-loading-text="Loading..." class="btn btn-primary"> </input>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="box">
 
             <div class="box-heading">Related Products</div>
 
@@ -626,7 +654,7 @@
 
         </div>
 
-        </div>
+    </div>
     </div>
 </div>
 </div>
@@ -772,39 +800,39 @@ $('#review').delegate('.pagination a', 'click', function(e) {
 });
 
 $('#review').load('https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product/review&amp;product_id=43');
-
-$('#button-review').on('click', function() {
-    $.ajax({
-        url: 'index.php?route=product/product/write&product_id=43',
-        type: 'post',
-        dataType: 'json',
-        data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']:checked').val() ? $('input[name=\'rating\']:checked').val() : '') + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),
-        beforeSend: function() {
-            $('#button-review').button('loading');
-        },
-        complete: function() {
-            $('#button-review').button('reset');
-            $('#captcha').attr('src', 'https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=tool/captcha#'+new Date().getTime());
-            $('input[name=\'captcha\']').val('');
-        },
-        success: function(json) {
-            $('.alert-success, .alert-danger').remove();
-
-            if (json['error']) {
-                $('#review').after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
-            }
-
-            if (json['success']) {
-                $('#review').after('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
-
-                $('input[name=\'name\']').val('');
-                $('textarea[name=\'text\']').val('');
-                $('input[name=\'rating\']:checked').prop('checked', false);
-                $('input[name=\'captcha\']').val('');
-            }
-        }
-    });
-});
+//
+// $('#button-review').on('click', function() {
+//     $.ajax({
+//         url: 'index.php?route=product/product/write&product_id=43',
+//         type: 'post',
+//         dataType: 'json',
+//         data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']:checked').val() ? $('input[name=\'rating\']:checked').val() : '') + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),
+//         beforeSend: function() {
+//             $('#button-review').button('loading');
+//         },
+//         complete: function() {
+//             $('#button-review').button('reset');
+//             $('#captcha').attr('src', 'https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=tool/captcha#'+new Date().getTime());
+//             $('input[name=\'captcha\']').val('');
+//         },
+//         success: function(json) {
+//             $('.alert-success, .alert-danger').remove();
+//
+//             if (json['error']) {
+//                 $('#review').after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
+//             }
+//
+//             if (json['success']) {
+//                 $('#review').after('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
+//
+//                 $('input[name=\'name\']').val('');
+//                 $('textarea[name=\'text\']').val('');
+//                 $('input[name=\'rating\']:checked').prop('checked', false);
+//                 $('input[name=\'captcha\']').val('');
+//             }
+//         }
+//     });
+// });
 
 $(document).ready(function() {
     $('.thumbnails').magnificPopup({

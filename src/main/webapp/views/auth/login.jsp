@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -28,6 +29,8 @@
             <li><a href="../../views/auth/login.jsp">Login</a></li>
         </ul>
         <div class="row">
+            <c:set var="error" value="${param.err}"></c:set>
+            <c:set var="success" value="${param.msg}"></c:set>
             <jsp:include page="../../layouts/menu_vertical.jsp"></jsp:include>
             <div id="content" class="col-sm-9">
                 <div class="row">
@@ -45,16 +48,16 @@
                         <div class="well">
                             <h4>Returning Customer</h4>
                             <p><strong>I am a returning customer</strong></p>
-                            <form action="/login"
-                                  method="post" enctype="multipart/form-data">
+                            <form action="/logins" method="post">
+                                <input type="hidden" class="form-control" name="action" value="login" >
                                 <div class="form-group">
                                     <label class="control-label" for="input-email">E-Mail Address</label>
-                                    <input type="text" name="email" value="" placeholder="E-Mail Address"
-                                           id="input-email" class="form-control"/>
+                                    <input type="text" name="Email" placeholder="E-Mail Address"
+                                           id="input-email"  class="form-control"/>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="input-password">Password</label>
-                                    <input type="password" name="password" value="" placeholder="Password"
+                                    <input type="password" name="Pass" placeholder="Password"
                                            id="input-password" class="form-control"/>
                                     <a href="">Forgotten Password</a></div>
                                 <input type="submit" value="Login" class="btn btn-primary"/>

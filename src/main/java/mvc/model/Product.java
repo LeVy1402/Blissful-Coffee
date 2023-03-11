@@ -32,6 +32,13 @@ public class Product {
         this.image = image;
     }
 
+    public Product(int productId, String productName, String image, String status) {
+        this.productId = productId;
+        this.productName = productName;
+        this.image = image;
+        this.status = status;
+    }
+
     public int getProductId() {
         return productId;
     }
@@ -102,5 +109,20 @@ public class Product {
 
     public void setCategoryId(Category categoryId) {
         this.categoryId = categoryId;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", description='" + description + '\'' +
+                ", status='" + status + '\'' +
+                ", image='" + image + '\'' +
+                ", dateUpdate=" + dateUpdate +
+                ", categoryId=" + categoryId +
+                '}';
     }
 }
