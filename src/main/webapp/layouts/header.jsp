@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html dir="ltr" lang="en" class="ie8">
@@ -68,7 +69,11 @@
 
     <!-- Megnor www.templatemela.com - End -->
 
-
+<style>
+    form.form-inline {
+        display: flex;
+    }
+</style>
     <script src="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js"
             type="text/javascript"></script>
 </head>
@@ -129,10 +134,14 @@
             </div>
             <div class="col-sm-5 btn-search">
                 <div id="search" class="input-group">
-                    <input type="text" name="search" value="" placeholder="Search" class="form-control input-lg"/>
+                    <form action="/dashboards"  class="form-inline d-flex" >
+                        <input type="hidden" name="action" value="search">
+
+                        <input type="text" name="searchName"  placeholder="Search" class="form-control input-lg"/>
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+                        <button type="submit" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
                     </span>
+                    </form>
                 </div>
             </div>
         </div>
@@ -150,22 +159,26 @@
                     <div class="expandable"></div>
                 </div>
 
+
                 <ul class="main-navigation">
-                    <li>
-                        <a href="">Coffee</a>
-                    </li>
-                    <li>
-                        <a href="">Smoothie</a>
-                    </li>
-                    <li>
-                        <a href="">Juice</a>
-                    </li>
-                    <li>
-                        <a href="">Tea</a>
-                    </li>
-                    <li>
-                        <a href="">SoftDrink</a>
-                    </li>
+                    <c:forEach items="${sessionScope.categoryList}" var="category">
+                        <li>
+                            <a href="">${category.getCategoryName() }</a>
+                        </li>
+                    </c:forEach>
+
+<%--                    <li>--%>
+<%--                        <a href="">Smoothie</a>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="">Juice</a>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="">Tea</a>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="">SoftDrink </a>--%>
+<%--                    </li>--%>
                 </ul>
 
             </div>

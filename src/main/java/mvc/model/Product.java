@@ -32,6 +32,12 @@ public class Product {
         this.image = image;
     }
 
+    public Product(int productId, String productName, String image, String status) {
+        this.productId = productId;
+        this.productName = productName;
+        this.image = image;
+        this.status = status;
+    }
     public int getProductId() {
         return productId;
     }
