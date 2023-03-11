@@ -8,9 +8,9 @@
   <div class="box">
     <div class="box-heading">Account</div>
     <div class="list-group">
-      <a href="../auth/login.jsp"
+      <a href="/logins"
          class="list-group-item">Login</a>
-      <a href="../auth/register.jsp"
+      <a href="/register"
          class="list-group-item">Register</a>
       <a href="../auth/forgot_password.jsp"
          class="list-group-item">Forgotten Password</a>
