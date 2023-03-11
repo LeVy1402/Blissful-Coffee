@@ -104,16 +104,16 @@
         </div>
 
         <div class="box-product product-carousel" id="featured-carousel">
-            <c:forEach items="${productList}" var="product">
+            <c:forEach items="${productListFeature}" var="product">
                 <div class="slider-item">
                     <div class="product-block product-thumb transition">
 
                         <div class="product-block-inner ">
                             <div class="image">
                                 <a href="">
-                                    <img
-                                            src="../assets/images/products/product1.jpg"
-                                            alt="Coffee Bean Direct" title="Coffee Bean Direct" class="img-responsive"/>
+                                    <img    style="width: 224px;height: 240px;  "
+                                            src="/img/${product.getImage()}"
+                                            alt="${product.getImage()}" class="img-responsive"/>
                                 </a>
                                 <span class="saleicon sale">Sale</span>
                             </div>
@@ -209,15 +209,15 @@
                             </div>
 
                             <div class="box-product product-carousel" id="tablatest-carousel">
-                                <c:forEach items="${productListF}" var="product">
+                                <c:forEach items="${productList}" var="product">
                                     <div class="slider-item">
                                         <div class="product-block product-thumb transition">
                                             <div class="product-block-inner">
                                                 <div class="image">
                                                     <a href="">
-                                                        <img src="../assets/images/products/product1.jpg"
-                                                             alt="Cinnamon Coffee" title="Cinnamon Coffee"
-                                                             class="img-responsive"/>
+                                                        <img    style="width: 224px;height: 240px;  "
+                                                                src="/img/${product.getImage()}"
+                                                                alt="${product.getImage()}" class="img-responsive"/>
                                                     </a>
                                                 </div>
                                                 <div class="caption">

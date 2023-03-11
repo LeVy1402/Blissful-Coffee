@@ -51,9 +51,13 @@ public class DashboardServlet extends HttpServlet {
 
     private void dashboard(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productListInFeature = iProductService.selectAllProductInFeature();
-        request.setAttribute("productList", productListInFeature);
+        request.setAttribute("productListFeature", productListInFeature);
         List<Product> productList = iProductService.selectAllProduct();
-        request.setAttribute("productListF", productList);
+        for (Product kt:
+             productList) {
+            System.out.println(kt.toString());
+        }
+        request.setAttribute("productList", productList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("views/dashboard.jsp");
         dispatcher.forward(request, response);
     }

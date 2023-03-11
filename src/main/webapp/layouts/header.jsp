@@ -89,8 +89,8 @@
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
-                        <li><a href="../views/auth/register.jsp">Register</a></li>
-                        <li><a href="../views/auth/login.jsp">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                        <li><a href="/logins">Login</a></li>
 
 <%--                        Khi đăng nhập header sẽ chuyển thành dưới--%>
 <%--                        <li><a href="../views/auth/register.jsp">My Profile</a></li>--%>
@@ -102,6 +102,8 @@
 
                 <li><a href="../views/checkout.jsp" title="Checkout"><span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
                 </li>
+                <li><span class="hidden-xs hidden-sm hidden-md">Hello <strong>${UserLogin.fullName}</strong></span></li>
+                <li><a href="/logins?action=logout"><span class="hidden-xs hidden-sm hidden-md">Sign Out <i class="fa fa-sign-out"></i></span></a></li>
             </ul>
         </div>
     </div>
@@ -112,7 +114,7 @@
         <div class="row">
             <div class="col-sm-4 logo">
                 <div id="logo">
-                    <a href="../views/dashboard.jsp"><img
+                    <a href="/dashboards"><img
                             src="https://opencart.templatemela.com/OPC08/OPC080182/image/catalog/logo.png"
                             title="Your Store" alt="Your Store" class="img-responsive"/></a>
                 </div>
