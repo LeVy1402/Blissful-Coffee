@@ -96,7 +96,6 @@
 <%--Đổ sản phẩm chỗ này nhe--%>
 <div class="box featured">
     <div class="box-heading">Featured</div>
-
     <div class="box-content">
         <div class="customNavigation">
             <a class="btn prev">&nbsp;</a>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html dir="ltr" lang="en" class="ie8">
@@ -160,22 +161,26 @@
                     <div class="expandable"></div>
                 </div>
 
+
                 <ul class="main-navigation">
-                    <li>
-                        <a href="">Coffee</a>
-                    </li>
-                    <li>
-                        <a href="">Smoothie</a>
-                    </li>
-                    <li>
-                        <a href="">Juice</a>
-                    </li>
-                    <li>
-                        <a href="">Tea</a>
-                    </li>
-                    <li>
-                        <a href="">SoftDrink</a>
-                    </li>
+                    <c:forEach items="${sessionScope.categoryList}" var="category">
+                        <li>
+                            <a href="">${category.getCategoryName() }</a>
+                        </li>
+                    </c:forEach>
+
+<%--                    <li>--%>
+<%--                        <a href="">Smoothie</a>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="">Juice</a>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="">Tea</a>--%>
+<%--                    </li>--%>
+<%--                    <li>--%>
+<%--                        <a href="">SoftDrink </a>--%>
+<%--                    </li>--%>
                 </ul>
 
             </div>

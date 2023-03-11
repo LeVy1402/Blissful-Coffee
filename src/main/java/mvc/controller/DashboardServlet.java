@@ -1,13 +1,19 @@
 package mvc.controller;
 
 import mvc.model.Product;
+import mvc.model.Rating;
+import mvc.repository.IReviewRepository;
+import mvc.repository.impl.ReviewRepository;
 import mvc.service.IProductService;
 import mvc.service.impl.ProductService;
+import mvc.service.impl.ReviewService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "DashboardServlet", value = "/dashboards")
@@ -51,13 +57,9 @@ public class DashboardServlet extends HttpServlet {
 
     private void dashboard(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productListInFeature = iProductService.selectAllProductInFeature();
-        request.setAttribute("productListFeature", productListInFeature);
+        request.setAttribute("productList", productListInFeature);
         List<Product> productList = iProductService.selectAllProduct();
-        for (Product kt:
-             productList) {
-            System.out.println(kt.toString());
-        }
-        request.setAttribute("productList", productList);
+        request.setAttribute("productListF", productList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("views/dashboard.jsp");
         dispatcher.forward(request, response);
     }

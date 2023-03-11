@@ -25,6 +25,35 @@ public class Product {
         this.categoryId = categoryId;
     }
 
+    public Product(int productId, String productName, String image, double price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+        this.image = image;
+    }
+
+    public Product(int productId, String productName, String image, String status) {
+        this.productId = productId;
+        this.productName = productName;
+        this.image = image;
+        this.status = status;
+    }
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+        this.quantity = quantity;
+        this.description = description;
+        this.status = status;
+        this.image = image;
+        this.dateUpdate = dateUpdate;
+        this.categoryId = categoryId;
+    }
+
     public int getProductId() {
         return productId;
     }
