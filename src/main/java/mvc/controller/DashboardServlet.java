@@ -1,19 +1,12 @@
 package mvc.controller;
-
 import mvc.model.Product;
-import mvc.model.Rating;
-import mvc.repository.IReviewRepository;
-import mvc.repository.impl.ReviewRepository;
 import mvc.service.IProductService;
 import mvc.service.impl.ProductService;
-import mvc.service.impl.ReviewService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "DashboardServlet", value = "/dashboards")

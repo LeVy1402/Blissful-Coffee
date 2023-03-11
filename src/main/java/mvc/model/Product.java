@@ -38,21 +38,6 @@ public class Product {
         this.image = image;
         this.status = status;
     }
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-        this.productName = productName;
-        this.price = price;
-        this.quantity = quantity;
-        this.description = description;
-        this.status = status;
-        this.image = image;
-        this.dateUpdate = dateUpdate;
-        this.categoryId = categoryId;
-    }
 
     public int getProductId() {
         return productId;
