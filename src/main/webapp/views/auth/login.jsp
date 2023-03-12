@@ -37,6 +37,9 @@
                     <div class="col-sm-6">
                         <div class="well">
                             <h2>Account Login</h2>
+                            <c:if test="${success.equals('signinSuccess')}">
+                                <p style="color:#4cae4c;"><strong>You have successfully registered !</strong></p>
+                            </c:if>
                             <h4>New Customer</h4>
                             <p><strong>Register Account</strong></p>
                             <p>By creating an account you will be able to shop faster, be up to date on an order's

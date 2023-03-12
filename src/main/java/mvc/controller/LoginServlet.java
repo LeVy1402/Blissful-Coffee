@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet", value = {"/logins",""} )
+@WebServlet(name = "LoginServlet", value = {"/logins"} )
 public class LoginServlet extends HttpServlet {
     private ILoginService iLoginService = new LoginService();
 

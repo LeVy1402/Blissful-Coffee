@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -24,6 +25,7 @@
         <ul class="breadcrumb">
             <li><a href="/dashboards"><i class="fa fa-home"></i></a></li>
             <li><a href="../../views/profile/my_account.jsp">Account</a></li>
+            <c:set var="error" value="${param.err}"></c:set>
             <li><a href="/register">Register</a></li>
         </ul>
         <div class="row">
@@ -32,19 +34,22 @@
                 <p>If you already have an account with us, please login at the <a
                         href="/logins"><strong style="color: #d56b1f">login page</strong></a>.
                 </p>
-                <form action="/register" method="post" name="action" value="register" type="hidden" class="form-horizontal">
+                <c:if test="${error.equals('ttemail')}">
+                        <p style="color:red;"><strong>Sorry, this email exists. Please enter another email address !!! </strong></p>
+                </c:if>
+                <form action="" method="post" name="action" class="form-horizontal">
                     <fieldset id="account" class="personal">
                         <legend>Your Personal Details</legend>
-                        <div class="form-group required" style="display: none;">
-                            <label class="col-sm-2 control-label">Customer Group</label>
-                            <div class="col-sm-10">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="customer_group_id" value="1" checked="checked"/>
-                                        Default</label>
-                                </div>
-                            </div>
-                        </div>
+<%--                        <div class="form-group required" style="display: none;">--%>
+<%--                            <label class="col-sm-2 control-label">Customer Group</label>--%>
+<%--                            <div class="col-sm-10">--%>
+<%--                                <div class="radio">--%>
+<%--                                    <label>--%>
+<%--                                        <input type="radio" name="customer_group_id" value="1" checked="checked"/>--%>
+<%--                                        Default</label>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-firstname">Full name</label>
@@ -57,7 +62,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="input-lastname">DOB</label>
                             <div class="col-sm-10">
-                                <input type="text" name="dateOfBirth" value="" placeholder="01/01/2001" id="input-lastname"
+                                <input type="date" name="dateOfBirth" value="" id="input-lastname"
                                        class="form-control"/>
                             </div>
                         </div>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html dir="ltr" lang="en" class="ie8">
@@ -91,6 +92,9 @@
                     <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
                         <li><a href="/register">Register</a></li>
                         <li><a href="/logins">Login</a></li>
+                        <c:if test="${UserLogin != null}">
+                        <li><a href="/logins?action=logout">Sign Out <i class="fa fa-sign-out"></i></a></li>
+                        </c:if>
 
 <%--                        Khi đăng nhập header sẽ chuyển thành dưới--%>
 <%--                        <li><a href="../views/auth/register.jsp">My Profile</a></li>--%>
@@ -103,7 +107,7 @@
                 <li><a href="../views/checkout.jsp" title="Checkout"><span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
                 </li>
                 <li><span class="hidden-xs hidden-sm hidden-md">Hello <strong>${UserLogin.fullName}</strong></span></li>
-                <li><a href="/logins?action=logout"><span class="hidden-xs hidden-sm hidden-md">Sign Out <i class="fa fa-sign-out"></i></span></a></li>
+
             </ul>
         </div>
     </div>
