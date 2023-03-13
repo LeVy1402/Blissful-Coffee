@@ -52,17 +52,17 @@
 <%--                        </div>--%>
 
                         <div class="form-group required">
-                            <label class="col-sm-2 control-label" for="input-firstname">Full name</label>
+                            <label class="col-sm-2 control-label" for="input-fullname">Full name</label>
                             <div class="col-sm-10">
                                 <input type="text" name="fullName" value="" placeholder="Nguyễn Văn A" required
-                                       id="input-firstname" class="form-control"/>
+                                       id="input-fullname" class="form-control"/>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="input-lastname">DOB</label>
+                            <label class="col-sm-2 control-label" for="input-dob">DOB</label>
                             <div class="col-sm-10">
-                                <input type="date" name="dateOfBirth" value="" id="input-lastname" required
+                                <input type="date" name="dateOfBirth" value="" id="input-dob" required
                                        class="form-control"/>
                             </div>
                         </div>
@@ -71,10 +71,10 @@
                             <label class="col-sm-2 control-label">Gender</label>
                             <div class="col-sm-10">
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender" value="1" checked="checked">
+                                    <input type="radio" name="gender" value="true" checked>
                                     Male</label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender" value="0">
+                                    <input type="radio" name="gender" value="false">
                                     Female</label>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                        class="form-control"/>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-fax">Address</label>
                             <div class="col-sm-10">
                                 <input type="text" name="address" value="" placeholder="" id="input-fax" required

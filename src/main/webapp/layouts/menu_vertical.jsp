@@ -14,7 +14,7 @@
          class="list-group-item">Register</a>
       <a href="../auth/forgot_password.jsp"
          class="list-group-item">Forgotten Password</a>
-      <a href="../profile/my_account.jsp"
+      <a href="/views/profile/my_account.jsp"
          class="list-group-item">My Account</a>
       <a href="../profile/address_book.jsp"
          class="list-group-item">Address Books</a>

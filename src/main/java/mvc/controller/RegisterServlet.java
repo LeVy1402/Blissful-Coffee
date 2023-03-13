@@ -68,8 +68,9 @@ public class RegisterServlet extends HttpServlet {
     private void registerUser(HttpServletRequest request, HttpServletResponse response) throws ParseException, ServletException, IOException {
         String fullName = request.getParameter("fullName");
         Date dateOfBirth = Date.valueOf(request.getParameter("dateOfBirth"));
-        System.out.println(dateOfBirth);
+
         boolean gender = Boolean.parseBoolean(request.getParameter("gender"));
+        System.out.println(gender);
         String contact = request.getParameter("contact");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
