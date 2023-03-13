@@ -8,4 +8,6 @@ import java.util.List;
 public interface IOrderDetailRepository {
 
     List<OrderDetail> getOrderDetailByOrderId(int id);
+
+    void addOrderDetail(OrderDetail orderDetail);
 }

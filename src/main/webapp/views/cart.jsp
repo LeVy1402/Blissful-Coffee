@@ -637,7 +637,9 @@
 
                             <tr>
                                 <td class="text-center">
-                                    <a href=""   > <img src="/img/${orderDetail.getProduct().getImage()}"  alt="${orderDetail.getProduct().getImage()}" title="Coffee Bean Direct" class="img-thumbnail" /></a>
+                                    <a href=""   >
+                                        <img src="/img/${orderDetail.getProduct().getImage()}"  alt="${orderDetail.getProduct().getImage()}" title="${orderDetail.getProduct().getProductName()}" class="img-thumbnail" />
+                                    </a>
                                 </td>
                                 <td class="text-left"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=43">${orderDetail.getProduct().getProductName()}</a>
                                     <br />

@@ -20,6 +20,7 @@ public class OrderDetailRepository implements IOrderDetailRepository {
             "inner join product on product.product_id = order_detail.product_id " +
             "inner join `order` on `order`.order_id = order_detail.order_id " +
             "where order_detail.order_id=?";
+    private static final String INSERT_ORDER_DETAIL = "INSERT INTO `order_detail` (`product_id`, `order_id`, `quantity`) VALUES (?, ?, ?)";
     @Override
     public List<OrderDetail> getOrderDetailByOrderId(int orderId) {
         List<OrderDetail> orderDetailList = new ArrayList<>();
@@ -55,5 +56,31 @@ public class OrderDetailRepository implements IOrderDetailRepository {
             }
         }
         return orderDetailList;
+    }
+
+    @Override
+    public void addOrderDetail(OrderDetail orderDetail) {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement preparedStatement = null;
+        if (connection != null) {
+            try {
+                preparedStatement = connection.prepareStatement(INSERT_ORDER_DETAIL);
+                preparedStatement.setInt(1, orderDetail.getProduct().getProductId());
+                preparedStatement.setInt(2, orderDetail.getOrder().getOrderId());
+                preparedStatement.setInt(3, orderDetail.getQuantity());
+                System.out.println(preparedStatement);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                DBConnection.close();
+            }
+        }
     }
 }

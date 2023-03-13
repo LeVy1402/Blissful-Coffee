@@ -101,16 +101,18 @@
         </div>
     </div>
 </div>
-<div class="container product">
-    <ul class="breadcrumb">
-        <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=common/home"><i class="fa fa-home"></i></a></li>
-        <li><a href="indexb8ca.html?route=product/product&amp;product_id=43">Coffee Bean Direct</a></li>
-    </ul>
-    <div class="row">                <div id="content" class="productpage col-sm-12">      <div class="row">
+    <div class="container product">
+        <ul class="breadcrumb">
+            <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=common/home"><i class="fa fa-home"></i></a></li>
+            <li><a href="indexb8ca.html?route=product/product&amp;product_id=43">Coffee Bean Direct</a></li>
+        </ul>
+        <div class="row">
+            <div id="content" class="productpage col-sm-12">
+                <div class="row">
 
 
 
-        <div class="col-sm-8">
+                <div class="col-sm-8">
             <div class="product-info">
 
 
@@ -170,7 +172,7 @@
             </div>
         </div>
 
-        <div class="col-sm-4">
+                <div class="col-sm-4">
             <h2>${product.getProductName()}</h2>
             <h3>${product.getProductName()}</h3>
             <div class="description">
@@ -191,7 +193,7 @@
                     <label class="control-label" for="input-quantity">${product.getQuantity()}</label>
                     <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
                     <input type="hidden" name="product_id" value="43" />
-                    <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block">Add to Cart</button>
+                    <a href="/cart?action=add&id=${product.getProductId()}" type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block">Add to Cart</a>
                 </div>
             </div>
 
@@ -214,7 +216,7 @@
                 <!-- AddThis Button END -->
             </div>
         </div>
-        <div class="col-sm-12">
+                <div class="col-sm-12">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
                 <li><a href="#tab-specification" data-toggle="tab">Specification</a></li>
@@ -341,9 +343,9 @@
                 </div>
             </div>
         </div>
-    </div>
+            </div>
 
-        <div class="box">
+            <div class="box">
 
             <div class="box-heading">Related Products</div>
 
@@ -369,7 +371,7 @@
                                         <div class="actions">
                                             <button type="button" onclick="cart.add('30');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
                                             <button class="wishlist_button" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('30');"></button>
-                                            <button class="compare_button" type="button" data-toggle="tooltip" title="Add to Compare" onclick="compare.add('30');"></button>
+<%--                                            <button class="compare_button" type="button" data-toggle="tooltip" title="Add to Compare" onclick="compare.add('30');"></button>--%>
                                             <div class="rating">
                                                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
                                                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
@@ -615,7 +617,8 @@
                                     <h4><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=48">Cinnamon Coffee</a></h4>
                                     <div class="hover_block">
                                         <div class="actions">
-                                            <button type="button" onclick="cart.add('48');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+<%--                                            <button type="button" onclick="cart.add('48');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>--%>
+                                            <a href="/cart?" type="button" onclick="cart.add('48');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></a>
                                             <button class="wishlist_button" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('48');"></button>
                                             <button class="compare_button" type="button" data-toggle="tooltip" title="Add to Compare" onclick="compare.add('48');"></button>
                                             <div class="rating">
@@ -654,9 +657,9 @@
 
         </div>
 
+        </div>
     </div>
     </div>
-</div>
 </div>
 
 <script type="text/javascript"><!--

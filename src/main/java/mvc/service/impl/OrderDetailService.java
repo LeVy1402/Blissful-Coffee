@@ -13,4 +13,9 @@ public class OrderDetailService implements IOrderDetailService {
     public List<OrderDetail> getOrderDetailByOrderId(int i) {
         return iOrderDetailRepository.getOrderDetailByOrderId(i);
     }
+
+    @Override
+    public void addOrderDetail(OrderDetail orderDetail) {
+        iOrderDetailRepository.addOrderDetail(orderDetail);
+    }
 }

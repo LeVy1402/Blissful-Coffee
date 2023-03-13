@@ -2,7 +2,11 @@ package mvc.controller;
 
 import mvc.model.Customer;
 import mvc.service.ILoginService;
+import mvc.service.IOrderDetailService;
+import mvc.service.IOrderService;
 import mvc.service.impl.LoginService;
+import mvc.service.impl.OrderDetailService;
+import mvc.service.impl.OrderService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,6 +16,8 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet", value = {"/logins",""} )
 public class LoginServlet extends HttpServlet {
     private ILoginService iLoginService = new LoginService();
+    private IOrderDetailService iOrderDetailService = new OrderDetailService();
+    private IOrderService iOrderService = new OrderService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -71,11 +77,12 @@ public class LoginServlet extends HttpServlet {
             String email = request.getParameter("Email");
             String pass = request.getParameter("Pass");
             System.out.println(email + pass);
-            Customer customer = iLoginService.checkLogin(email, pass);
+            Customer customer = iLoginService.getCustomerByLogin(email, pass);
             if (customer == null) {
                 response.sendRedirect("/logins?err=1");
             }else {
                 session.setAttribute("UserLogin",customer);
+                session.setAttribute("orderDetailList", iOrderDetailService.getOrderDetailByOrderId(iOrderService.findOrderInCartByCusId(customer).getOrderId()));
                 System.out.println(customer.getFullName());
                 response.sendRedirect("/dashboards");
             }

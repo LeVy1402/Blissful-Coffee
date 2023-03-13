@@ -15,6 +15,11 @@ public class LoginService implements ILoginService {
     }
 
     @Override
+    public Customer getCustomerByLogin(String email, String pass) {
+        return iLoginRepository.getCustomerByLogin(email,pass);
+    }
+
+    @Override
     public int ForgotPass(String txtEmail, String txtPass) {
         return 0;
     }

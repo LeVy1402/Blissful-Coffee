@@ -16,7 +16,7 @@ import java.util.List;
 public class ProductRepository implements IProductRepository {
 
     private static final String SELECT_ALL_PRODUCT_IN_FEATURE = "select * from `product` join `category` using(`category_id`) where `product_status` = \"Feature\"\n";
-        private static final String SELECT_ALL_PRODUCT = "SELECT * FROM `product` join `category` using(`category_id`);";
+    private static final String SELECT_ALL_PRODUCT = "SELECT * FROM `product` join `category` using(`category_id`);";
     private static final String SEARCH_NAME_PRODUCT = "select * from `product` join `category` using(`category_id`) where `product_name` like ?;";
 
     private static final String SELECT_PRODUCT_BY_ID= "select * from `product` join `category` using(`category_id`) where `product_id`= ?";
@@ -25,7 +25,40 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public List<Product> selectAllProductInFeature() {
-        return null;
+        List<Product> productList = new ArrayList<>();
+        Connection connection = DBConnection.getConnection();
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+        if (connection != null) {
+            try {
+                preparedStatement = connection.prepareStatement(SELECT_ALL_PRODUCT_IN_FEATURE);
+                resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    int productId = resultSet.getInt("product_id");
+                    String productName = resultSet.getString("product_name");
+                    double price = resultSet.getDouble("price");
+                    int quantity = resultSet.getInt("quantity");
+                    String description = resultSet.getString("description");
+                    String productStatus = resultSet.getString("product_status");
+                    String image = resultSet.getString("image");
+                    Date dateUpdate = resultSet.getDate("date_update");
+                    Category category = new Category(resultSet.getInt("category_id"), resultSet.getString("category_name"));
+                    Product product = new Product(productId, productName, price, quantity, description, productStatus, image, dateUpdate, category);
+                    productList.add(product);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    resultSet.close();
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                DBConnection.close();
+            }
+        }
+        return productList;
     }
 
     @Override
@@ -95,6 +128,34 @@ public class ProductRepository implements IProductRepository {
         return productList;
     }
 
+    @Override
+    public Product selectProductById(int id) {
+
+        Product product = null;
+        Connection connection = DBConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_PRODUCT_BY_ID);
+            preparedStatement.setInt(1, id);
+
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int productId = rs.getInt("product_id");
+                String productName = rs.getString("product_name");
+                double price = rs.getDouble("price");
+                int quantity = rs.getInt("quantity");
+                String description = rs.getString("description");
+                String productStatus = rs.getString("product_status");
+                String image = rs.getString("image");
+                Date dateUpdate = rs.getDate("date_update");
+                Category category = new Category(rs.getInt("category_id"), rs.getString("category_name"));
+
+                product = new Product(productId, productName, price, quantity, description, productStatus, image, dateUpdate, category);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return product;
+    }
 
     @Override
     public List<Product> selectProductByCategory(int cateId) {
@@ -123,4 +184,5 @@ public class ProductRepository implements IProductRepository {
             throwables.printStackTrace();
         }
         return productListByCategory;
+    }
 }

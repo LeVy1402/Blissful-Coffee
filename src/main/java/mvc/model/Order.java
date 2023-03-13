@@ -21,6 +21,12 @@ public class Order {
         this.orderId = orderId;
     }
 
+    public Order(int orderId, Customer customer, String orderStatus) {
+        this.orderId = orderId;
+        this.customer = customer;
+        this.orderStatus = orderStatus;
+    }
+
     public int getOrderId() {
         return orderId;
     }

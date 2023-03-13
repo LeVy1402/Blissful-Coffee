@@ -13,6 +13,12 @@ public class OrderDetail {
         this.quantity = quantity;
     }
 
+    public OrderDetail(Product product, Order order, int quantity) {
+        this.product = product;
+        this.order = order;
+        this.quantity = quantity;
+    }
+
     public int getDetailId() {
         return detailId;
     }

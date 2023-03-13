@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IOrderDetailService {
     List<OrderDetail> getOrderDetailByOrderId(int i);
+    void addOrderDetail(OrderDetail orderDetail);
 }

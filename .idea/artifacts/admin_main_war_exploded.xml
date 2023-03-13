@@ -18,8 +18,8 @@
           <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-engine:1.9.1" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="admin.main/web/Web Gradle : admin-1.0-SNAPSHOT.war" />
       <element id="artifact" artifact-name="Gradle : com.example : admin-1.0-SNAPSHOT.war" />
+      <element id="javaee-facet-resources" facet="admin.main/web/Web Gradle : admin-1.0-SNAPSHOT.war" />
     </root>
   </artifact>
 </component>

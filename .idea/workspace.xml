@@ -10,60 +10,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02866142-062c-44f4-ae8f-99d73f845428" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/admin_main_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/IndexServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/ICategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/ILoginRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IReviewRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/LoginRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/ReviewRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/ICategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/ILoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IReviewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/ReviewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/blueberrysmoothie.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/caphemuoi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/caphesua.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/cocacola.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/forestBlackTea.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/juiceMango.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/juiceapple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/oolong-tea-assam.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/peachyogurt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/pessi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/DashboardServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/CheckoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IOrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/admin_main_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/admin_main_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/IndexServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/OrderDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/OrderDetailServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mvc/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/model/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/model/Rating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/IRegisterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IRegisterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/model/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/model/OrderDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/ILoginRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/ILoginRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/IOrderDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IOrderDetailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/LoginRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/LoginRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/OrderDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/OrderDetailRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/RegisterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/RegisterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/IRegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IRegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/impl/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/RegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/theme/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/theme/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/ILoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/ILoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/IOrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IOrderDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/impl/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/impl/OrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/OrderDetailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/layouts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layouts/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/layouts/menu_vertical.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layouts/menu_vertical.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/auth/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/auth/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/search.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +59,15 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -112,6 +94,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "E:/Temporary (chứa code các bài tập)/Blissful_Coffee_Admin",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -121,16 +104,16 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="admin.main:war exploded">
+        <artifact name="Gradle : com.example : blissful_coffee-1.0-SNAPSHOT.war (exploded)">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="88a83630-98bb-45ad-8ea4-6ed0f14d3d35" />
+        <option name="BASE_DIRECTORY_NAME" value="888cdd17-c3e1-4935-9096-f3004021f82b" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -138,7 +121,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64916" />
+        <option name="DEBUG_PORT" value="56746" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -156,21 +139,6 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -203,7 +171,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="admin.main:war exploded" />
+          <artifact name="Gradle : com.example : blissful_coffee-1.0-SNAPSHOT.war (exploded)" />
         </option>
       </method>
     </configuration>
@@ -217,7 +185,8 @@
       <option name="presentableId" value="Default" />
       <updated>1678552852334</updated>
       <workItem from="1678552853796" duration="60000" />
-      <workItem from="1678557610183" duration="2077000" />
+      <workItem from="1678557610183" duration="7844000" />
+      <workItem from="1678609307556" duration="27432000" />
     </task>
     <servers />
   </component>

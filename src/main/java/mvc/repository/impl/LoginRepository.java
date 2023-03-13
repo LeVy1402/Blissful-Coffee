@@ -13,6 +13,7 @@ import java.sql.SQLException;
 public class LoginRepository implements ILoginRepository {
     private static final String SELECT_LOGIN = "select * from `customer` where `email` = ? and `password` = ?";
 
+
     @Override
     public Customer checkLogin(String email, String password) {
         Connection connection = DBConnection.getConnection();
@@ -27,6 +28,38 @@ public class LoginRepository implements ILoginRepository {
                 resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     Customer customer = new Customer(resultSet.getString(2), resultSet.getString(5), resultSet.getString(8));
+                    return customer;
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Customer getCustomerByLogin(String email, String password) {
+        Connection connection = DBConnection.getConnection();
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+        if (connection != null) {
+            try {
+                preparedStatement = connection.prepareStatement(SELECT_LOGIN);
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, password);
+
+                resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    Customer customer = new Customer(resultSet.getInt(1),
+                            resultSet.getString(2),
+                            resultSet.getDate(3),
+                            resultSet.getBoolean(4),
+                            resultSet.getString(5),
+                            resultSet.getString(6),
+                            resultSet.getString(7),
+                            resultSet.getString(8),
+                            resultSet.getString(9),
+                            resultSet.getString(10));
                     return customer;
                 }
             } catch (SQLException e) {

@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "IndexServlet", value = "")
+@WebServlet(name = "IndexServlet", value = "/init")
 public class IndexServlet extends HttpServlet {
 
     private ICategoryService iCategoryService = new CategoryService();
