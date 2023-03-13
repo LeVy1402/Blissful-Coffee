@@ -35,7 +35,7 @@
                         href="/logins"><strong style="color: #d56b1f">login page</strong></a>.
                 </p>
                 <c:if test="${error.equals('ttemail')}">
-                        <p style="color:red;"><strong>Sorry, this email exists. Please enter another email address !!! </strong></p>
+                        <p style="color:red;"><strong> ༼ಢ_ಢ༽ Sorry, this email exists. Please enter another email address !!! 😢 </strong></p>
                 </c:if>
                 <form action="" method="post" name="action" class="form-horizontal">
                     <fieldset id="account" class="personal">
@@ -54,7 +54,7 @@
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-firstname">Full name</label>
                             <div class="col-sm-10">
-                                <input type="text" name="fullName" value="" placeholder="Nguyễn Văn A"
+                                <input type="text" name="fullName" value="" placeholder="Nguyễn Văn A" required
                                        id="input-firstname" class="form-control"/>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="input-lastname">DOB</label>
                             <div class="col-sm-10">
-                                <input type="date" name="dateOfBirth" value="" id="input-lastname"
+                                <input type="date" name="dateOfBirth" value="" id="input-lastname" required
                                        class="form-control"/>
                             </div>
                         </div>
@@ -83,21 +83,21 @@
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-email">E-Mail</label>
                             <div class="col-sm-10">
-                                <input type="email" name="email" value="" placeholder="E-Mail" id="input-email"
+                                <input type="email" name="email" value="" placeholder="E-Mail" id="input-email" required
                                        class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-telephone">Phone number</label>
                             <div class="col-sm-10">
-                                <input type="tel" name="contact" value="" placeholder="" id="input-telephone"
+                                <input type="tel" name="contact" value="" placeholder="" id="input-telephone" required
                                        class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="input-fax">Address</label>
                             <div class="col-sm-10">
-                                <input type="text" name="address" value="" placeholder="" id="input-fax"
+                                <input type="text" name="address" value="" placeholder="" id="input-fax" required
                                        class="form-control"/>
                             </div>
                         </div>
@@ -108,14 +108,14 @@
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="password">Password</label>
                             <div class="col-sm-10">
-                                <input type="password" name="password" value="" placeholder="Password"
+                                <input type="password" name="password" value="" placeholder="Password" required
                                        id="password" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="confirm_password">Password Confirm</label>
                             <div class="col-sm-10">
-                                <input type="password" name="confirm" value="" placeholder="Password Confirm"
+                                <input type="password" name="confirm" value="" placeholder="Password Confirm" required
                                        id="confirm_password" class="form-control"/>
                             </div>
                         </div>

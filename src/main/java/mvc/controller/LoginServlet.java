@@ -8,6 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet(name = "LoginServlet", value = {"/logins"} )
 public class LoginServlet extends HttpServlet {
@@ -72,9 +73,12 @@ public class LoginServlet extends HttpServlet {
             String pass = request.getParameter("Pass");
             System.out.println(email + pass);
             Customer customer = iLoginService.checkLogin(email, pass);
+
             if (customer == null) {
-                response.sendRedirect("/logins?err=1");
+//                response.sendRedirect("/logins?err=1");
+                response.sendRedirect(request.getContextPath()+"logins?err=loginError");
             }else {
+                System.out.println(customer.getCustomerId());
                 session.setAttribute("UserLogin",customer);
                 System.out.println(customer.getFullName());
                 response.sendRedirect("/dashboards");

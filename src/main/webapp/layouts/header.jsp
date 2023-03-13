@@ -90,10 +90,14 @@
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
-                        <li><a href="/register">Register</a></li>
-                        <li><a href="/logins">Login</a></li>
+<%--                        <li><a href="/logins">Login</a></li>--%>
+                        <c:if test="${UserLogin == null}">
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/logins" >Login</a></li>
+                        </c:if>
                         <c:if test="${UserLogin != null}">
-                        <li><a href="/logins?action=logout">Sign Out <i class="fa fa-sign-out"></i></a></li>
+                            <li><a href="/views/profile/my_account.jsp">My Account</a></li>
+                            <li><a href="/logins?action=logout">Sign Out <i class="fa fa-sign-out"></i></a></li>
                         </c:if>
 
 <%--                        Khi đăng nhập header sẽ chuyển thành dưới--%>

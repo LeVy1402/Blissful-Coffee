@@ -10,4 +10,5 @@ public interface ILoginService {
     public int ForgotPass(String txtEmail, String txtPass);
 
     ArrayList<Customer> all();
+
 }

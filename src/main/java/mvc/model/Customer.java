@@ -49,6 +49,8 @@ public class Customer {
         this.password = password;
     }
 
+
+
     public Customer(String fullName, Date dateOfBirth, boolean gender, String contact, String email, String password, String address) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;

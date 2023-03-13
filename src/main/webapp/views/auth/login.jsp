@@ -38,7 +38,7 @@
                         <div class="well">
                             <h2>Account Login</h2>
                             <c:if test="${success.equals('signinSuccess')}">
-                                <p style="color:#4cae4c;"><strong>You have successfully registered !</strong></p>
+                                <p style="color:#4cae4c; font-size: 17px"><i class="fa fa-check-circle"></i><strong> You have successfully registered !</strong></p>
                             </c:if>
                             <h4>New Customer</h4>
                             <p><strong>Register Account</strong></p>
@@ -55,16 +55,19 @@
                                 <input type="hidden" class="form-control" name="action" value="login" >
                                 <div class="form-group">
                                     <label class="control-label" for="input-email">E-Mail Address</label>
-                                    <input type="text" name="Email" placeholder="E-Mail Address"
+                                    <input type="text" name="Email" placeholder="E-Mail Address" required
                                            id="input-email"  class="form-control"/>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="input-password">Password</label>
-                                    <input type="password" name="Pass" placeholder="Password"
+                                    <input type="password" name="Pass" placeholder="Password" required
                                            id="input-password" class="form-control"/>
                                     <a href="">Forgotten Password</a></div>
                                 <input type="submit" value="Login" class="btn btn-primary"/>
                             </form>
+                            <c:if test="${error.equals('loginError')}">
+                                <p style="color: red;"><strong>Incorrect account or password. Please try again</strong></p>
+                            </c:if>
                         </div>
                     </div>
                 </div>

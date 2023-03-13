@@ -25,7 +25,15 @@ public class LoginRepository implements ILoginRepository {
 
                 resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
-                    Customer customer = new Customer(resultSet.getString(2), resultSet.getString(5), resultSet.getString(8));
+                    int id = resultSet.getInt(1);
+                    String fullname = resultSet.getString(2);
+                    Date dateOfBirth = resultSet.getDate(3);
+                    boolean gender = resultSet.getBoolean(4);
+                    String contact = resultSet.getString(6);
+                    String profileCustomer = resultSet.getString(8);
+                    String accountStatus = resultSet.getString(9);
+                    String address = resultSet.getString(10);
+                    Customer customer = new Customer(id,fullname,dateOfBirth,gender,contact,email,password,profileCustomer,accountStatus,address);
                     return customer;
                 }
             } catch (SQLException e) {
