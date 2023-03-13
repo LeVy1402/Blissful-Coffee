@@ -23,9 +23,9 @@
 <jsp:include page="../../layouts/header.jsp"></jsp:include>
 <div class="account-register layout-2 left-col">
     <div class="container">
+        <h1>My Account</h1>
         <ul class="breadcrumb">
-            <li><a href="../../views/dashboard.jsp"><i class="fa fa-home"></i></a></li>
-            <li><a href="../../views/profile/my_account.jsp">Account</a></li>
+            <li><a href="/dashboards"><i class="fa fa-home"></i></a></li>
             <li><a href="/views/profile/my_account.jsp">My Account</a></li>
         </ul>
         <div class="row">
@@ -33,47 +33,13 @@
             <c:set var="success" value="${param.msg}"></c:set>
             <jsp:include page="../../layouts/menu_vertical.jsp"></jsp:include>
             <div id="content" class="col-sm-9">
-                <form action="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/edit" method="post" enctype="multipart/form-data" class="form-horizontal">
-                    <fieldset>
-                        <legend>Edit Your Personal Details</legend>
-                        <div class="form-group required">
-                            <label class="col-sm-2 control-label" for="input-firstname">First Name </label>
-                            <div class="col-sm-10">
-                                <input type="text" name="firstname" value="van" placeholder="First Name" id="input-firstname" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group required">
-                            <label class="col-sm-2 control-label" for="input-lastname">Last Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="lastname" value="tuan" placeholder="Last Name" id="input-lastname" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group required">
-                            <label class="col-sm-2 control-label" for="input-email">E-Mail</label>
-                            <div class="col-sm-10">
-                                <input type="email" name="email" value="tuan@gmail.com" placeholder="E-Mail" id="input-email" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group required">
-                            <label class="col-sm-2 control-label" for="input-telephone">Telephone</label>
-                            <div class="col-sm-10">
-                                <input type="tel" name="telephone" value="0900000999" placeholder="Telephone" id="input-telephone" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="input-fax">Fax</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="fax" value="" placeholder="Fax" id="input-fax" class="form-control">
-                            </div>
-                        </div>
-                    </fieldset>
-                    <div class="buttons clearfix">
-                        <div class="pull-left"><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/account" class="btn btn-default">Back</a></div>
-                        <div class="pull-right">
-                            <input type="submit" value="Continue" class="btn btn-primary">
-                        </div>
-                    </div>
-                </form>
+                <h3>My Account</h3>
+                <ul class="list-unstyled">
+                    <li><a href="/views/profile/edit_account.jsp">Edit your account information</a></li>
+                    <li><a href="/views/profile/change_passwork.jsp">Change your password</a></li>
+<%--                    <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/address">Modify your address book entries</a></li>--%>
+<%--                    <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/wishlist">Modify your wish list</a></li>--%>
+                </ul>
             </div>
         </div>
     </div>
