@@ -115,10 +115,10 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void addReviewProduct(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        Product product = new Product(Integer.parseInt(request.getParameter("productId")),
-                request.getParameter("productName"),
-                request.getParameter("productImg"),
-                request.getParameter("productStatus"));
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("UserLogin");
+        Product product = iProductService.selectProductById(Integer.parseInt(request.getParameter("productId")));
+
         double score = Double.parseDouble(request.getParameter("score"));
 
         String remarks = request.getParameter("remarks");
@@ -129,7 +129,7 @@ public class ProductServlet extends HttpServlet {
 
         Date dateRecoreded = new Date();
 
-        Customer customer = new Customer(1,"Bảo Ng", "img");
+//        Customer customer = new Customer(1,"Bảo Ng", "img");
 
 //        customerId, String fullName, String profileCustomer
         Rating newReview = new Rating(product, score, remarks, dateRecoreded, customer);

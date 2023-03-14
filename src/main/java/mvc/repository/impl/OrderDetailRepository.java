@@ -21,6 +21,10 @@ public class OrderDetailRepository implements IOrderDetailRepository {
             "inner join `order` on `order`.order_id = order_detail.order_id " +
             "where order_detail.order_id=?";
     private static final String INSERT_ORDER_DETAIL = "INSERT INTO `order_detail` (`product_id`, `order_id`, `quantity`) VALUES (?, ?, ?)";
+
+    private static final String UPDATE_ORDER_DETAIL = "UPDATE `order_detail` SET `quantity`=? WHERE `order_id`= ? AND `product_id`= ?";
+    private static final String DELETE_ORDER_DETAIL = "DELETE FROM `order_detail` WHERE `product_id` = ? AND `order_id`= ?";
+
     @Override
     public List<OrderDetail> getOrderDetailByOrderId(int orderId) {
         List<OrderDetail> orderDetailList = new ArrayList<>();
@@ -82,5 +86,57 @@ public class OrderDetailRepository implements IOrderDetailRepository {
                 DBConnection.close();
             }
         }
+    }
+
+    @Override
+    public boolean updateOrderDetail(OrderDetail orderDetail) throws SQLException {
+        boolean rowUpdate = false;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement preparedStatement = null;
+        if (connection != null) {
+            try {
+//                (int staffIdl, String fullName, String contact, String email, String userName, String passWord, int roleId, int siteInfId)
+                preparedStatement = connection.prepareStatement(UPDATE_ORDER_DETAIL);
+                preparedStatement.setInt(3, orderDetail.getProduct().getProductId());
+                preparedStatement.setInt(2, orderDetail.getOrder().getOrderId());
+                preparedStatement.setInt(1, orderDetail.getQuantity());
+                rowUpdate = preparedStatement.executeUpdate() > 0;
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            } finally {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                DBConnection.close();
+            }
+        }
+        return rowUpdate;
+    }
+
+    @Override
+    public boolean deleteOrderDetail(OrderDetail orderDetail) throws SQLException {
+        boolean rowDelete = false;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement preparedStatement = null;
+        if (connection != null) {
+            try {
+                preparedStatement = connection.prepareStatement(DELETE_ORDER_DETAIL);
+                preparedStatement.setInt(1, orderDetail.getProduct().getProductId());
+                preparedStatement.setInt(2, orderDetail.getOrder().getOrderId());
+                rowDelete = preparedStatement.executeUpdate() > 0;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                DBConnection.close();
+            }
+        }
+        return rowDelete;
     }
 }

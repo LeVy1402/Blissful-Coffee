@@ -82,8 +82,11 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("/logins?err=1");
             }else {
                 session.setAttribute("UserLogin",customer);
+                if (iOrderService.findOrderInCartByCusId(customer)==null){
+                    iOrderService.createOrderInCart(customer);
+                }
                 session.setAttribute("orderDetailList", iOrderDetailService.getOrderDetailByOrderId(iOrderService.findOrderInCartByCusId(customer).getOrderId()));
-                System.out.println(customer.getFullName());
+                System.out.println(customer.getFullName() + "what");
                 response.sendRedirect("/dashboards");
             }
         } catch (Exception e){

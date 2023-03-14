@@ -21,7 +21,6 @@ import java.util.List;
 public class OrderDetailServlet extends HttpServlet {
     private IOrderDetailService iOrderDetailService = new OrderDetailService();
     private IOrderService iOrderService = new OrderService();
-
     private IProductService iProductService = new ProductService();
 
     @Override
@@ -34,15 +33,19 @@ public class OrderDetailServlet extends HttpServlet {
         System.out.println(action);
         switch (action) {
             case "add":
-                addProductToCart(request, response);
+                try {
+                    addProductToCart(request, response);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
 //                showNewFormCustomer(request, response);
                 break;
             case "delete":
-//                try {
-//                    showDeleteCustomer(request, response);
-//                } catch (SQLException e) {
-//                    throw new RuntimeException(e);
-//                }
+                try {
+                    deleteProductFromCart(request, response);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
                 break;
             default:
                     listOrderDetail(request, response);
@@ -50,17 +53,13 @@ public class OrderDetailServlet extends HttpServlet {
         }
     }
 
-    private void addProductToCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void deleteProductFromCart(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("UserLogin");
-        if (iOrderService.findOrderInCartByCusId(customer)==null){
-            iOrderService.createOrderInCart(customer);
-        }
         Order order = iOrderService.findOrderInCartByCusId(customer);
         int productId = Integer.parseInt(request.getParameter("id"));
-        int quantity = 1; //test
-        OrderDetail orderDetail = new OrderDetail(iProductService.selectProductById(productId), order, quantity);
-        iOrderDetailService.addOrderDetail(orderDetail);
+        OrderDetail orderDetail = new OrderDetail(iProductService.selectProductById(productId), order);
+        iOrderDetailService.deleteOrderDetail(orderDetail);
 
         List<OrderDetail> orderDetailList = iOrderDetailService.getOrderDetailByOrderId(order.getOrderId() );
         request.setAttribute("orderDetailList", orderDetailList);
@@ -72,10 +71,54 @@ public class OrderDetailServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    private OrderDetail checkOrderDetailInCart(List<OrderDetail> orderDetailListInCart, OrderDetail orderDetail){
+        for(OrderDetail orderDetail1 : orderDetailListInCart) {
+            if(orderDetail1.getProduct().getProductId() == orderDetail.getProduct().getProductId()) {
+                return orderDetail1;
+            }
+        }
+        return null;
+    }
+
+    private void addProductToCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("UserLogin");
+        List<OrderDetail> orderDetailList = (List<OrderDetail>) session.getAttribute("orderDetailList");
+
+        if (iOrderService.findOrderInCartByCusId(customer)==null){
+            iOrderService.createOrderInCart(customer);
+        }
+        Order order = iOrderService.findOrderInCartByCusId(customer);
+        int productId = Integer.parseInt(request.getParameter("id"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        OrderDetail orderDetail = new OrderDetail(iProductService.selectProductById(productId), order, quantity);
+
+
+        //kiểm tra xem có trùng sản phẩm trong giỏ hàng ko, nếu có thì tăng quantity, nếu không thì thêm mới
+        OrderDetail orderDetail1 = checkOrderDetailInCart(orderDetailList, orderDetail);
+        System.out.println(orderDetail1);
+        if (orderDetail1==null){
+            iOrderDetailService.addOrderDetail(orderDetail);
+        }
+        else {
+            orderDetail1.setQuantity(orderDetail1.getQuantity()+quantity);
+            iOrderDetailService.updateOrderDetail(orderDetail1);
+        }
+
+        orderDetailList = iOrderDetailService.getOrderDetailByOrderId(order.getOrderId() );
+        request.setAttribute("orderDetailList", orderDetailList);
+
+        //lưu sản phẩm trong giỏ hàng vào session
+        session.setAttribute("orderDetailList", orderDetailList);
+
+        response.sendRedirect("dashboards");
+    }
+
     private void listOrderDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("UserLogin");
 
+        //order trong giỏ hàng
         if (iOrderService.findOrderInCartByCusId(customer)==null){
             iOrderService.createOrderInCart(customer);
         }
@@ -90,8 +133,44 @@ public class OrderDetailServlet extends HttpServlet {
 //        int orderId = Integer.parseInt(request.getParameter("orderId"));
     }
 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        System.out.println(action);
+        switch (action) {
+            case "update":
+                try {
+                    updateOrderDetail(request, response);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+               break;
+            default:
+                listOrderDetail(request, response);
+                break;
+        }
+    }
 
+    private void updateOrderDetail(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("UserLogin");
+        Order order = iOrderService.findOrderInCartByCusId(customer);
+        int productId = Integer.parseInt(request.getParameter("id"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        OrderDetail orderDetail = new OrderDetail(iProductService.selectProductById(productId), order, quantity);
+        iOrderDetailService.updateOrderDetail(orderDetail);
+
+        List<OrderDetail> orderDetailList = iOrderDetailService.getOrderDetailByOrderId(order.getOrderId() );
+        request.setAttribute("orderDetailList", orderDetailList);
+
+        //lưu sản phẩm trong giỏ hàng vào session
+        session.setAttribute("orderDetailList", orderDetailList);
+
+        response.sendRedirect("cart");
     }
 }

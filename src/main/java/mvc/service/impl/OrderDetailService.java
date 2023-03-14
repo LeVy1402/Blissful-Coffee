@@ -5,6 +5,7 @@ import mvc.repository.IOrderDetailRepository;
 import mvc.repository.impl.OrderDetailRepository;
 import mvc.service.IOrderDetailService;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class OrderDetailService implements IOrderDetailService {
@@ -17,5 +18,15 @@ public class OrderDetailService implements IOrderDetailService {
     @Override
     public void addOrderDetail(OrderDetail orderDetail) {
         iOrderDetailRepository.addOrderDetail(orderDetail);
+    }
+
+    @Override
+    public boolean updateOrderDetail(OrderDetail orderDetail) throws SQLException {
+        return iOrderDetailRepository.updateOrderDetail(orderDetail);
+    }
+
+    @Override
+    public boolean deleteOrderDetail(OrderDetail orderDetail) throws SQLException {
+        return iOrderDetailRepository.deleteOrderDetail(orderDetail);
     }
 }

@@ -4,6 +4,7 @@
 <head>
     <title>Home</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
+
     <%--    <link rel="stylesheet" href="../css/dashboard.css">--%>
 </head>
 <body>
@@ -109,7 +110,7 @@
 
                         <div class="product-block-inner ">
                             <div class="image">
-                                <a href="">
+                                <a href="products?action=detail&id=${product.getProductId()}">
                                     <img    style="width: 224px;height: 240px;  "
                                             src="/img/${product.getImage()}"
                                             alt="${product.getImage()}" class="img-responsive"/>
@@ -144,9 +145,9 @@
                                 </div>
                                 <p class="price">
                                 <span class="price-old">
-                                    <c:out value="${product.getPrice()}">VNĐ</c:out>
+
                                     </span><span class="price-new">
-                                  28.000VNĐ
+                                    <c:out value="${product.getPrice()}">VNĐ</c:out>
                                </span>
                                 </p>
                                 <div class="res-cartbtn">
@@ -221,7 +222,7 @@
                                                 </div>
                                                 <div class="caption">
                                                     <h4>
-                                                        <a href=""> <c:out value="${product.getProductName()}"></c:out>
+                                                        <a href="products?action=detail&id=${product.getProductId()}"> <c:out value="${product.getProductName()}"></c:out>
                                                         </a>
                                                     </h4>
                                                     <div class="hover_block">
@@ -344,6 +345,7 @@
             <span class="module_default_width" style="display:none; visibility:hidden"></span></div>
     </div>
 </div>
+
 <jsp:include page="../layouts/footer.jsp"></jsp:include>
 </body>
 </html>

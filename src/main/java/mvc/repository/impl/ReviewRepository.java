@@ -62,6 +62,7 @@ public class ReviewRepository implements IReviewRepository {
 
     @Override
     public void addReview(Rating review) {
+
         Connection connection = DBConnection.getConnection();
         PreparedStatement preparedStatement = null;
         if (connection != null) {

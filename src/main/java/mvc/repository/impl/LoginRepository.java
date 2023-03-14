@@ -42,6 +42,7 @@ public class LoginRepository implements ILoginRepository {
         Connection connection = DBConnection.getConnection();
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
+        Customer customer = null;
         if (connection != null) {
             try {
                 preparedStatement = connection.prepareStatement(SELECT_LOGIN);
@@ -49,8 +50,8 @@ public class LoginRepository implements ILoginRepository {
                 preparedStatement.setString(2, password);
 
                 resultSet = preparedStatement.executeQuery();
-                while (resultSet.next()) {
-                    Customer customer = new Customer(resultSet.getInt(1),
+                if (resultSet.next()) {
+                    customer = new Customer(resultSet.getInt(1),
                             resultSet.getString(2),
                             resultSet.getDate(3),
                             resultSet.getBoolean(4),
@@ -60,13 +61,14 @@ public class LoginRepository implements ILoginRepository {
                             resultSet.getString(8),
                             resultSet.getString(9),
                             resultSet.getString(10));
+//                    System.out.println(customer);
                     return customer;
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
-        return null;
+        return customer;
     }
 
     @Override

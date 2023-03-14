@@ -104,7 +104,7 @@
     <div class="container product">
         <ul class="breadcrumb">
             <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=common/home"><i class="fa fa-home"></i></a></li>
-            <li><a href="indexb8ca.html?route=product/product&amp;product_id=43">Coffee Bean Direct</a></li>
+            <li><a href="indexb8ca.html?route=product/product&amp;product_id=43">${product.getProductName()}</a></li>
         </ul>
         <div class="row">
             <div id="content" class="productpage col-sm-12">
@@ -120,51 +120,53 @@
                 <ul class="left product-image thumbnails">
 
                     <!-- Megnor Cloud-Zoom Image Effect Start -->
-                    <li class="image"><a class="thumbnail" href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-500x500.jpg" title="Coffee Bean Direct"><img src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-506x580.jpg" title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a></li>
+                    <li class="image"><a class="thumbnail" href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-500x500.jpg" title="Coffee Bean Direct">
+                        <img src="/img/${product.getImage()}" title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
+                    </li>
 
 
-                    <div class="additional-carousel">
-                        <div class="customNavigation">
-                            <span class="btn prev">&nbsp;</span>
-                            <span class="btn next">&nbsp;</span>
-                        </div>
+<%--                    <div class="additional-carousel">--%>
+<%--                        <div class="customNavigation">--%>
+<%--                            <span class="btn prev">&nbsp;</span>--%>
+<%--                            <span class="btn next">&nbsp;</span>--%>
+<%--                        </div>--%>
 
-                                    <div id="additional-carousel" class="image-additional product-carousel">
+<%--                                    <div id="additional-carousel" class="image-additional product-carousel">--%>
 
-                                        <div class="slider-item">
-                                            <div class="product-block">
-                                                <li>
-                                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-500x500.jpg" title="Coffee Bean Direct" class="thumbnail" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-506x580.jpg"><img  src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-506x580.jpg" width="74" title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
+<%--                                        <div class="slider-item">--%>
+<%--                                            <div class="product-block">--%>
+<%--                                                <li>--%>
+<%--                                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-500x500.jpg" title="Coffee Bean Direct" class="thumbnail" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-506x580.jpg"><img  src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/10-506x580.jpg" width="74" title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>--%>
 
-                                                </li>
-                                            </div>
-                                        </div>
+<%--                                                </li>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
 
-                            <div class="slider-item">
-                                <div class="product-block">
-                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-500x500.jpg"><img id="cloud-zoom" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="product-block">
-                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-500x500.jpg"><img id="cloud-zoom1" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="product-block">
-                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-500x500.jpg"><img id="cloud-zoom2" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="product-block">
-                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-500x500.jpg"><img id="cloud-zoom3" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>
-                                </div>
-                            </div>
+<%--                            <div class="slider-item">--%>
+<%--                                <div class="product-block">--%>
+<%--                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-500x500.jpg"><img id="cloud-zoom" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/14-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="slider-item">--%>
+<%--                                <div class="product-block">--%>
+<%--                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-500x500.jpg"><img id="cloud-zoom1" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/01-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="slider-item">--%>
+<%--                                <div class="product-block">--%>
+<%--                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-500x500.jpg"><img id="cloud-zoom2" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/07-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="slider-item">--%>
+<%--                                <div class="product-block">--%>
+<%--                                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-500x500.jpg" title="Coffee Bean Direct" class="thumbnail elevatezoom-gallery" data-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-74x84.jpg" data-zoom-image="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-500x500.jpg"><img id="cloud-zoom3" src="https://opencart.templatemela.com/OPC08/OPC080182/image/cache/catalog/05-74x84.jpg"  title="Coffee Bean Direct" alt="Coffee Bean Direct" /></a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
 
-                        </div>
+<%--                        </div>--%>
 
-                        <span class="additional_default_width" style="display:none; visibility:hidden"></span>
-                    </div>
+<%--                        <span class="additional_default_width" style="display:none; visibility:hidden"></span>--%>
+<%--                    </div>--%>
 
 
                     <!-- Megnor Cloud-Zoom Image Effect End-->
@@ -189,17 +191,20 @@
                 <li>Ex Tax: $499.00</li>
             </ul>
             <div id="product">
-                <div class="form-group" id="qty-cart">
-                    <label class="control-label" for="input-quantity">${product.getQuantity()}</label>
-                    <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
-                    <input type="hidden" name="product_id" value="43" />
-                    <a href="/cart?action=add&id=${product.getProductId()}" type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block">Add to Cart</a>
-                </div>
+                <form method="GET" action="/cart">
+                    <div class="form-group" id="qty-cart">
+                        <label class="control-label" for="input-quantity">${product.getQuantity()}</label>
+                        <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
+                        <input type="hidden" name="id" value="${product.getProductId()}" />
+                        <input type="hidden" name="action" value="add">
+                        <input type="submit" type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block" value="Add to Cart"></input>
+                    </div>
+                </form>
             </div>
 
             <div class="btn-group product">
                 <button type="button" class="wishlist_button btn btn-default" id="wishlist" onclick="wishlist.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Wish List</span></button>
-                <button type="button" class="compare_button btn btn-default" id="compare" onclick="compare.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>
+<%--                <button type="button" class="compare_button btn btn-default" id="compare" onclick="compare.add('43');"><span class="hidden-xs hidden-sm hidden-md">Add to Compare</span></button>--%>
             </div>
             <div class="rating">
                 <p>

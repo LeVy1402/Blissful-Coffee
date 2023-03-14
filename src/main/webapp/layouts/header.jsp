@@ -21,6 +21,7 @@
 
     <link href="../js/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="../css/header.css">
+    <script src="https://malsup.github.io/jquery.cycle.all.js" type="text/javascript"></script>
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet" type="text/css"/>
@@ -46,9 +47,7 @@
           type="text/css" rel="stylesheet" media="screen"/>
     <link href="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/jquery/owl-carousel/owl.transitions.css"
           type="text/css" rel="stylesheet" media="screen"/>
-    <script src="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/common.js"
-            type="text/javascript"></script>
-
+    <script src="../js/common.js" type="text/javascript"></script>
     <!-- Megnor www.templatemela.com - Start -->
     <script type="text/javascript"
             src="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/megnor/carousel.min.js"></script>
@@ -128,8 +127,14 @@
                 <div id="cart" class="btn-group btn-block">
                     <button type="button" data-toggle="dropdown" data-loading-text="Loading..."
                             class="btn btn-inverse btn-block btn-lg dropdown-toggle">
-                        <span class="carticon"> </span>
-                        <span id="cart-total">${sessionScope.orderDetailList.size()} item(s) - $0.00<i class="fa fa-angle-down"></i></span>
+                        <span id="carticon" class="carticon"> </span>
+                        <c:set var = "total" scope = "session" value = "0"/>
+                        <c:forEach items="${orderDetailList}" var="orderDetail">
+                            <c:set var = "total" scope = "session" value = "${total + orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}"/>
+                        </c:forEach>
+
+                        <span id="cart-total-container"><span id="cart-total">${sessionScope.orderDetailList.size()} item(s) - $ <c:out value="${total}"> </c:out><i class="fa fa-angle-down"></i></span></span>
+
                     </button>
                     <ul class="dropdown-menu pull-right cart-menu">
                         <c:choose>
@@ -155,7 +160,8 @@
                                                     <td class="text-right">${orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}</td>
                                                     <td class="text-center">
                                                         <button type="button"
-                                                                onclick="cart.remove('YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjQzO30=');"
+                                                           href="/cart?action=delete&id=${orderDetail.getProduct().getProductId()}"
+                                                                onclick="cart.remove('${orderDetail.getProduct().getProductId()}');"
                                                                 title="Remove" class="btn btn-danger btn-xs"></button>
                                                     </td>
                                                 </tr>
@@ -168,10 +174,6 @@
                                                 <tr>
                                                     <td class="text-right"><strong>Total</strong></td>
                                                     <td class="text-right">
-                                                        <c:set var = "total" scope = "session" value = "0"/>
-                                                        <c:forEach items="${orderDetailList}" var="orderDetail">
-                                                            <c:set var = "total" scope = "session" value = "${total + orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}"/>
-                                                        </c:forEach>
                                                         <c:out value="${total}"> </c:out>
                                                     </td>
                                                 </tr>
@@ -247,5 +249,9 @@
         </div>
     </div>
 </nav>
+
+<script>
+
+</script>
 </body>
 </html>

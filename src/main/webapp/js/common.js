@@ -138,10 +138,9 @@ $(document).ready(function() {
 var cart = {
 	'add': function(product_id, quantity) {
 		$.ajax({
-			url: 'index.php?route=checkout/cart/add',
-			type: 'post',
-			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
-			dataType: 'json',
+			url: 'cart',
+			type: 'get',
+			data: 'action=add&id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			beforeSend: function() {
 				$('#cart > button').button('loading');
 			},
@@ -150,67 +149,69 @@ var cart = {
 
 				$('#cart > button').button('reset');
 
+				$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
+				$('.nav-container').after('<div class="container alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
+				$('#cart-total-container').load('cart #cart-total');
+
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
+
+				$('#cart > ul').load('cart #cart > ul>li');
+
 				if (json['redirect']) {
 					location = json['redirect'];
 				}
 
 				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-					
-					$('.nav-container').after('<div class="container alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-					$('#cart-total').html(json['total']);
-
-					$('html, body').animate({ scrollTop: 0 }, 'slow');
-
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
 				}
 			}
 		});
 	},
-	'update': function(key, quantity) {
+	'update': function(productId, quantity) {
 		$.ajax({
-			url: 'index.php?route=checkout/cart/edit',
+			url: 'cart',
 			type: 'post',
-			data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
-			dataType: 'json',
+			data: 'id=' + productId + '&action=update&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			beforeSend: function() {
 				$('#cart > button').button('loading');
 			},
 			success: function(json) {
 				$('#cart > button').button('reset');
 
-				$('#cart-total').html(json['total']);
+				$('#cart-total-container').load('cart #cart-total');
 
-				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
-					location = 'index.php?route=checkout/cart';
+				if (getURLVar('route') == 'cart' || getURLVar('route') == 'checkout') {
+					location = 'cart';
 				} else {
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('#cart > ul').load('cart #cart > ul>li');
 				}
 			}
 		});
 	},
-	'remove': function(key) {
-		$.ajax({
-			url: 'index.php?route=checkout/cart/remove',
-			type: 'post',
-			data: 'key=' + key,
-			dataType: 'json',
-			beforeSend: function() {
-				$('#cart > button').button('loading');
-			},
-			success: function(json) {
-				$('#cart > button').button('reset');
+	'remove': function(productId) {
+			$.ajax({
+				url: 'cart',
+				type: 'get',
+				data: 'action=delete' + '&id=' +productId,
+				beforeSend: function() {
+					$('#cart > button').button('loading');
+				},
+				success: function(json) {
+					$('#cart > button').button('reset');
 
-				$('#cart-total').html(json['total']);
+					// console.log("Remove successfully")
+					// $('#cart-total').html(json['total']);
 
-				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
-					location = 'index.php?route=checkout/cart';
-				} else {
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('#cart-total-container').load('cart #cart-total');
+					if (getURLVar('route') == 'cart' || getURLVar('route') == 'checkout') {
+						location = 'cart';
+					} else {
+						$('#cart > ul').load('cart #cart > ul>li');
+					}
 				}
-			}
-		});
+			});
 	}
 }
 
