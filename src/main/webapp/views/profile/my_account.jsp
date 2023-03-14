@@ -35,8 +35,8 @@
             <div id="content" class="col-sm-9">
                 <h3>My Account</h3>
                 <ul class="list-unstyled">
-                    <li><a href="/views/profile/edit_account.jsp">Edit your account information</a></li>
-                    <li><a href="/views/profile/change_passwork.jsp">Change your password</a></li>
+                    <li><a href="/accounts?action=editInfo">Edit your account information</a></li>
+                    <li><a href="/accounts?action=changePass">Change your password</a></li>
 <%--                    <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/address">Modify your address book entries</a></li>--%>
 <%--                    <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/wishlist">Modify your wish list</a></li>--%>
                 </ul>

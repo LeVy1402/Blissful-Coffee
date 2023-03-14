@@ -14,6 +14,7 @@ public class Customer {
     private String accountStatus;
     private String address;
 
+
     public Customer(int customerId, String fullName, Date dateOfBirth, boolean gender, String contact, String email, String password, String profileCustomer, String accountStatus, String address) {
         this.customerId = customerId;
         this.fullName = fullName;
@@ -58,6 +59,17 @@ public class Customer {
         this.contact = contact;
         this.email = email;
         this.password = password;
+        this.address = address;
+    }
+
+
+    public Customer(int customerId, String fullName, Date dateOfBirth, boolean gender, String contact, String email, String address) {
+        this.customerId = customerId;
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.contact = contact;
+        this.email = email;
         this.address = address;
     }
 
@@ -138,5 +150,21 @@ public class Customer {
 
     public void setProfileCustomer(String profileCustomer) {
         this.profileCustomer = profileCustomer;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", fullName='" + fullName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", gender=" + gender +
+                ", contact='" + contact + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", profileCustomer='" + profileCustomer + '\'' +
+                ", accountStatus='" + accountStatus + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

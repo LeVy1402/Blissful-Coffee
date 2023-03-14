@@ -96,7 +96,7 @@
                             <li><a href="/logins" >Login</a></li>
                         </c:if>
                         <c:if test="${UserLogin != null}">
-                            <li><a href="/views/profile/my_account.jsp">My Account</a></li>
+                            <li><a href="/accounts">My Account</a></li>
                             <li><a href="/logins?action=logout">Sign Out <i class="fa fa-sign-out"></i></a></li>
                         </c:if>
 

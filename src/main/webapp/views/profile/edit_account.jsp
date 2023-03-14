@@ -25,27 +25,39 @@
     <div class="container">
         <h1>Edit Your Account</h1>
         <ul class="breadcrumb">
-            <li><a href="../../views/dashboard.jsp"><i class="fa fa-home"></i></a></li>
-            <li><a href="/views/profile/my_account.jsp">My Account</a></li>
+            <li><a href="/dashboards"><i class="fa fa-home"></i></a></li>
+            <li><a href="/accounts">My Account</a></li>
         </ul>
         <div class="row">
             <c:set var="error" value="${param.err}"></c:set>
             <c:set var="success" value="${param.msg}"></c:set>
             <jsp:include page="../../layouts/menu_vertical.jsp"></jsp:include>
             <div id="content" class="col-sm-9">
-                <form action="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/edit" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <c:if test="${success.equals('updateSuccess')}">
+                    <p style="color:#4cae4c; font-size: 17px"><i class="fa fa-check-circle"></i><strong> You have successfully updated !</strong></p>
+                </c:if>
+                <form  method="post" class="form-horizontal">
+                    <input type="hidden" class="form-control" name="action" value="editInfo"  >
+<%--                    <input type="hidden" name="action" value="editInfo">--%>
+<%--                    <c:if test="${customerById.getCustomerId() != null}">--%>
+<%--                        <input type="hidden" name="id" value="${customerById.getCustomerId()}">--%>
+<%--                    </c:if>--%>
+                    <c:if test="${ customerById != null}">
+                        <input type="hidden" name="id"
+                               value="<c:out value='${customerById.getCustomerId()}' />"/>
+                    </c:if>
                     <fieldset>
                         <legend>Edit Your Personal Details</legend>
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-fullname">Full Name </label>
                             <div class="col-sm-10">
-                                <input type="text" name="firstname" value="van" placeholder="Full Name" id="input-fullname" class="form-control">
+                                <input type="text" name="fullName" value="${customerById.getFullName()}"  id="input-fullname" class="form-control">
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-dob">DOB</label>
                             <div class="col-sm-10">
-                                <input type="date" name="dateOfBirth" value="" id="input-dob" required
+                                <input type="date" name="dateOfBirth" value="${customerById.getDateOfBirth()}" id="input-dob" required
                                        class="form-control"/>
                             </div>
                         </div>
@@ -53,34 +65,34 @@
                             <label class="col-sm-2 control-label">Gender</label>
                             <div class="col-sm-10">
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender" value="true" checked>
+                                    <input type="radio" name="gender" value="true" <c:if test="${customerById.getGender() == true}"> checked </c:if> >
                                     Male</label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender" value="false">
+                                    <input type="radio" name="gender" value="false" <c:if test="${customerById.getGender() == false}"> checked </c:if> >
                                     Female</label>
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-email">E-Mail</label>
                             <div class="col-sm-10">
-                                <input type="email" name="email" value="tuan@gmail.com" placeholder="E-Mail" id="input-email" class="form-control">
+                                <input type="email" name="email" value="${customerById.getEmail()}" id="input-email" class="form-control">
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-telephone">Phone number</label>
                             <div class="col-sm-10">
-                                <input type="tel" name="telephone" value="0900000999" placeholder="Telephone" id="input-telephone" class="form-control">
+                                <input type="tel" name="contact" value="${customerById.getContact()}"  id="input-telephone" class="form-control">
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-fax">Address</label>
                             <div class="col-sm-10">
-                                <input type="text" name="fax" value="" placeholder="Address" id="input-fax" class="form-control">
+                                <input type="text" name="address" value="${customerById.getAddress()}" id="input-fax" class="form-control">
                             </div>
                         </div>
                     </fieldset>
                     <div class="buttons clearfix">
-                        <div class="pull-left"><a href="/views/profile/my_account.jsp" class="btn btn-default">Back</a></div>
+                        <div class="pull-left"><a href="/accounts" class="btn btn-default">Back</a></div>
                         <div class="pull-right">
                             <input type="submit" value="Continue" class="btn btn-primary">
                         </div>
