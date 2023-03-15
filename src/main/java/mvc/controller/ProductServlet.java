@@ -63,11 +63,16 @@ public class ProductServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+
+
     private void showDetailProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = iProductService.selectProductById(id);
         List<Rating> ratingList = iReviewService.selectRatingById(id);
         RequestDispatcher dispatcher;
+        List<Product> productListByCate = iProductService.selectProductByCategory(product.getCategoryId().getCategoryId());
+        productListByCate.removeIf(item -> item.getProductId() == product.getProductId());
+        request.setAttribute("productListByCate", productListByCate);
         request.setAttribute("product", product);
         request.setAttribute("reviewList", ratingList);
         dispatcher = request.getRequestDispatcher("views/product.jsp");
@@ -135,9 +140,14 @@ public class ProductServlet extends HttpServlet {
         Rating newReview = new Rating(product, score, remarks, dateRecoreded, customer);
         System.out.println(newReview.getCustomer().getFullName());
         iReviewService.addReview(newReview);
+        List<Product> productListByCate = iProductService.selectProductByCategory(product.getCategoryId().getCategoryId());
+        productListByCate.removeIf(item -> item.getProductId() == product.getProductId());
+        request.setAttribute("productListByCate", productListByCate);
         request.setAttribute("product", product);
         request.setAttribute("reviewList", iReviewService.selectRatingById(product.getProductId()));
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/product.jsp");
-        dispatcher.forward(request, response);
+
+        response.sendRedirect("products");
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("views/product.jsp");
+//        dispatcher.forward(request, response);
     }
 }

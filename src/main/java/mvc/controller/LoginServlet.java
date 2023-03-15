@@ -1,14 +1,8 @@
 package mvc.controller;
 
 import mvc.model.Customer;
-import mvc.service.ILoginService;
-import mvc.service.IOrderDetailService;
-import mvc.service.IOrderService;
-import mvc.service.IWishListService;
-import mvc.service.impl.LoginService;
-import mvc.service.impl.OrderDetailService;
-import mvc.service.impl.OrderService;
-import mvc.service.impl.WishListService;
+import mvc.service.*;
+import mvc.service.impl.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -21,6 +15,7 @@ public class LoginServlet extends HttpServlet {
     private IOrderDetailService iOrderDetailService = new OrderDetailService();
     private IOrderService iOrderService = new OrderService();
     private IWishListService iWishListService = new WishListService();
+    private ICategoryService iCategoryService = new CategoryService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -85,6 +80,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("/logins?err=1");
             }else {
 
+                session.setAttribute("categoryList", iCategoryService.selectAllCategory());
                 session.setAttribute("UserLogin",customer);
                 session.setAttribute("wishListList", iWishListService.selectWishListByCusId(customer));
                 if (iOrderService.findOrderInCartByCusId(customer)==null){

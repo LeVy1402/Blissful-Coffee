@@ -6,6 +6,7 @@ import mvc.repository.IWishListRepository;
 import mvc.repository.impl.WishListRepository;
 import mvc.service.IWishListService;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class WishListService implements IWishListService {
@@ -14,5 +15,15 @@ public class WishListService implements IWishListService {
     @Override
     public List<Wishlist> selectWishListByCusId(Customer customer) {
         return iWishListRepository.selectWishListByCusId(customer);
+    }
+
+    @Override
+    public void addWishList(Wishlist wishlist) {
+        iWishListRepository.addWishList(wishlist);
+    }
+
+    @Override
+    public boolean deleteWishList(Wishlist wishlist) throws SQLException {
+        return iWishListRepository.deleteWishList(wishlist);
     }
 }

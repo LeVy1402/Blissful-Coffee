@@ -1,9 +1,6 @@
 package mvc.repository.impl;
 
-import mvc.model.Category;
-import mvc.model.Customer;
-import mvc.model.Product;
-import mvc.model.Wishlist;
+import mvc.model.*;
 import mvc.repository.DBConnection;
 import mvc.repository.IWishListRepository;
 
@@ -17,6 +14,8 @@ import java.util.List;
 public class WishListRepository implements IWishListRepository {
 
     private static final String SELECT_WISHLIST_BY_CUSTOMER_ID = "SELECT * FROM `wishlist` JOIN `product` USING(`product_id`) JOIN `customer` USING(`customer_id`) WHERE wishlist.customer_id = ?  ";
+    private static final String INSERT_WISHLIST ="INSERT INTO `wishlist` (`product_id`,`customer_id`) VALUES (?, ?)";
+    private static final String DELETE_WISHLIST="DELETE FROM `wishlist` WHERE `product_id` = ? AND `customer_id`= ?";
     @Override
     public List<Wishlist> selectWishListByCusId(Customer customer) {
 
@@ -62,5 +61,55 @@ public class WishListRepository implements IWishListRepository {
             }
         }
         return wishlistList;
+    }
+
+    @Override
+    public void addWishList(Wishlist wishlist) {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement preparedStatement = null;
+        if (connection != null) {
+            try {
+                preparedStatement = connection.prepareStatement(INSERT_WISHLIST);
+                preparedStatement.setInt(1, wishlist.getProduct().getProductId());
+                preparedStatement.setInt(2, wishlist.getCustomer().getCustomerId());
+                System.out.println(preparedStatement);
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                DBConnection.close();
+            }
+        }
+    }
+
+    @Override
+    public boolean deleteWishList(Wishlist wishlist) throws SQLException {
+        boolean rowDelete = false;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement preparedStatement = null;
+        if (connection != null) {
+            try {
+                preparedStatement = connection.prepareStatement(DELETE_WISHLIST);
+                preparedStatement.setInt(1, wishlist.getProduct().getProductId());
+                preparedStatement.setInt(2, wishlist.getCustomer().getCustomerId());
+                rowDelete = preparedStatement.executeUpdate() > 0;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                DBConnection.close();
+            }
+        }
+        return rowDelete;
     }
 }

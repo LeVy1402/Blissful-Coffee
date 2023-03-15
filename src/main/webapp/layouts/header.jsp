@@ -99,8 +99,13 @@
                         <%--                        <li><a href="../views/auth/login.jsp">Logout</a></li>--%>
                     </ul>
                 </li>
-                <li><a href="../views/wishlist.jsp" id="wishlist-total" title="Wish List ${wishListList.size()}"><span
-                        class="hidden-xs hidden-sm hidden-md">Wish List ${wishListList.size()}</span></a></li>
+                <li>
+                    <div id="wishlist-total-container">
+                        <a href="wishlist" id="wishlist-total" title="Wish List ${wishListList.size()}"><span
+                                class="hidden-xs hidden-sm hidden-md">Wish List (${wishListList.size()})</span>
+                        </a>
+                    </div>
+                </li>
 
                 <li><a href="../views/checkout.jsp" title="Checkout"><span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
                 </li>
@@ -123,6 +128,7 @@
                             title="Your Store" alt="Your Store" class="img-responsive"/></a>
                 </div>
             </div>
+
             <div class="col-sm-3 btn-cart">
                 <div id="cart" class="btn-group btn-block">
                     <button type="button" data-toggle="dropdown" data-loading-text="Loading..."
@@ -133,7 +139,11 @@
                             <c:set var = "total" scope = "session" value = "${total + orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}"/>
                         </c:forEach>
 
-                        <span id="cart-total-container"><span id="cart-total">${sessionScope.orderDetailList.size()} item(s) - $ <c:out value="${total}"> </c:out><i class="fa fa-angle-down"></i></span></span>
+                        <span id="cart-total-container">
+                            <span id="cart-total">${sessionScope.orderDetailList.size()} item(s) - <c:out value="${total}"> </c:out> VNĐ
+                                <i class="fa fa-angle-down"></i>
+                            </span>
+                        </span>
 
                     </button>
                     <ul class="dropdown-menu pull-right cart-menu">
@@ -249,6 +259,7 @@
         </div>
     </div>
 </nav>
+
 
 <script>
 

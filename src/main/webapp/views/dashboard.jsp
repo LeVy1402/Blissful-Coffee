@@ -120,7 +120,7 @@
 
                             <div class="caption">
                                 <h4>
-                                    <a href="">
+                                    <a href="products?action=detail&id=${product.getProductId()}">
                                         <c:out value="${product.getProductName()}"></c:out>
                                     </a>
                                 </h4>

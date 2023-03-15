@@ -149,7 +149,7 @@ var cart = {
 
 				$('#cart > button').button('reset');
 
-				$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + "Success" + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
 				$('.nav-container').after('<div class="container alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
@@ -247,29 +247,58 @@ var voucher = {
 var wishlist = {
 	'add': function(product_id) {
 		$.ajax({
-			url: 'index.php?route=account/wishlist/add',
-			type: 'post',
-			data: 'product_id=' + product_id,
-			dataType: 'json',
+			url: 'wishlist',
+			type: 'get',
+			data: 'action=add?id=' + product_id,
 			success: function(json) {
 				$('.alert').remove();
 
+				$('#content').parent().before('' +
+					'<div class="alert alert-success">' +
+					'<i class="fa fa-check-circle"></i> ' + 'Success' +
+					'<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
 				}
 
 				if (json['info']) {
 					$('#content').parent().before('<div class="alert alert-info"><i class="fa fa-info-circle"></i> ' + json['info'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 				}
 
-				$('#wishlist-total').html(json['total']);
+
+				$('#wishlist-total-container').load('wishlist #wishlist-total');
+
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
+
+			}
+		});
+	},
+	'remove': function(product_id) {
+		$.ajax({
+			url: 'wishlist',
+			type: 'get',
+			data: 'action=delete?id=' + product_id,
+			success: function(json) {
+				$('.alert').remove();
+
+				$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				if (json['success']) {
+
+				}
+
+				if (json['info']) {
+					$('#content').parent().before('<div class="alert alert-info"><i class="fa fa-info-circle"></i> ' + json['info'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				}
+
+				if (getURLVar('route') == 'wishlist') {
+					$('#content-box').load('wishlist #content');
+				}
+
+				$('#wishlist-total-container').load('wishlist #wishlist-total');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 			}
 		});
-	},
-	'remove': function() {
-
 	}
 }
 
