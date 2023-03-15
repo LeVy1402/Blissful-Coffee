@@ -100,11 +100,13 @@
                     </ul>
                 </li>
                 <li>
-                    <div id="wishlist-total-container">
-                        <a href="wishlist" id="wishlist-total" title="Wish List ${wishListList.size()}"><span
-                                class="hidden-xs hidden-sm hidden-md">Wish List (${wishListList.size()})</span>
-                        </a>
-                    </div>
+                    <c:if test="${UserLogin != null}">
+                        <div id="wishlist-total-container">
+                            <a href="wishlist" id="wishlist-total" title="Wish List ${wishListList.size()}"><span
+                                    class="hidden-xs hidden-sm hidden-md">Wish List (${wishListList.size()})</span>
+                            </a>
+                        </div>
+                    </c:if>
                 </li>
 
                 <li><a href="../views/checkout.jsp" title="Checkout"><span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
@@ -128,27 +130,27 @@
                             title="Your Store" alt="Your Store" class="img-responsive"/></a>
                 </div>
             </div>
+            <c:if test="${UserLogin != null}">
+                <div class="col-sm-3 btn-cart">
+                    <div id="cart" class="btn-group btn-block">
+                        <button type="button" data-toggle="dropdown" data-loading-text="Loading..."
+                                class="btn btn-inverse btn-block btn-lg dropdown-toggle">
+                            <span id="carticon" class="carticon"> </span>
+                            <c:set var = "total" scope = "session" value = "0"/>
+                            <c:forEach items="${orderDetailList}" var="orderDetail">
+                                <c:set var = "total" scope = "session" value = "${total + orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}"/>
+                            </c:forEach>
 
-            <div class="col-sm-3 btn-cart">
-                <div id="cart" class="btn-group btn-block">
-                    <button type="button" data-toggle="dropdown" data-loading-text="Loading..."
-                            class="btn btn-inverse btn-block btn-lg dropdown-toggle">
-                        <span id="carticon" class="carticon"> </span>
-                        <c:set var = "total" scope = "session" value = "0"/>
-                        <c:forEach items="${orderDetailList}" var="orderDetail">
-                            <c:set var = "total" scope = "session" value = "${total + orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}"/>
-                        </c:forEach>
-
-                        <span id="cart-total-container">
+                            <span id="cart-total-container">
                             <span id="cart-total">${sessionScope.orderDetailList.size()} item(s) - <c:out value="${total}"> </c:out> VNĐ
                                 <i class="fa fa-angle-down"></i>
                             </span>
                         </span>
 
-                    </button>
-                    <ul class="dropdown-menu pull-right cart-menu">
-                        <c:choose>
-                            <c:when test="${sessionScope.orderDetailList.size()>0}">
+                        </button>
+                        <ul class="dropdown-menu pull-right cart-menu">
+                            <c:choose>
+                                <c:when test="${sessionScope.orderDetailList.size()>0}">
                                     <li>
                                         <table class="table table-striped">
                                             <c:forEach items="${orderDetailList}" var="orderDetail">
@@ -157,7 +159,7 @@
                                                         <a
                                                                 href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=43">
                                                             <img
-                                                                     src="/img/${orderDetail.getProduct().getImage()}"  alt="${orderDetail.getProduct().getImage()}"
+                                                                    src="/img/${orderDetail.getProduct().getImage()}"  alt="${orderDetail.getProduct().getImage()}"
                                                                     alt="Coffee Bean Direct" title="${orderDetail.getProduct().getProductName()}"
                                                                     class="img-thumbnail"/>
                                                                 <%--                                                            ${orderDetail.getProduct().getProductName()}--%>
@@ -170,7 +172,7 @@
                                                     <td class="text-right">${orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}</td>
                                                     <td class="text-center">
                                                         <button type="button"
-                                                           href="/cart?action=delete&id=${orderDetail.getProduct().getProductId()}"
+                                                                href="/cart?action=delete&id=${orderDetail.getProduct().getProductId()}"
                                                                 onclick="cart.remove('${orderDetail.getProduct().getProductId()}');"
                                                                 title="Remove" class="btn btn-danger btn-xs"></button>
                                                     </td>
@@ -195,17 +197,18 @@
                                             </p>
                                         </div>
                                     </li>
-                            </c:when>
+                                </c:when>
 
-                            <c:otherwise>
-                                <li>
-                                    <p class="text-center">Your shopping cart is empty!</p>
-                                </li>
-                            </c:otherwise>
-                        </c:choose>
-                    </ul>
+                                <c:otherwise>
+                                    <li>
+                                        <p class="text-center">Your shopping cart is empty!</p>
+                                    </li>
+                                </c:otherwise>
+                            </c:choose>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </c:if>
             <div class="col-sm-5 btn-search">
                 <div id="search" class="input-group">
                     <form action="/dashboards" class="form-inline d-flex">

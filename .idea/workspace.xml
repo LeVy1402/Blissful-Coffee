@@ -10,22 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4bc4f4-d58f-4236-a999-b515aef3bd9f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/WishlistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/WishlistServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/IWishListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IWishListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/WishListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/WishListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/IWishListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IWishListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/impl/WishListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/WishListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/wishlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/wishlist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/layouts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layouts/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/wishlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/wishlist.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +176,7 @@
       <workItem from="1678609307556" duration="27432000" />
       <workItem from="1678689770711" duration="40117000" />
       <workItem from="1678774037557" duration="13263000" />
-      <workItem from="1678797461064" duration="20207000" />
+      <workItem from="1678797461064" duration="20679000" />
     </task>
     <servers />
   </component>
