@@ -1,0 +1,7 @@
+.product-info .thumbnail>img{
+    height: 70%;
+}
+
+.product-thumb .image img{
+    max-height: 400px;
+}

@@ -182,7 +182,7 @@ var cart = {
 
 				$('#cart-total-container').load('cart #cart-total');
 
-				if (getURLVar('route') == 'cart' || getURLVar('route') == 'checkout') {
+				if (location.pathname == '/cart' || location.pathname == '/checkout') {
 					location = 'cart';
 				} else {
 					$('#cart > ul').load('cart #cart > ul>li');
@@ -249,7 +249,7 @@ var wishlist = {
 		$.ajax({
 			url: 'wishlist',
 			type: 'get',
-			data: 'action=add?id=' + product_id,
+			data: 'action=add&id=' + product_id,
 			success: function(json) {
 				$('.alert').remove();
 
@@ -277,11 +277,11 @@ var wishlist = {
 		$.ajax({
 			url: 'wishlist',
 			type: 'get',
-			data: 'action=delete?id=' + product_id,
+			data: 'action=delete&id=' + product_id,
 			success: function(json) {
 				$('.alert').remove();
 
-				$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + 'Success' + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 				if (json['success']) {
 
 				}
@@ -290,10 +290,11 @@ var wishlist = {
 					$('#content').parent().before('<div class="alert alert-info"><i class="fa fa-info-circle"></i> ' + json['info'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 				}
 
-				if (getURLVar('route') == 'wishlist') {
-					$('#content-box').load('wishlist #content');
+				if (location.pathname == '/wishlist') {
+					$('#content').load('wishlist #content-box');
 				}
 
+				// $('#content').load('wishlist #content-box');
 				$('#wishlist-total-container').load('wishlist #wishlist-total');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');

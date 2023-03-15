@@ -7,6 +7,7 @@
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <head>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blissful Coffee</title>
@@ -20,14 +21,11 @@
     <script src="../js/boostrap/bootstrap.min.js" type="text/javascript"></script>
 
     <link href="../js/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="../css/header.css">
-    <script src="https://malsup.github.io/jquery.cycle.all.js" type="text/javascript"></script>
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Coustard:400,900" rel="stylesheet" type="text/css"/>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,300' rel='stylesheet'
-          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,300' rel='stylesheet' type='text/css'>
 
     <%--    khong doi duoc do dinh link image--%>
     <link href="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/theme/OPC080182/stylesheet/stylesheet.css"
@@ -47,7 +45,10 @@
           type="text/css" rel="stylesheet" media="screen"/>
     <link href="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/jquery/owl-carousel/owl.transitions.css"
           type="text/css" rel="stylesheet" media="screen"/>
-    <script src="../js/common.js" type="text/javascript"></script>
+    <script src="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/common.js"
+            type="text/javascript"></script>
+
+    <script src="/js/common.js"></script>
     <!-- Megnor www.templatemela.com - Start -->
     <script type="text/javascript"
             src="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/megnor/carousel.min.js"></script>
@@ -75,6 +76,7 @@
             display: flex;
         }
     </style>
+    <link rel="stylesheet" href="/css/header.css">
     <script src="https://opencart.templatemela.com/OPC08/OPC080182/catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js"
             type="text/javascript"></script>
 </head>
@@ -91,8 +93,15 @@
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
-                        <li><a href="/register">Register</a></li>
-                        <li><a href="/logins">Login</a></li>
+<%--                        <li><a href="/logins">Login</a></li>--%>
+                        <c:if test="${UserLogin == null}">
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/logins" >Login</a></li>
+                        </c:if>
+                        <c:if test="${UserLogin != null}">
+                            <li><a href="/accounts">My Account</a></li>
+                            <li><a href="/logins?action=logout">Sign Out <i class="fa fa-sign-out"></i></a></li>
+                        </c:if>
 
                         <%--                        Khi đăng nhập header sẽ chuyển thành dưới--%>
                         <%--                        <li><a href="../views/auth/register.jsp">My Profile</a></li>--%>
@@ -111,10 +120,8 @@
 
                 <li><a href="../views/checkout.jsp" title="Checkout"><span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
                 </li>
-                <li><span class="hidden-xs hidden-sm hidden-md">Hello <strong>${UserLogin.getFullName()}</strong></span>
-                </li>
-                <li><a href="/logins?action=logout"><span class="hidden-xs hidden-sm hidden-md">Sign Out <i
-                        class="fa fa-sign-out"></i></span></a></li>
+                <li><span class="hidden-xs hidden-sm hidden-md">Hello <strong>${UserLogin.fullName}</strong></span></li>
+
             </ul>
         </div>
     </div>
@@ -142,7 +149,7 @@
                             </c:forEach>
 
                             <span id="cart-total-container">
-                            <span id="cart-total">${sessionScope.orderDetailList.size()} item(s) - <c:out value="${total}"> </c:out> VNĐ
+                            <span id="cart-total">${sessionScope.orderDetailList.size()} item(s) - <c:out value="${total}"> </c:out>00 VNĐ
                                 <i class="fa fa-angle-down"></i>
                             </span>
                         </span>
@@ -169,7 +176,7 @@
                                                             href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=43">${orderDetail.getProduct().getProductName()}</a>
                                                     </td>
                                                     <td class="text-right">x ${orderDetail.getQuantity()}</td>
-                                                    <td class="text-right">${orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}</td>
+                                                    <td class="text-right">${orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}00 VNĐ</td>
                                                     <td class="text-center">
                                                         <button type="button"
                                                                 href="/cart?action=delete&id=${orderDetail.getProduct().getProductId()}"
@@ -238,34 +245,26 @@
 
 
                 <ul class="main-navigation">
-                    <c:forEach items="${sessionScope.categoryList}" var="category">
-                        <li>
-                            <a href="">${category.getCategoryName() }</a>
-                        </li>
-                    </c:forEach>
-
-                    <%--                    <li>--%>
-                    <%--                        <a href="">Smoothie</a>--%>
-                    <%--                    </li>--%>
-                    <%--                    <li>--%>
-                    <%--                        <a href="">Juice</a>--%>
-                    <%--                    </li>--%>
-                    <%--                    <li>--%>
-                    <%--                        <a href="">Tea</a>--%>
-                    <%--                    </li>--%>
-                    <%--                    <li>--%>
-                    <%--                        <a href="">SoftDrink </a>--%>
-                    <%--                    </li>--%>
+                    <li>
+                        <a href="">Coffee</a>
+                    </li>
+                    <li>
+                        <a href="">Smoothie</a>
+                    </li>
+                    <li>
+                        <a href="">Juice</a>
+                    </li>
+                    <li>
+                        <a href="">Tea</a>
+                    </li>
+                    <li>
+                        <a href="">SoftDrink</a>
+                    </li>
                 </ul>
 
             </div>
         </div>
     </div>
 </nav>
-
-
-<script>
-
-</script>
 </body>
 </html>

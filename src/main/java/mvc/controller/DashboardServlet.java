@@ -1,4 +1,5 @@
 package mvc.controller;
+
 import mvc.model.Product;
 import mvc.service.IProductService;
 import mvc.service.impl.ProductService;
@@ -52,6 +53,10 @@ public class DashboardServlet extends HttpServlet {
         List<Product> productListInFeature = iProductService.selectAllProductInFeature();
         request.setAttribute("productListFeature", productListInFeature);
         List<Product> productList = iProductService.selectAllProduct();
+//        for (Product kt:
+//             productList) {
+//            System.out.println(kt.toString());
+//        }
         request.setAttribute("productList", productList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("views/dashboard.jsp");
         dispatcher.forward(request, response);

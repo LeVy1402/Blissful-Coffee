@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Search</title>
+    <title>Product</title>
 </head>
 <body>
 <jsp:include page="../layouts/header.jsp"></jsp:include>
@@ -14,7 +14,7 @@
 </ul>
     <div class="row">
         <column id="column-left" class="col-sm-3 hidden-xs">
-        <span class="bestseller_default_width" style="display: none; visibility: hidden;"></span>
+            <span class="bestseller_default_width" style="display: none; visibility: hidden;"></span>
         </column>
         <div id="content" class="col-sm-9 category_filter">
             <br>

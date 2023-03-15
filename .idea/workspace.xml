@@ -10,8 +10,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4bc4f4-d58f-4236-a999-b515aef3bd9f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/AccountServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IAccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/AccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IAccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/detailProduct.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/listProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/DashboardServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/WishlistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/WishlistServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/ILoginRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/ILoginRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/LoginRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/LoginRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/ILoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/ILoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/impl/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/wishlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/wishlist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/layouts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layouts/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/layouts/menu_vertical.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layouts/menu_vertical.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/auth/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/auth/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/filter.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/detailProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/profile/change_passwork.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/profile/change_passwork.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/profile/edit_account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/profile/edit_account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/profile/my_account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/profile/my_account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/wishlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/wishlist.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +104,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Temporary (chứa code các bài tập)/Blissful_Coffee",
+    "last_opened_file_path": "E:/Temporary (chứa code các bài tập)/Blissful_Coffee_Admin",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,7 +121,11 @@
       <recent name="E:\Temporary (chứa code các bài tập)\Blissful_Coffee\src\main\java\mvc\controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Temporary (chứa code các bài tập)\Blissful_Coffee\src\main\webapp\css" />
       <recent name="E:\Temporary (chứa code các bài tập)\Blissful_Coffee\src\main\webapp\views" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mvc.controller" />
     </key>
   </component>
   <component name="RunManager">
@@ -176,7 +215,8 @@
       <workItem from="1678609307556" duration="27432000" />
       <workItem from="1678689770711" duration="40117000" />
       <workItem from="1678774037557" duration="13263000" />
-      <workItem from="1678797461064" duration="20679000" />
+      <workItem from="1678797461064" duration="31915000" />
+      <workItem from="1678881865347" duration="12166000" />
     </task>
     <servers />
   </component>
@@ -199,12 +239,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/views/cart.jsp</url>
-          <line>619</line>
+          <line>620</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/views/cart.jsp</url>
-          <line>618</line>
+          <line>619</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

@@ -1,7 +1,9 @@
 package mvc.controller;
 
 import mvc.model.Customer;
+import mvc.service.ILoginService;
 import mvc.service.IRegisterService;
+import mvc.service.impl.LoginService;
 import mvc.service.impl.RegisterService;
 
 import javax.servlet.*;
@@ -13,10 +15,12 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 @WebServlet(name = "RegisterServlet", value = "/register")
 public class RegisterServlet extends HttpServlet {
     private IRegisterService iregisterService = new RegisterService();
+    private ILoginService iLoginService = new LoginService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -49,11 +53,12 @@ public class RegisterServlet extends HttpServlet {
         }
         System.out.println(action);
         switch (action) {
-            case "register":
+
+            default:
                 try {
                     registerUser(request, response);
                 } catch (ParseException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
                 break;
         }
@@ -62,16 +67,23 @@ public class RegisterServlet extends HttpServlet {
 
     private void registerUser(HttpServletRequest request, HttpServletResponse response) throws ParseException, ServletException, IOException {
         String fullName = request.getParameter("fullName");
-        Date dateOfBirth = (Date) new SimpleDateFormat("dd-mm-yyyy").parse(request.getParameter("dateOfBirth"));
-        System.out.println(dateOfBirth);
+        Date dateOfBirth = Date.valueOf(request.getParameter("dateOfBirth"));
+
         boolean gender = Boolean.parseBoolean(request.getParameter("gender"));
+        System.out.println(gender);
         String contact = request.getParameter("contact");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String address = request.getParameter("address");
-
+        ArrayList<Customer> checkemail = iLoginService.all();
+        for (Customer kt: checkemail) {
+            if(email.equals(kt.getEmail())){
+                response.sendRedirect("/register?err=ttemail");
+                return;
+            }
+        }
         Customer customer = new Customer(fullName, dateOfBirth, gender, contact, email, password, address);
         iregisterService.addCustomer(customer);
-        response.sendRedirect(request.getContextPath()+"/logins");
+        response.sendRedirect(request.getContextPath()+"/logins?msg=signinSuccess");
     }
 }

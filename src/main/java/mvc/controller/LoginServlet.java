@@ -8,8 +8,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
-@WebServlet(name = "LoginServlet", value = {"/logins",""} )
+@WebServlet(name = "LoginServlet", value = {"/logins"} )
 public class LoginServlet extends HttpServlet {
     private ILoginService iLoginService = new LoginService();
     private IOrderDetailService iOrderDetailService = new OrderDetailService();
@@ -69,16 +70,18 @@ public class LoginServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        System.out.println("ALO ANH ");
 //        response.setContentType("text/html;charset=UFT-8");
         try {
             String email = request.getParameter("Email");
             String pass = request.getParameter("Pass");
             System.out.println(email + pass);
-            Customer customer = iLoginService.getCustomerByLogin(email, pass);
+            Customer customer = iLoginService.checkLogin(email, pass);
+
             if (customer == null) {
-                response.sendRedirect("/logins?err=1");
+//                response.sendRedirect("/logins?err=1");
+                response.sendRedirect(request.getContextPath()+"logins?err=loginError");
             }else {
+                System.out.println(customer.getCustomerId());
 
                 session.setAttribute("categoryList", iCategoryService.selectAllCategory());
                 session.setAttribute("UserLogin",customer);

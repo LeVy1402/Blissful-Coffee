@@ -9,6 +9,7 @@
 <head>
     <title>Cart</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
+    <link rel="stylesheet" href="/css/cart.css">
     <!-- Megnor www.templatemela.com - End -->
 
 
@@ -410,8 +411,8 @@
             <h2>Shopping Cart</h2>
             <c:choose>
                 <c:when test="${orderDetailList.size()>0}">
-                `<form action="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=checkout/cart/edit"
-                      method="post" enctype="multipart/form-data">
+                    `<form action="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=checkout/cart/edit"
+                    method="post" enctype="multipart/form-data">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
@@ -425,29 +426,29 @@
                             </tr>
                             </thead>
                             <tbody>`
-                                <c:forEach items="${orderDetailList}" var="orderDetail">
-                                    <tr>
-                                <td class="text-center">
-                                    <a href="">
-                                        <img src="/img/${orderDetail.getProduct().getImage()}"
-                                             alt="${orderDetail.getProduct().getImage()}"
-                                             title="${orderDetail.getProduct().getProductName()}"
-                                             class="img-thumbnail"/>
-                                    </a>
-                                </td>
-                                <td class="text-left"><a
-                                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=43">${orderDetail.getProduct().getProductName()}</a>
-                                    <br/>
-                                        <%--                                <small>Reward Points: 600</small>--%>
-                                </td>
-                                <td class="text-left">${orderDetail.getProduct().getProductId()}</td>
-                                <td class="text-left">
-                                    <div class="input-group btn-block" style="max-width: 200px;">
-                                        <input type="text" name="quantity"
-                                               id="quantity${orderDetail.getProduct().getProductId()}"
-                                               value="${orderDetail.getQuantity()}" size="1"
-                                               class="form-control"/>
-                                        <span class="input-group-btn">
+                            <c:forEach items="${orderDetailList}" var="orderDetail">
+                                <tr>
+                                    <td class="text-center">
+                                        <a href="">
+                                            <img src="/img/${orderDetail.getProduct().getImage()}"
+                                                 alt="${orderDetail.getProduct().getImage()}"
+                                                 title="${orderDetail.getProduct().getProductName()}"
+                                                 class="img-thumbnail"/>
+                                        </a>
+                                    </td>
+                                    <td class="text-left"><a
+                                            href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=43">${orderDetail.getProduct().getProductName()}</a>
+                                        <br/>
+                                            <%--                                <small>Reward Points: 600</small>--%>
+                                    </td>
+                                    <td class="text-left">${orderDetail.getProduct().getProductId()}</td>
+                                    <td class="text-left">
+                                        <div class="input-group btn-block" style="max-width: 200px;">
+                                            <input type="text" name="quantity"
+                                                   id="quantity${orderDetail.getProduct().getProductId()}"
+                                                   value="${orderDetail.getQuantity()}" size="1"
+                                                   class="form-control"/>
+                                            <span class="input-group-btn">
                                                     <button type="button" data-toggle="tooltip" title="Update"
                                                             class="btn btn-primary update"
                                                             onclick="cart.update(${orderDetail.getProduct().getProductId()}, $('input[id=quantity${orderDetail.getProduct().getProductId()}]').val());">
@@ -459,16 +460,18 @@
                                                         <i class="fa fa-times-circle"></i>
                                                     </button>
                                                 </span>
-                                    </div>
-                                </td>
-                                <td class="text-right">${orderDetail.getProduct().getPrice()}</td>
-                                <td class="text-right">${orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}</td>
-                            </tr>
-                                </c:forEach>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">${orderDetail.getProduct().getPrice()}00 VNĐ</td>
+                                    <td class="text-right">${orderDetail.getProduct().getPrice() * orderDetail.getQuantity()}00
+                                        VNĐ
+                                    </td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>
-                </form>
+                    </form>
                 </c:when>
 
                 <c:otherwise>

@@ -5,7 +5,7 @@
     <title>Home</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
 
-    <%--    <link rel="stylesheet" href="../css/dashboard.css">--%>
+    <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
 <jsp:include page="../layouts/header.jsp"></jsp:include>
@@ -97,6 +97,7 @@
 <%--Đổ sản phẩm chỗ này nhe--%>
 <div class="box featured">
     <div class="box-heading">Featured</div>
+
     <div class="box-content">
         <div class="customNavigation">
             <a class="btn prev">&nbsp;</a>
@@ -115,7 +116,7 @@
                                             src="/img/${product.getImage()}"
                                             alt="${product.getImage()}" class="img-responsive"/>
                                 </a>
-                                <span class="saleicon sale">Sale</span>
+<%--                                <span class="saleicon sale">Sale</span>--%>
                             </div>
 
                             <div class="caption">
@@ -145,10 +146,10 @@
                                 </div>
                                 <p class="price">
                                 <span class="price-old">
-
-                                    </span><span class="price-new">
-                                    <c:out value="${product.getPrice()}">VNĐ</c:out>
-                               </span>
+                                </span>
+                                <span class="price-new">
+                                  <c:out value="${product.getPrice()}"></c:out>00 VNĐ
+                                </span>
                                 </p>
                                 <div class="res-cartbtn">
                                     <button type="button" onclick="cart.add('${product.getProductId()}')"><span
@@ -214,7 +215,7 @@
                                         <div class="product-block product-thumb transition">
                                             <div class="product-block-inner">
                                                 <div class="image">
-                                                    <a href="">
+                                                    <a href="products?action=detail&id=${product.getProductId()}">
                                                         <img    style="width: 224px;height: 240px;  "
                                                                 src="/img/${product.getImage()}"
                                                                 alt="${product.getImage()}" class="img-responsive"/>
@@ -256,7 +257,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <p class="price"><c:out value="${product.getPrice()}">VNĐ</c:out>
+                                                    <p class="price"><c:out value="${product.getPrice()}"></c:out>00 VNĐ
                                                         <span class="price-tax">Ex Tax: $100.00</span>
                                                     </p>
                                                     <div class="res-cartbtn">
@@ -281,7 +282,10 @@
                 $('#tabs a').tabs();
             </script>
 
-            <div>
+
+
+<%--            bỏ qua--%>
+            <div style="display:none;">
                 <div class="testimonials-container " id="testimonial">
                     <div class="box-heading"><h3>Latest News</h3></div>
                     <div class="homepage-testimonials-inner products block_content">
@@ -345,7 +349,6 @@
             <span class="module_default_width" style="display:none; visibility:hidden"></span></div>
     </div>
 </div>
-
 <jsp:include page="../layouts/footer.jsp"></jsp:include>
 </body>
 </html>

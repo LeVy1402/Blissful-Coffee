@@ -1,6 +1,7 @@
 package mvc.controller;
 
 import mvc.model.Customer;
+import mvc.model.OrderDetail;
 import mvc.model.Wishlist;
 import mvc.service.IProductService;
 import mvc.service.IWishListService;
@@ -52,10 +53,9 @@ public class WishlistServlet extends HttpServlet {
         iWishListService.deleteWishList(wishlist);
 
         //lưu sản phẩm trong wishlist vào session
-        session.setAttribute("orderDetailList", iWishListService.selectWishListByCusId(customer));
+        session.setAttribute("wishListList", iWishListService.selectWishListByCusId(customer));
 
         response.sendRedirect("wishlist");
-
 
     }
 
@@ -73,16 +73,25 @@ public class WishlistServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+
     private void addProductToWishList(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("UserLogin");
         int productId = Integer.parseInt(request.getParameter("id"));
 
-        Wishlist wishlist = new Wishlist(iProductService.selectProductById(productId), customer );
-        iWishListService.addWishList(wishlist);
+        List<Wishlist> wishlistList= iWishListService.selectWishListByCusId(customer);
 
-        //lưu sản phẩm trong wishlist vào session
-        session.setAttribute("orderDetailList", iWishListService.selectWishListByCusId(customer));
+
+        //Tìm xem sản phẩm đang chọn đã có trong wishlist chưa
+        Wishlist wishlist = wishlistList.stream().filter(wishlist1 -> wishlist1.getProduct().getProductId() == productId).findAny().orElse(null);
+
+        if (wishlist == null){
+            wishlist = new Wishlist(iProductService.selectProductById(productId), customer );
+            iWishListService.addWishList(wishlist);
+        }
+
+        //lưu sản phẩm trong wishlist vào session bằng cách load lại các wishlist
+        session.setAttribute("wishListList", iWishListService.selectWishListByCusId(customer));
 
         response.sendRedirect("wishlist");
 

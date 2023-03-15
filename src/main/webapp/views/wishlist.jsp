@@ -11,6 +11,7 @@
 <head>
     <title>Cart</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
+    <link rel="stylesheet" href="/css/wishlist.css">
 </head>
 
 
@@ -82,7 +83,7 @@
                                 <c:forEach items="${wishListList}" var="wishList">
                                     <tr>
                                         <td class="text-center">
-                                            <a href="products?id=${wishList.getProduct().getProductId()}">
+                                            <a href="products?action=detail&id=${wishList.getProduct().getProductId()}">
                                                 <img src="/img/${wishList.getProduct().getImage()}"
                                                      alt="${wishList.getProduct().getImage()}"
                                                      title="${wishList.getProduct().getImage()}"
@@ -90,13 +91,13 @@
                                             </a>
                                         </td>
                                         <td class="text-left">
-                                            <a href="products?id=${wishList.getProduct().getProductId()}">${wishList.getProduct().getProductName()}</a>
+                                            <a href="products?action=detail&id=${wishList.getProduct().getProductId()}">${wishList.getProduct().getProductName()}</a>
                                         </td>
                                         <td class="text-left">Product ${wishList.getProduct().getProductId()}</td>
                                         <td class="text-right">In Stock</td>
                                         <td class="text-right">
                                             <div class="price">
-                                                <b>${wishList.getProduct().getPrice()}</b>
+                                                <b>${wishList.getProduct().getPrice()}00 VNĐ</b>
                                             </div>
                                         </td>
                                         <td class="text-right">
@@ -105,7 +106,7 @@
                                                 <i class="fa fa-shopping-cart"></i>
                                             </button>
                                             <button type="button" onclick="wishlist.remove('${wishList.getProduct().getProductId()}');"
-                                                    data-toggle="tooltip" title="Add to Cart" class="btn btn-primary">
+                                                    data-toggle="tooltip" title="Remove from wishlist" class="btn btn-primary">
                                                 <i class="fa fa-times"></i>
                                             </button>
                                         </td>
