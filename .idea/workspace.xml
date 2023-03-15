@@ -10,35 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4bc4f4-d58f-4236-a999-b515aef3bd9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/ant-deploy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/blissful_coffee/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/vnpay_return.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/model/Wishlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IWishListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/WishListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IWishListService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/WishListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/CheckoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/DashboardServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/OrderDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/OrderDetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/model/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/model/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/IOrderDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/IOrderDetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/LoginRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/LoginRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/OrderDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/OrderDetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/repository/impl/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/IOrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/IOrderDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/service/impl/OrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/service/impl/OrderDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mvc/controller/WishlistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mvc/controller/WishlistServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/layouts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layouts/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/product.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +45,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -90,21 +70,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Temporary (chứa code các bài tập)/Blissful_Coffee",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Temporary (chứa code các bài tập)/Blissful_Coffee&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Temporary (chứa code các bài tập)\Blissful_Coffee\src\main\webapp" />
@@ -201,7 +181,8 @@
       <workItem from="1678557610183" duration="7844000" />
       <workItem from="1678609307556" duration="27432000" />
       <workItem from="1678689770711" duration="40117000" />
-      <workItem from="1678774037557" duration="8289000" />
+      <workItem from="1678774037557" duration="13263000" />
+      <workItem from="1678797461064" duration="321000" />
     </task>
     <servers />
   </component>

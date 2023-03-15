@@ -99,8 +99,8 @@
                         <%--                        <li><a href="../views/auth/login.jsp">Logout</a></li>--%>
                     </ul>
                 </li>
-                <li><a href="../views/wishlist.jsp" id="wishlist-total" title="Wish List (0)"><span
-                        class="hidden-xs hidden-sm hidden-md">Wish List (0)</span></a></li>
+                <li><a href="../views/wishlist.jsp" id="wishlist-total" title="Wish List ${wishListList.size()}"><span
+                        class="hidden-xs hidden-sm hidden-md">Wish List ${wishListList.size()}</span></a></li>
 
                 <li><a href="../views/checkout.jsp" title="Checkout"><span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
                 </li>
