@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body class="product-product-43 layout-1">
-    <jsp:include page="../layouts/header.jsp"></jsp:include>
+<jsp:include page="../layouts/header.jsp"></jsp:include>
 
 <!-- ======= Menu Code START ========= -->
 <div id="res-menu" class="main-menu nav-container1">

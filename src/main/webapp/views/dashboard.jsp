@@ -145,10 +145,10 @@
                                 </div>
                                 <p class="price">
                                 <span class="price-old">
-                                    <c:out value="${product.getPrice()}">VNĐ</c:out>
-                                    </span><span class="price-new">
-                                  28.000VNĐ
-                               </span>
+                                </span>
+                                <span class="price-new">
+                                  <c:out value="${product.getPrice()}"></c:out>00 VNĐ
+                                </span>
                                 </p>
                                 <div class="res-cartbtn">
                                     <button type="button" onclick="cart.add('${product.getProductId()}')"><span
@@ -256,7 +256,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <p class="price"><c:out value="${product.getPrice()}">VNĐ</c:out>
+                                                    <p class="price"><c:out value="${product.getPrice()}"></c:out>00 VNĐ
                                                         <span class="price-tax">Ex Tax: $100.00</span>
                                                     </p>
                                                     <div class="res-cartbtn">

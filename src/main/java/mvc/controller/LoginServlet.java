@@ -66,7 +66,6 @@ public class LoginServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        System.out.println("ALO ANH ");
 //        response.setContentType("text/html;charset=UFT-8");
         try {
             String email = request.getParameter("Email");
