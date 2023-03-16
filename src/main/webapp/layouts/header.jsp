@@ -118,7 +118,7 @@
                     </c:if>
                 </li>
 
-                <li><a href="../views/checkout.jsp" title="Checkout"><span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
+                <li><a href="/checkout" title="Checkout"><span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
                 </li>
                 <li><span class="hidden-xs hidden-sm hidden-md">Hello <strong>${UserLogin.fullName}</strong></span></li>
 
@@ -164,7 +164,7 @@
                                                 <tr>
                                                     <td class="text-center">
                                                         <a
-                                                                href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/product&amp;product_id=43">
+                                                                href="products?action=detail&id=${orderDetail.getProduct().getProductId()}">
                                                             <img
                                                                     src="/img/${orderDetail.getProduct().getImage()}"  alt="${orderDetail.getProduct().getImage()}"
                                                                     alt="Coffee Bean Direct" title="${orderDetail.getProduct().getProductName()}"
@@ -193,14 +193,13 @@
                                                 <tr>
                                                     <td class="text-right"><strong>Total</strong></td>
                                                     <td class="text-right">
-                                                        <c:out value="${total}"> </c:out>
+                                                        <c:out value="${total}"> </c:out>00 VNĐ
                                                     </td>
                                                 </tr>
                                             </table>
                                             <p class="text-right"><a
-                                                    href="cart"><strong>View
-                                                Cart</strong></a>&nbsp;&nbsp;&nbsp;<a
-                                                    href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=checkout/checkout"><strong>Checkout</strong></a>
+                                                    href="/cart"><strong>View Cart</strong></a>&nbsp;&nbsp;&nbsp;<a
+                                                    href="/checkout"><strong>Checkout</strong></a>
                                             </p>
                                         </div>
                                     </li>

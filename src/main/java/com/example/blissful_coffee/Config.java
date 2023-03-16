@@ -22,9 +22,11 @@ import javax.servlet.http.HttpServletRequest;
 public class Config {
 
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    public static String vnp_Returnurl = "http://localhost:8080/vnpay_jsp/vnpay_return.jsp";
-    public static String vnp_TmnCode = "";
-    public static String vnp_HashSecret = "";
+    public static String vnp_Returnurl = "http://localhost:8080/views/checkoutReturn.jsp";
+
+//    public static String vnp_Returnurl = "http://localhost:8080/vnpay_jsp/vnpay_return.jsp";
+    public static String vnp_TmnCode = "O85OIVEE";
+    public static String vnp_HashSecret = "HHBTBFGBJYYUATJGZTZCBTVCXCFSQZCR";
     public static String vnp_apiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
 
     public static String md5(String message) {
@@ -83,7 +85,7 @@ public class Config {
         }
         return hmacSHA512(vnp_HashSecret,sb.toString());
     }
-    
+
     public static String hmacSHA512(final String key, final String data) {
         try {
 

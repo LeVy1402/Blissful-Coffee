@@ -89,6 +89,7 @@ public class LoginServlet extends HttpServlet {
                 if (iOrderService.findOrderInCartByCusId(customer)==null){
                     iOrderService.createOrderInCart(customer);
                 }
+                session.setAttribute("orderInCart", iOrderService.findOrderInCartByCusId(customer));
                 session.setAttribute("orderDetailList", iOrderDetailService.getOrderDetailByOrderId(iOrderService.findOrderInCartByCusId(customer).getOrderId()));
                 System.out.println(customer.getFullName() + "what");
                 response.sendRedirect("/dashboards");

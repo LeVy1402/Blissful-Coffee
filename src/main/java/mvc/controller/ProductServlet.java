@@ -74,8 +74,11 @@ public class ProductServlet extends HttpServlet {
         Product product = iProductService.selectProductById(id);
         List<Rating> ratingList = iReviewService.selectRatingById(id);
         RequestDispatcher dispatcher;
+
+        //List các sản phẩm có cùng loại với sản phẩm đang chọn
         List<Product> productListByCate = iProductService.selectProductByCategory(product.getCategoryId().getCategoryId());
         productListByCate.removeIf(item -> item.getProductId() == product.getProductId());
+
         request.setAttribute("productListByCate", productListByCate);
         request.setAttribute("product", product);
         request.setAttribute("reviewList", ratingList);
@@ -144,13 +147,15 @@ public class ProductServlet extends HttpServlet {
         Rating newReview = new Rating(product, score, remarks, dateRecoreded, customer);
         System.out.println(newReview.getCustomer().getFullName());
         iReviewService.addReview(newReview);
+
         List<Product> productListByCate = iProductService.selectProductByCategory(product.getCategoryId().getCategoryId());
         productListByCate.removeIf(item -> item.getProductId() == product.getProductId());
+
         request.setAttribute("productListByCate", productListByCate);
         request.setAttribute("product", product);
         request.setAttribute("reviewList", iReviewService.selectRatingById(product.getProductId()));
 
-        response.sendRedirect("products");
+        response.sendRedirect("products?action=detail&id="+product.getProductId());
 //        RequestDispatcher dispatcher = request.getRequestDispatcher("views/product.jsp");
 //        dispatcher.forward(request, response);
     }
