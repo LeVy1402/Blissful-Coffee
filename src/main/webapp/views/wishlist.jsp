@@ -20,48 +20,14 @@
 <jsp:include page="../layouts/header.jsp"></jsp:include>
 <div class="container">
     <ul class="breadcrumb">
-        <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=common/home"><i
+        <li><a href="/dashboards"><i
                 class="fa fa-home"></i></a></li>
-        <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/account">Account</a></li>
-        <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/wishlist">My Wish
+        <li><a href="/accounts">Account</a></li>
+        <li><a href="/wishlist">My Wish
             List</a></li>
     </ul>
     <div class="row">
-        <column id="column-left" class="col-sm-3 hidden-xs">
-            <div class="box">
-                <div class="box-heading">Account</div>
-                <div class="list-group">
-                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/account"
-                       class="list-group-item">My Account</a>
-                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/edit"
-                       class="list-group-item">Edit Account</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/password"
-                        class="list-group-item">Password</a>
-                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/address"
-                       class="list-group-item">Address Books</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/wishlist"
-                        class="list-group-item">Wish List</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/order"
-                        class="list-group-item">Order History</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/download"
-                        class="list-group-item">Downloads</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/reward"
-                        class="list-group-item">Reward Points</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/return"
-                        class="list-group-item">Returns</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/transaction"
-                        class="list-group-item">Transactions</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/newsletter"
-                        class="list-group-item">Newsletter</a><a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/recurring"
-                        class="list-group-item">Recurring payments</a>
-                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/logout"
-                       class="list-group-item">Logout</a>
-                </div>
-            </div>
-
-
-        </column>
+        <jsp:include page="/layouts/menu_vertical.jsp"></jsp:include>
 
         <div id="content" class="col-sm-9">
                 <div id="content-box">

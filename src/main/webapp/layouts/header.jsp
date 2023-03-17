@@ -245,19 +245,19 @@
 
                 <ul class="main-navigation">
                     <li>
-                        <a href="">Coffee</a>
+                        <a href="/pageProduct?category=Coffee">Coffee</a>
                     </li>
                     <li>
-                        <a href="">Smoothie</a>
+                        <a href="/pageProduct?category=Smoothie - Yogurt">Smoothie</a>
                     </li>
                     <li>
-                        <a href="">Juice</a>
+                        <a href="/pageProduct?category=Juice">Juice</a>
                     </li>
                     <li>
-                        <a href="">Tea</a>
+                        <a href="/pageProduct?category=Tea">Tea</a>
                     </li>
                     <li>
-                        <a href="">SoftDrink</a>
+                        <a href="/pageProduct?category=Soft Drink">SoftDrink</a>
                     </li>
                 </ul>
 

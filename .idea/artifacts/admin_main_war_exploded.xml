@@ -10,16 +10,17 @@
           <element id="library" level="project" name="Gradle: org.jetbrains:annotations:23.0.0" />
           <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.22" />
+          <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.9.0" />
           <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:3.11.4" />
           <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.9.1" />
           <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.9.1" />
+          <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-engine:1.9.1" />
           <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-commons:1.9.1" />
           <element id="library" level="project" name="Gradle: org.opentest4j:opentest4j:1.2.0" />
-          <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-engine:1.9.1" />
         </element>
       </element>
-      <element id="artifact" artifact-name="Gradle : com.example : admin-1.0-SNAPSHOT.war" />
       <element id="javaee-facet-resources" facet="admin.main/web/Web Gradle : admin-1.0-SNAPSHOT.war" />
+      <element id="artifact" artifact-name="Gradle : com.example : admin-1.0-SNAPSHOT.war" />
     </root>
   </artifact>
 </component>

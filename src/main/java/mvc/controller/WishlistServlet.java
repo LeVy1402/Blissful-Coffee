@@ -3,8 +3,10 @@ package mvc.controller;
 import mvc.model.Customer;
 import mvc.model.OrderDetail;
 import mvc.model.Wishlist;
+import mvc.service.IAccountService;
 import mvc.service.IProductService;
 import mvc.service.IWishListService;
+import mvc.service.impl.AccountService;
 import mvc.service.impl.ProductService;
 import mvc.service.impl.WishListService;
 
@@ -19,9 +21,16 @@ import java.util.List;
 public class WishlistServlet extends HttpServlet {
     private IWishListService iWishListService = new WishListService() ;
     private IProductService iProductService = new ProductService();
+    private IAccountService iAccountService = new AccountService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+
+        HttpSession session = request.getSession();
+        Customer UserLogin = (Customer) session.getAttribute("UserLogin");
+        if(UserLogin == null){
+            response.sendRedirect("/logins?err=pleaseLogin");
+            return;
+        }
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -60,10 +69,12 @@ public class WishlistServlet extends HttpServlet {
     }
 
     private void listWishList(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
         HttpSession session = request.getSession();
-        Customer customer = (Customer) session.getAttribute("UserLogin");
-        List<Wishlist> wishListList = iWishListService.selectWishListByCusId(customer);
+        Customer UserLogin = (Customer) session.getAttribute("UserLogin");
+        System.out.println(UserLogin.getCustomerId());
+        request.setAttribute("customerById", iAccountService.selectByIdCustomer(UserLogin.getCustomerId()));
+
+        List<Wishlist> wishListList = iWishListService.selectWishListByCusId(UserLogin);
 
         //lưu sản phẩm trong wishlist vào session
 //        session.setAttribute("orderDetailList", orderDetailList);

@@ -19,11 +19,11 @@
             <a href="/accounts"
                class="list-group-item">My Account</a>
         </c:if>
-      <a href="../profile/address_book.jsp"
-         class="list-group-item">Address Books</a>
-      <a href="../wishlist.jsp"
+<%--      <a href="../profile/address_book.jsp"--%>
+<%--         class="list-group-item">Address Books</a>--%>
+      <a href="/wishlist"
          class="list-group-item">Wish List</a>
-      <a href="../order_history.jsp"
+      <a href="/order_history.jsp"
          class="list-group-item">Order History</a>
     </div>
   </div>

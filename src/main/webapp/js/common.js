@@ -151,7 +151,7 @@ var cart = {
 
 				$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + "Success" + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('.nav-container').after('<div class="container alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				$('.nav-container').after('<div class="container alert alert-success"><i class="fa fa-check-circle"></i> ' + "Success" + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
 				$('#cart-total-container').load('cart #cart-total');
 

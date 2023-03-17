@@ -6,8 +6,10 @@ import com.google.gson.JsonObject;
 import mvc.model.Customer;
 import mvc.model.Order;
 import mvc.model.OrderDetail;
+import mvc.service.IAccountService;
 import mvc.service.IOrderDetailService;
 import mvc.service.IOrderService;
+import mvc.service.impl.AccountService;
 import mvc.service.impl.OrderDetailService;
 import mvc.service.impl.OrderService;
 
@@ -27,9 +29,16 @@ public class CheckoutServlet extends HttpServlet {
 
     private IOrderService iOrderService = new OrderService();
     private IOrderDetailService iOrderDetailService = new OrderDetailService();
+    private IAccountService iAccountService = new AccountService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+        Customer UserLogin = (Customer) session.getAttribute("UserLogin");
+        if(UserLogin == null){
+            response.sendRedirect("/logins?err=pleaseLogin");
+            return;
+        }
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -158,6 +167,11 @@ public class CheckoutServlet extends HttpServlet {
 
     private void checkout(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
+        Customer UserLogin = (Customer) session.getAttribute("UserLogin");
+        System.out.println(UserLogin.getCustomerId());
+        request.setAttribute("customerById", iAccountService.selectByIdCustomer(UserLogin.getCustomerId()));
+
+//        HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("UserLogin");
         Order order = (Order) session.getAttribute("orderInCart");
         List<OrderDetail> orderDetailList = (List<OrderDetail>) session.getAttribute("orderDetailList");

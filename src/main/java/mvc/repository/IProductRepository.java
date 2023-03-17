@@ -10,4 +10,6 @@ public interface IProductRepository {
     public List<Product> searchProduct(String search);
     public Product selectProductById(int id);
     public List<Product> selectProductByCategory(int cateId);
+
+    List<Product> searchProductCate(String category);
 }

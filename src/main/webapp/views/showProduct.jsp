@@ -3,18 +3,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Search</title>
+    <title>Product</title>
 </head>
 <body>
 <jsp:include page="../layouts/header.jsp"></jsp:include>
 <div class="container">
     <h1>Search Result</h1><ul class="breadcrumb">
-    <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=common/home"><i class="fa fa-home"></i></a></li>
-    <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=product/search&amp;search=coffe">Search</a></li>
+    <li><a href="/dashboards"><i class="fa fa-home"></i></a></li>
+    <li><a href="/dashboards">Home</a></li>
 </ul>
     <div class="row">
         <column id="column-left" class="col-sm-3 hidden-xs">
-        <span class="bestseller_default_width" style="display: none; visibility: hidden;"></span>
+            <span class="bestseller_default_width" style="display: none; visibility: hidden;"></span>
         </column>
         <div id="content" class="col-sm-9 category_filter">
             <br>
@@ -65,9 +65,10 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <p class="price">
 
-                                            <c:out value="${product.getPrice()}"></c:out>
+                                            <c:out value="${product.getPrice()}"></c:out>00 VNĐ
                                         </p>
 
                                         <div class="res-cartbtn">
@@ -94,5 +95,6 @@
         </div>
     </div>
 </div>
+<jsp:include page="/layouts/footer.jsp"></jsp:include>
 </body>
 </html>

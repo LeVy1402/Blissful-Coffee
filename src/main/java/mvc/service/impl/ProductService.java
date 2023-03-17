@@ -33,4 +33,9 @@ public class ProductService  implements IProductService {
     public List<Product> selectProductByCategory(int cateId) {
         return iProductRepository.selectProductByCategory(cateId);
     }
+
+    @Override
+    public List<Product> searchProductCate(String category) {
+        return iProductRepository.searchProductCate(category);
+    }
 }

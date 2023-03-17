@@ -21,7 +21,11 @@ public class ProductRepository implements IProductRepository {
 
     private static final String SELECT_PRODUCT_BY_ID= "select * from `product` join `category` using(`category_id`) where `product_id`= ?";
     private static final String SELECT_PRODUCT_BY_CATEGORY= "select * from `product` join `category` using(`category_id`) where `category_id`= ?";
-
+    private static final String SEARCH_PRODUCT_BY_CATEGORY =
+            "select * from product\n" +
+                    "inner join category\n" +
+                    "on product.category_id = category.category_id\n" +
+                    "where category_name = ?;";
 
     @Override
     public List<Product> selectAllProductInFeature() {
@@ -184,5 +188,34 @@ public class ProductRepository implements IProductRepository {
             throwables.printStackTrace();
         }
         return productListByCategory;
+    }
+
+    @Override
+    public List<Product> searchProductCate(String category) {
+        List<Product> productList = new ArrayList<>();
+        Connection connection = DBConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_PRODUCT_BY_CATEGORY);
+            preparedStatement.setString(1, category);
+
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int productId = rs.getInt("product_id");
+                String productName = rs.getString("product_name");
+                double price = rs.getDouble("price");
+                int quantity = rs.getInt("quantity");
+                String description = rs.getString("description");
+                String productStatus = rs.getString("product_status");
+                String image = rs.getString("image");
+                Date dateUpdate = rs.getDate("date_update");
+                Category categormain = new Category(rs.getInt("category_id"), rs.getString("category_name"));
+
+                Product product = new Product(productId, productName, price, quantity, description, productStatus, image, dateUpdate, categormain);
+                productList.add(product);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return productList;
     }
 }

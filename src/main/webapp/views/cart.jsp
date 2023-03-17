@@ -21,44 +21,12 @@
 <jsp:include page="../layouts/header.jsp"></jsp:include>
 <div class="container">
     <ul class="breadcrumb">
-        <li><a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=common/home"><i
+        <li><a href="/dashboards"><i
                 class="fa fa-home"></i></a></li>
-        <li><a href="index630e.html?route=checkout/cart">Shopping Cart</a></li>
+        <li><a href="/cart">Shopping Cart</a></li>
     </ul>
     <div class="row">
-        <column id="column-left" class="col-sm-3 hidden-xs">
-            <div class="box">
-                <div class="box-heading">Account</div>
-                <div class="list-group">
-                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/login"
-                       class="list-group-item">Login</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/register"
-                        class="list-group-item">Register</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/forgotten"
-                        class="list-group-item">Forgotten Password</a>
-                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/account"
-                       class="list-group-item">My Account</a>
-                    <a href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/address"
-                       class="list-group-item">Address Books</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/wishlist"
-                        class="list-group-item">Wish List</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/order"
-                        class="list-group-item">Order History</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/download"
-                        class="list-group-item">Downloads</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/reward"
-                        class="list-group-item">Reward Points</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/return"
-                        class="list-group-item">Returns</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/transaction"
-                        class="list-group-item">Transactions</a> <a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/newsletter"
-                        class="list-group-item">Newsletter</a><a
-                        href="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=account/recurring"
-                        class="list-group-item">Recurring payments</a>
-                </div>
-            </div>
-        </column>
+        <jsp:include page="/layouts/menu_vertical.jsp"></jsp:include>
         <%--        <div id="content" class="col-sm-9">      <h1>Shopping Cart</h1>--%>
         <%--            <p>Your shopping cart is empty!</p>--%>
         <%--            <div class="buttons">--%>
@@ -70,7 +38,7 @@
             <h2>Shopping Cart</h2>
             <c:choose>
                 <c:when test="${orderDetailList.size()>0}">
-                    `<form action="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=checkout/cart/edit"
+                    <form action="https://opencart.templatemela.com/OPC08/OPC080182/index.php?route=checkout/cart/edit"
                     method="post" enctype="multipart/form-data">
                     <div class="table-responsive">
                         <table class="table table-bordered">
@@ -84,7 +52,7 @@
                                 <td class="text-right">Total</td>
                             </tr>
                             </thead>
-                            <tbody>`
+                            <tbody>
                             <c:forEach items="${orderDetailList}" var="orderDetail">
                                 <tr>
                                     <td class="text-center">

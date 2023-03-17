@@ -31,7 +31,7 @@
         <div class="row">
             <c:set var="error" value="${param.err}"></c:set>
             <c:set var="success" value="${param.msg}"></c:set>
-            <jsp:include page="../../layouts/menu_vertical.jsp"></jsp:include>
+            <jsp:include page="/layouts/menu_vertical.jsp"></jsp:include>
             <div id="content" class="col-sm-9">
                 <div class="row">
                     <div class="col-sm-6">
