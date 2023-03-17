@@ -25,4 +25,9 @@ public class OrderService implements IOrderService {
     public List<Order> selectAllCheckoutOrder(Customer customer) throws SQLException {
         return iOrderRepository.selectAllCheckoutOrder(customer);
     }
+
+    @Override
+    public boolean updateOrder(Customer customer) throws SQLException {
+        return iOrderRepository.updateOrder(customer);
+    }
 }

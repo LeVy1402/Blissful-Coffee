@@ -20,7 +20,7 @@ import java.util.*;
 public class OrderServlet extends HttpServlet {
 
     private IOrderService iOrderService = new OrderService();
-    private IOrderDetailService iorderDetailService = new OrderDetailService();
+    private IOrderDetailService iOrderDetailService = new OrderDetailService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -30,13 +30,13 @@ public class OrderServlet extends HttpServlet {
         }
         System.out.println(action + "from get");
         switch (action) {
-//            case "update":
-//                try {
-//                    updateOrderDetail(request, response);
-//                } catch (SQLException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                break;
+            case "getOrderResult":
+                try {
+                    orderResult(request, response);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                break;
             default:
                 try {
                     getOrderHistoryList(request, response);
@@ -61,8 +61,8 @@ public class OrderServlet extends HttpServlet {
         });
 
         for (Order order : orderList){
-            orderMap.put(order, iorderDetailService.getOrderDetailByOrderId(order.getOrderId()));
-            System.out.println(orderMap.get(order));
+            orderMap.put(order, iOrderDetailService.getOrderDetailByOrderId(order.getOrderId()));
+//            System.out.println(orderMap.get(order));
         }
 
 
@@ -76,6 +76,47 @@ public class OrderServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        System.out.println(action + "from get");
+        switch (action) {
+            case "getOrderResult":
+                try {
+                    orderResult(request, response);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                break;
+            default:
+                try {
+                    getOrderHistoryList(request, response);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                break;
+        }
     }
+
+    private void orderResult(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("UserLogin");
+
+        String status= request.getParameter("status");
+        System.out.println(status);
+
+        System.out.println(status=="Success");
+        if (status=="Success"){
+
+            iOrderService.updateOrder(customer);
+            iOrderService.createOrderInCart(customer);
+            session.setAttribute("orderInCart", iOrderService.findOrderInCartByCusId(customer));
+            session.setAttribute("orderDetailList", iOrderDetailService.getOrderDetailByOrderId(iOrderService.findOrderInCartByCusId(customer).getOrderId()));
+            System.out.println(iOrderService.findOrderInCartByCusId(customer).getOrderId() + "is new");
+        }
+        response.sendRedirect("order");
+    }
+
 }

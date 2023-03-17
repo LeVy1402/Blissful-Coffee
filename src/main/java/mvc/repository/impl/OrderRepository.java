@@ -18,6 +18,7 @@ public class OrderRepository implements IOrderRepository {
 
     private static final String SELECT_ORDER_IN_CART = "SELECT * FROM `order` WHERE customer_id=? AND order_status='in cart'";
     private static final String SELECT_CHECKOUT_ORDER_BY_CUSTOMER_ID = "SELECT * FROM `order` join `staff` on `order`.`process_by` = `staff`.`staff_id`  join `customer` using(`customer_id`) WHERE customer_id=? AND order_status <> 'in cart'";
+    private static final String UPDATE_ORDER = "UPDATE `order` SET `order_status`=`New Order` WHERE `customer_id`= ? AND `order_status`= 'in cart'";
     @Override
     public void createOrderInCart(Customer customer) {
         Order order = null;
@@ -116,4 +117,30 @@ public class OrderRepository implements IOrderRepository {
         }
         return orderList;
     }
+
+    @Override
+    public boolean updateOrder(Customer customer) throws SQLException {
+        boolean rowUpdate = false;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement preparedStatement = null;
+        if (connection != null) {
+            try {
+//                (int staffIdl, String fullName, String contact, String email, String userName, String passWord, int roleId, int siteInfId)
+                preparedStatement = connection.prepareStatement(UPDATE_ORDER);
+                preparedStatement.setInt(1, customer.getCustomerId());
+                rowUpdate = preparedStatement.executeUpdate() > 0;
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            } finally {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                DBConnection.close();
+            }
+        }
+        return rowUpdate;
+    }
+
 }

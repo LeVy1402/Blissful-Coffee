@@ -10,4 +10,5 @@ public interface IOrderService {
     public void createOrderInCart(Customer customer);
     public Order findOrderInCartByCusId(Customer customer);
     List<Order> selectAllCheckoutOrder(Customer customer) throws SQLException;
+    boolean updateOrder(Customer customer) throws SQLException;
 }

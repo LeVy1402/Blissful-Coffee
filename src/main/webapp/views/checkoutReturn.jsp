@@ -187,6 +187,20 @@
 <link href="https://pay.vnpay.vn/lib/vnpay/vnpay.css" rel="stylesheet" />
 <script src="https://pay.vnpay.vn/lib/vnpay/vnpay.min.js"></script>
 <script type="text/javascript">
+    $(document).ready(function() {
+        $.ajax({
+            url: 'order',
+
+            data:'action=getOrderResult&status='+"<%=status%>",
+            success: function(html) {
+                console.log("OK")
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    });
+
     $("#frmCreateOrder").submit(function () {
         var postData = $("#frmCreateOrder").serialize();
         var submitUrl = $("#frmCreateOrder").attr("action");
